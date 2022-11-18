@@ -1,0 +1,99 @@
+\include{preambulo}
+
+\chapter{Teorema de Recorrência de Poincaré}
+
+\section{Versão Mensurável}
+
+\begin{teorema}\label{trp_vm}
+Seja $f:M\to M$ uma transformação mensurável e $\mu$ uma medida $f$-invariante finita. Seja $E\subset M$ qualquer conjunto mensurável com $\mu(E)>0$. Então, $\mu$-quase todo ponto $x\in E$ tem algum iterado $f^n(x)$, $n\geq 1$, que também está em $E$.
+\end{teorema}
+
+\begin{proof}
+Chamemos $E_0$ o conjunto dos pontos $x\in E$ que nunca retornam a $E$. Vamos provar que $E_0$ tem medida nula. Primeiro vamos provar que as suas pré-imagens $f^{-n}(E_0)$ são duas a duas disjuntas. De fato, suponhamos que exista $m>n\geq 1$ tais que $f^{-m}(E_0)\cap f^{-n}(E_0)\neq\varnothing$ e seja $x$ um ponto dessa intersecção e $y=f^{n}(x)$. Então $y\in E_0$ e $f^{m-n}(y)=f^{m-n}\circ f^n(x)=f^{m}(x)\in E_0\subset E$, isso significa que $y$ retorna pelo menos uma vez a $E$, absurdo pois $y\in E_0$. Essa contradição prova que as pré-imagens de $E_0$ por $f$ são duas a duas disjuntas. Então, pela $\sigma$-aditividade de $\mu$, temos
+
+\begin{equation*}
+\mu\left(\bigcup_{n=0}^{\infty}f^{-n}(E_0)\right)=\sum_{n=0}^{\infty}\mu(f^{-n}(E_0))=\sum_{n=0}^{\infty}\mu(E_0)
+\end{equation*}\vspace{0.1cm}
+
+Na ultima igualdade usamos a hipótese de que $\mu$ é $f$-invariante, ou seja, $\mu(f^{-n}(E_0))=\mu(E_0)$  para todo $n\geq1$. Como $\mu$ é finita, temos que $\mu\left(\bigcup_{n=0}^{\infty}f^{-n}(E_0)\right)<+\infty$, por outro lado, a direita temos uma soma infinita de termos constantes. A única forma dessa soma ser finita, é se todos as suas parcelas forem nulas. Portanto concluímos que $\mu(E_0)=0$, e está provado o teorema. 
+\end{proof}
+
+%\begin{corolario}
+%Nas condições do Teorema \ref{trp_vm}, para $\mu$-quase todo ponto $x\in E$, existem infinitos valores de $n\geq1$ tais que $f^{n}(x)$ está em $E$.
+%\end{corolario}
+%
+%\begin{proof}
+%
+%\end{proof}
+
+\section{Versão Topológica}
+
+\begin{teorema}\label{trp_vt}
+Suponhamos que $M$ admite uma base enumerável de abertos. Seja $f:M \to M$ uma transformação mensurável e $\mu$ uma medida $f$-invariante finita. Então, $\mu$-quase todo ponto $x\in M$ é recorrente para $f$.
+\end{teorema}
+
+\begin{proof}
+Seja $B=\{U_k;k\in\N\}$ uma base enumerável de abertos de $M$, isto é, se $U\in M$ um aberto então $U=\cup_{i\in I}{U_{k_i}}$, com $I\subset\N$. 
+
+Para cada $k$ representamos por $U_{k}^{0}$ o conjunto dos pontos $x\in U_k$ que nunca regressam a $U_k$. Pelo Teorema \ref{trp_vm}, $U_{k}^{0}$ tem medida nula pra todo $k$, e portanto a união enumerável 
+
+\begin{equation*}
+\tilde{U}=\bigcup_{k\in\N}{U_{K}^{0}}         \vspace{0.2cm}
+\end{equation*}
+tem medida nula. Portanto para demonstrar o teorema, basta mostrar que todo ponto $x$ que não está em $\tilde{U}$ é recorrente. 
+
+De fato, seja $x\in(M-\tilde{U})$ e $U$ uma vizinhança aberta qualquer de $x$, como $B$ é uma base de abertos de $M$ então existe um $U_k\in B$ tal que $x\in U_k\subset U$. Como $x\notin \tilde{U}$, então $x\notin U_{k}^{0}$, ou seja, existe um $n\geq1$, tal que $f^n(x)\in U_k\subset U$. Como $U$ é uma vizinhança arbitrária, isso mostra que $x$ é um ponto recorrente.
+\end{proof}
+
+\end{document}
+
+
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[height=5cm]{Imagem.png}
+%\caption{legenda}
+%\label{Imagem}
+%\end{figure}
+
+%\begin{equation*}
+
+%\end{equation*}\vspace{0.1cm}
+
+%\begin{eqnarray*}
+
+%\end{eqnarray*}
+
+%\begin{propriedade}
+
+%\end{propriedade}
+
+%\begin{definicao}
+
+%\end{definicao}
+
+%\begin{ex}
+
+%\end{ex}
+
+%\begin{solucao}
+
+%\end{solucao}
+
+%\begin{teorema}
+
+%\end{teorema}
+
+%\begin{proof}
+
+%\end{proof}
+
+%\begin{corolario}
+
+%\end{corolario}
+
+%\begin{flushright}
+%\begin{minipage}{7cm}
+%\small
+%\end{minipage}\vspace{1cm}
+%\end{flushright}

@@ -1,0 +1,137 @@
+\include{preambulo}
+
+\chapter{Automorfismo Hiperbólico no Toro}
+
+\begin{definicao} Um sistema dinâmico $f:M\to M$ é chamado \textbf{minimal} se $\fecho{\orb{x}}=M$, para todo $x\in M$, ou seja, a orbita de todo ponto $x \in M$ é densa em $M$.
+
+\end{definicao}
+
+\section{Rotação Irracional no Circulo}
+
+Seja $S^1=\{z\in\C;|z|=1\}=\{e^{2\pi it};t\in\R\}$ a esfera unitária em $\C$ e o conjunto $\R/\Z=\{[x]\in [0,1);x\thicksim x'\Leftrightarrow x-x'\in\Z\}$, onde $[x]$ é a classe de equivalência pela relação $\thicksim$. Para facilitar a notação, ao invés de escrevermos $[x]\in\R/\Z$, escreveremos apenas $x\in\R/\Z$ onde o $x$ estará representando sua classe de equivalência $x\ (\mod 1)$.
+
+\begin{proposicao} O grupo multiplicativo $S^1$ é isomorfo ao grupo aditivo $\R/\Z$.
+
+\end{proposicao}
+
+\begin{proof} Definamos a seguinte função:
+\begin{equation*}
+\funcao{h}{\R/\Z}{S^1}{t}{e^{2\pi it}}
+\end{equation*}
+
+$i)$ $h$ é um homomorfismo: De fato, seja $x,y\in \R/\Z$, então
+\begin{eqnarray*}
+h(x+y) & = & e^{2\pi i (x+y)}\\
+ & = & e^{2\pi ix + 2\pi iy}\\
+ & = & e^{2\pi ix}e^{2\pi iy}\\
+ & = & h(x)h(y)
+\end{eqnarray*}
+
+$ii)$ $h$ é injetora: De fato, seja $x,y\in \R/\Z$ tal que $h(x)=h(y)$, então $e^{2\pi ix}=e^{2\pi iy}$\newline $\Rightarrow$ $e^{2\pi i(x-y)}=1$ $\Rightarrow$ $2\pi i(x-y)=\ln(1)$ $\Rightarrow$ $2\pi i(x-y)=0$ $\Rightarrow$ $x-y=0$ $\Rightarrow$ $x=y$.
+
+$iii)$ $h$ é sobrejetora: De fato, seja $y\in S^1$, então $y=e^{2\pi ix}$ para algum $x\in\R$, logo existe $x\in\R/\Z$ tal que $h(x)=e^{2\pi ix}=y$.
+
+Portanto, $h$ é um isomorfismo de grupos, ou seja, $\R/\Z$ é isomorfo a $S^1$. 
+\end{proof}
+
+Seja $\alpha\in\R$ e $R_{\alpha}:S^1\to S^1$ uma dinâmica em $S^1$, tal que $R_{\alpha}(z)=e^{2\pi i\alpha}z$, como todo elemento $z\in S^1$ é da forma $z=e^{2\pi it}$ para algum $t\in \R$, então $R_{\alpha}(z)=e^{2\pi i\alpha}z=e^{2\pi i\alpha}e^{2\pi it}=e^{2\pi i(t+\alpha)}$ rotação pelo angulo $2\pi\alpha$. Chamaremos essa função de \textbf{rotação pelo angulo $\alpha$}. Agora seja $T_{\alpha}:\R/\Z\to \R/\Z$ uma dinâmica em $\R/\Z$, tal que $T_{\alpha}(x)=x+\alpha\ (\mod 1)$.
+
+\begin{proposicao} A função $h:\R/\Z\to S^1$ tal que $h(t)=e^{2\pi it}$ é uma conjugação de $T_{\alpha}$ e $R_{\alpha}$
+
+\end{proposicao}
+
+\begin{proof} Vamos mostrar que $h\circ T_{\alpha}=R_{\alpha}\circ h$.
+\begin{eqnarray*}
+(h\circ T_{\alpha})(x) & = & h(T_{\alpha}(x))\\
+ & = & h(x+\alpha)\\
+ & = & e^{2\pi i(x+\alpha)}\\
+ & = & e^{2\pi ix}e^{2\pi i\alpha}\\
+ & = & R_{\alpha}(e^{2\pi ix})\\
+ & = & R_{\alpha}(h(x))\\
+ & = & (R_{\alpha}\circ h)(x)
+\end{eqnarray*}
+\end{proof}
+
+\begin{proposicao} Se $\alpha$ for um número racional, então $R_{\alpha}$ é periódica para todo 
+
+\end{proposicao}
+
+\begin{proof} Vamos mostrar que $h\circ T_{\alpha}=R_{\alpha}\circ h$.
+\begin{eqnarray*}
+(h\circ T_{\alpha})(x) & = & h(T_{\alpha}(x))\\
+ & = & h(x+\alpha)\\
+ & = & e^{2\pi i(x+\alpha)}\\
+ & = & e^{2\pi ix}e^{2\pi i\alpha}\\
+ & = & R_{\alpha}(e^{2\pi ix})\\
+ & = & R_{\alpha}(h(x))\\
+ & = & (R_{\alpha}\circ h)(x)
+\end{eqnarray*}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[height=5cm]{Imagem.png}
+%\caption{legenda}
+%\label{Imagem}
+%\end{figure}
+
+%\begin{equation*}
+
+%\end{equation*}\vspace{0.1cm}
+
+%\begin{eqnarray*}
+
+%\end{eqnarray*}
+
+%\begin{propriedade}
+
+%\end{propriedade}
+
+%\begin{definicao}
+
+%\end{definicao}
+
+%\begin{ex}
+
+%\end{ex}
+
+%\begin{solucao}
+
+%\end{solucao}
+
+%\begin{teorema}
+
+%\end{teorema}
+
+%\begin{proof}
+
+%\end{proof}
+
+%\begin{corolario}
+
+%\end{corolario}
+
+%\begin{proposicao}
+
+%\end{proposicao}
+
+%\begin{flushright}
+%\begin{minipage}{7cm}
+%\small
+%\end{minipage}\vspace{1cm}
+%\end{flushright}

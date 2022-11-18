@@ -1,0 +1,100 @@
+\include{preambulo}
+
+\chapter{Exercícios}
+
+\begin{definicao} Seja $f:M\to M$ um difeomorfismo parcialmente hiperbólico. Considerando $W^{ss(uu)}(x)\subseteq M$ a variedade estável (respectivamente instável) forte de $x$, chamamos de \textbf{disco estável} (respectivamente \textbf{instável}) \textbf{forte de $x$ de tamanho $k$}, a bola fechada $D_k^{ss(uu)}(x)\subseteq W^{ss(uu)}(x)$ de raio $k/2$, pela métrica em $W^{ss(uu)}(x)$, e centrada em $x$.
+\end{definicao}
+
+
+
+\begin{lema}\label{lemadeltadenso} Seja $f:M\to M$ um difeomorfismo parcialmente hiperbólico e $\varepsilon\in[0,1]$ dado, se $f$ for $ms-$minimal ou $mu-$minimal, então para todo $\delta>0$, existe um conjunto $W\subseteq\mathcal{X}(f)$ e $K>0$ suficientemente grande tal que $D_K^{ss(uu)}(x)$ é $\delta-$denso em $M$ para todo $x\in W$ e $m(W)>1-\varepsilon$.
+\end{lema}
+
+\begin{proof} Seja $\delta>0$, $x\in M$ um ponto qualquer e $D_{k}^{ss(uu)}(x)$ o disco estável (instável) forte de $x$ de tamanho $k$. Como $\overline{W^{ss(uu)}(x)}=M$, pois $f$ é $ss(uu)-$minimal, então existe $k_x\in\N$ tal que $D_{k}^{ss(uu)}(x)$ é $\delta-$denso em $M$. 
+
+Pela continuidade das variedades estáveis (instáveis) forte, existe uma vizinhança $U_x$ de $x$ tal que para todo $y\in U_x$, existe $k_y\in\N$ tal que $D_{k}^{ss(uu)}(x)$ também é $\delta-$denso em $M$. Como $f$ é parcialmente hiperbólico e $x$ é um ponto qualquer de $M$, então $\cup_{x\in M}{U_x}$ é uma cobertura aberta de $M$, e pela compacidade de $M$ existe $n\in \N$ tal que $M\subseteq \cup_{i=1}^{n}{U_{x_i}}$. Seja $k_i\in \N$ tal que $D_{k_{x_i}}^{ss(uu)}(x_i)$ seja $\delta-$denso em $M$, tomemos $K=\max\conjunto{k_{x_1},k_{x_2},\cdots,k_{x_n}}$ e então para qualquer $x\in M$ temos que $x\in U_{x_i}$ para algum $i\in\N$, logo $D_{K}^{ss(uu)}(x)$ é $\delta-$denso em $M$.
+\end{proof}
+
+
+\begin{teorema} Seja $f:M\to M$ um difeomorfismo parcialmente hiperbólico preservando a medida de Lebesgue $m$. Se $f$ for $ms-$minimal ou $mu-$minimal, então $f$ é topologicamente \textit{mixing}.
+\end{teorema}
+
+\begin{proof} Vamos provar para o caso $mu-$minimal, e para o caso $ms-$minimal a demonstração é análoga.
+
+Sejam $U,V\subseteq M$ dois abertos quaisquer. Tomemos $\varepsilon>0$ tal que $U$ contenha uma bola aberta $B$ de raio $\varepsilon$, e $D^{uu}_{\varepsilon}(x)\subseteq U$ para todo ponto $x\in B$. Como $B$ é aberto, então $b=m(B)>0$.
+
+Seja $\delta>0$ tal que $V$ contenha uma bola de raio $\delta$. Como $f$ é $mu-$minimal, pelo Lema \ref{lemadeltadenso} existem $W\in M$ e $K>0$ suficientemente grande, tal que $D^{uu}_{K}(x)$ é $\delta-$denso para todo $x\in W$ e $m(W)>1-b$. Por hiperbolicidade, existe $n_0\in\N$ tal que $f^{n}\big(D^{uu}_{\varepsilon}(x)\big)\supseteq D^{uu}_{K}(x)$ para todo $n>n_0$ e para todo $x\in M$. Temos também que $m\big(f^{-n}(W)\big)=m(W)$ pois $f$ preserva a medida. Fixemos um $n\in \N$ onde $n>n_0$.
+
+Afirmação: $f^{-n}(W)\cap B\neq\emptyset$. De fato, suponhamos que $f^{-n}(W)\cap B=\emptyset$. Daí, por aditividade da medida, temos que se $f^{-n}(W)\cap B=\emptyset$ então $m\big(f^{-n}(W)\cup B\big)=m\big(f^{-n}(W)\big)+m(B)>b+1-b=1$. Absurdo pois $f^{-n}(W)\cup B\subseteq M$ e $m(M)=1$. Logo $f^{-n}(W)\cap B\neq\emptyset$. 
+
+Tomemos $z\in f^{-n}(W)\cap B$. Como $z\in f^{-n}(W)$ temos também que $f^n(z)\in W$, logo $f^{n}\big(D^{uu}_{\varepsilon}(z)\big)\supseteq D^{uu}_{K}\big(f^{n}(z)\big)$ é $\delta-$denso. Por escolha de $B$, temos $D^{uu}_{\varepsilon}(z)\subseteq U$ e por escolha de $\delta$, temos $f^{n}\big(D^{uu}_{\varepsilon}(z)\big)\cap V$ e como $n>n_0$ é um qualquer, então $f^n(U)\cup V\neq\emptyset$ para todo $n>n_0$. Como $U$ e $V$ foram tomados abertos quaisquer então $f$ é topologicamente \textbf{mixing}.
+\end{proof}
+
+
+
+\end{document}
+
+\begin{definicao} Seja $f:M\to M$ um difeomorfismo parcialmente hiperbólico. Considerando $W^{ss(uu)}(x)\subseteq M$ a variedade estável forte (respectivamente instável forte) de $x$, chamamos de \textbf{disco estável forte} (respectivamente \textbf{instável forte}) \textbf{de $x$ de tamanho $K$}, a bola fechada $D_K^{ss(uu)}(x)\subseteq W^{ss(uu)}(x)$ de raio $K$, pela métrica em $W^{ss(uu)}(x)$, e centrada em $x$.
+\end{definicao}
+
+\begin{lema}\label{lemadeltadenso} Seja $f:M\to M$ um difeomorfismo parcialmente hiperbólico, se $f$ for $ss-$minimal ou $uu-$minimal, então dado $\delta>0$, existe um $K>0$ suficientemente grande tal que $D_K^{ss(uu)}(x)$ é $\delta-$denso em $M$ para todo $x\in M$.
+\end{lema}
+
+\begin{proof} Sejam $\delta>0$, $x\in M$ um ponto qualquer e $D_{k}^{ss(uu)}(x)$ o disco estável (instável) forte de $x$ de tamanho $k$. Como $\overline{W^{ss(uu)}(x)}=M$, pois $f$ é $ss(uu)-$minimal, então existe $k_x\in\N$ tal que $D_{k}^{ss(uu)}(x)$ é $\delta-$denso em $M$. 
+
+Pela continuidade das variedades estáveis (instáveis) forte, existe uma vizinhança $U_x$ de $x$ tal que para todo $y\in U_x$, existe $k_y\in\N$ tal que $D_{k}^{ss(uu)}(x)$ também é $\delta-$denso em $M$. Como $f$ é parcialmente hiperbólico e $x$ é um ponto qualquer de $M$, então $\bigcup_{x\in M}{U_x}$ é uma cobertura aberta de $M$, e pela compacidade de $M$ existe $n\in \N$ tal que $M\subseteq \bigcup_{i=1}^{n}{U_{x_i}}$. Seja $k_i\in \N$ tal que $D_{k_{x_i}}^{ss(uu)}(x_i)$ é $\delta-$denso em $M$, tomemos $K=\max\conjunto{k_{x_1},k_{x_2},\cdots,k_{x_n}}$ e então para qualquer $x\in M$ temos que $x\in U_{x_i}$ para algum $i\in\N$, logo $D_{K}^{ss(uu)}(x)$ é $\delta-$denso em $M$.
+\end{proof}
+
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[height=5cm]{Imagem.png}
+%\caption{legenda}
+%\label{Imagem}
+%\end{figure}
+
+%\begin{equation*}
+
+%\end{equation*}\vspace{0.1cm}
+
+%\begin{eqnarray*}
+
+%\end{eqnarray*}
+
+%\begin{propriedade}
+
+%\end{propriedade}
+
+%\begin{definicao}
+
+%\end{definicao}
+
+%\begin{ex}
+
+%\end{ex}
+
+%\begin{solucao}
+
+%\end{solucao}
+
+%\begin{teorema}
+
+%\end{teorema}
+
+%\begin{proof}
+
+%\end{proof}
+
+%\begin{corolario}
+
+%\end{corolario}
+
+%\begin{proposicao}
+
+%\end{proposicao}
+
+%\begin{flushright}
+%\begin{minipage}{7cm}
+%\small
+%\end{minipage}\vspace{1cm}
+%\end{flushright}

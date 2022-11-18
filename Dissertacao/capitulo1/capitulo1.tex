@@ -1,0 +1,672 @@
+%\include{../preambulo/preambulo.tex}
+
+\chapter{Conceitos Básicos da Teoria de Sistemas Dinâmicos} 
+
+Neste capítulo apresentaremos as noções básicas de Sistemas Dinâmicos. Usaremos sempre o conjunto dos naturais incluindo o $0$, então $\N=\conjunto{0,1,2,\cdots}$ e nos casos em que precisarmos excluir o $0$, usaremos $\N_{*}=\conjunto{1,2,\cdots}$. Um espaço métrico $M$ é um conjunto com uma métrica $d$ que possibilita calcular a distância entre dois pontos quaisquer. Definimos em $M$ a topologia $\zeta$ gerada pela métrica $d$, isto é, $\zeta$ é a família de abertos de $M$, pela métrica $d$. Definimos também em $M$ a $\sigma-$álgebra de Borel $\B(M)$, que é gerada pela topologia $\zeta$, ou seja, a menor $\sigma-$álgebra que contém todos os subconjuntos abertos de $M$. 
+
+O conjunto $M$ será sempre um espaço topológico mensurável compacto, e quando ele tiver uma outra estrutura ou propriedade, como por exemplo ser uma variedade diferenciável ou um espaço de probabilidade, será devidamente caracterizado. A função $f:M\to M$ será sempre uma função contínua, e portanto mensurável. Na sequência vamos definir uma série de termos básicos da teoria.
+
+\section{Dinâmica Topológica}
+
+Vamos definir e mostrar alguns resultados de uma dinâmica sob um olhar topológico. Dado uma aplicação $f:M\to M$ qualquer, dizemos que $f$ é um \textbf{Sistema Dinâmico} que associa um ponto $x\in M$ a um outro ponto $f(x)\in M$ que é a dinâmica de $x$ uma unidade de tempo depois, e portanto $f$ é uma dinâmica com tempo discreto. Definimos $f^{0}(x)=x$, $f^1(x)=f(x)$ e $f^{n}(x)=f\big(f^{n-1}(x)\big)$, que são os iterados futuros de $x$, e então chamamos de \textbf{órbita futura} de $x$ o conjunto $\orbf{x}=\big\{f^n(x);n\in\N\big\}$. Se $f$ for bijetora, definimos também a \textbf{órbita passada} de $x$, o conjunto $\orbp{x}=\big\{f^{-n}(x);n\in\N\big\}$, em que $f^{-1}(x)$ é a pré imagem de $x$ e $f^{-n}(x)=f^{-1}\big(f^{-(n-1)}(x)\big)$, que são os iterados passados de $x$, e nesse caso podemos definir de maneira generalizada o conjunto $\orb{x}=\orbf{x}\cup\orbp{x}=\big\{f^{n}(x);n\in\Z\big\}$, que chamamos de \textbf{órbita} de $x$. Caso precisemos deixar claro a qual função estamos nos referindo, denotaremos tais órbitas por $\orbf{x,f}$, $\orbp{x,f}$ e $\orb{x,f}$, respectivamente.
+
+Dizemos que um ponto $p\in M$ é um \textbf{ponto periódico} de $f$ de período $\tau(p)$ se $f^{\tau(p)}(p)=p$ e chamamos o conjunto finito $\orb{p}=\big\{p,f(p),\cdots,f^{\tau(p)-1}(p)\big\}$ de \textbf{órbita periódica} de $p$. Denotamos por $Per_n(f)$ o conjunto dos pontos periódicos de $f$ de período $n$ e $Per(f)=\bigcup_{n\in\N} Per_n(f)$ o conjunto de todos os pontos periódicos de $f$. Particularmente quando $\tau(p)=1$, ou seja, $f(p)=p$, chamamos $p$ de \textbf{ponto fixo} de $f$ e definimos $Fix(f)$ o conjunto dos pontos fixos de $f$.
+
+Um conjunto $A\subseteq M$ é chamado \textbf{positivamente $f-$invariante} se $f(A)\subseteq A$ e dizemos que o conjunto $A$ é \textbf{negativamente $f-$invariante} se $f^{-1}(A)\subseteq A$. Se $f(A)=A$ dizemos que $A$ é um conjunto \textbf{$f-$invariante}. Observemos que o conjunto $Per(f)$ é um conjunto $f$-invariante. De fato, se $p\in Per(f)$ então $f^{\tau(p)}(p)=p$, isso implica que $f^{\tau(p)}\big(f(p)\big)=f^{\tau(p)+1}(x)=f^{1+\tau(p)}(x)=f\big(f^{\tau(p)}(p)\big)=f(p)$, logo $f(p)\in Per(f)$, ou seja, $f\big(Per(f)\big)\subseteq Per(f)$. Reciprocamente, se $p\in f^{-1}\big(Per(f)\big)$ significa que $f(p)\in Per(f)$ e com raciocínio análogo ao caso anterior concluímos que $p\in Per(f)$, ou seja, $f^{-1}\big(Per(f)\big)\subseteq Per(f)$. Portanto $f\big(Per(f)\big)=Per(f)$. 
+
+Um ponto $x\in M$ é um \textbf{ponto recorrente no futuro} (respectivamente \textbf{ponto recorrente no passado}, caso $f$ seja bijetora) se para cada vizinhança $V_x$ de $x$ dada, existe $n\in\N$ tal que $f^n(x)\in V_x$ (respectivamente existe $m\in\N$ tal que $f^{-m}(x)\in V_x$). Se $x$ é recorrente no passado e no futuro, isto é, para cada vizinhança $V_x$ de $x$ dada, existem $m,n\in\N$ tal que $f^{-m}(x),f^n(x)\in V_x$, dizemos que $x$ é \textbf{recorrente}. Denotamos por $\rec{f}$ o conjunto dos pontos recorrentes de $f$. Dizemos que um ponto $x\in M$ é um \textbf{ponto não errante} de $f$ se para cada vizinhança $V_x$ de $x$ dada, existe $n\in\N$ tal que $f^n\big(V_x\big)\cap V_x\neq\emptyset$, ou seja, para cada vizinhança $V_x$ de $x$ dada, existem $n\in\N$ e $y\in V_x$ tais que $f^n(y)\in V_x$. Denotamos por $\Omega(f)$ o conjunto dos pontos não errantes de $f$.
+
+Seja $\{x_n\}_{n\in\Z}\subseteq M$ uma sequência de pontos de $M$. Dizemos que $\{x_n\}_{n\in\Z}$ é uma \textbf{$\varepsilon-$pseudo-órbita} para $f$ se $d\big(f(x_n),x_{n+1}\big)\leq\varepsilon$. Se $x\in\{x_n\}_{n\in\Z}$ e existe um $n_0\in\N$ tal que $d\big(f(x_{n_0-1}),x\big)\leq\varepsilon$ e $x_{n_0}=x_1$, dizemos que $\{x_n\}_{n\in\Z}$ é uma \textbf{$\varepsilon-$pseudo-órbita periódica contendo $x$}. Um ponto $y\in M$ \textbf{$\delta-$sombreia} a sequência $\{x_n\}_{n\in\Z}$ se $d\big(f^n(y),x_{n}\big)\leq\delta$ para todo $n\in\Z$. Dizemos que um ponto $x\in M$ é \textbf{recorrente por cadeia} se para cada $\varepsilon>0$ dado, existe uma $\varepsilon-$pseudo-órbita periódica contendo $x$ e denotamos por $\recc{f}$ o conjunto de todos os pontos recorrentes por cadeia.
+
+Esses conjuntos definidos acima possuem uma relação entre si, que podemos ver na seguinte proposição.
+
+\begin{proposicao}\label{inclusoesdinamica} Seja $f:M\to M$ uma aplicação qualquer, então temos a seguinte sequência de inclusões: $${Per(f)}\subseteq\rec{f}\subseteq\Omega(f)\subseteq\recc{f}.$$
+\end{proposicao}
+
+\begin{proof} Vamos provar separadamente cada inclusão.
+\begin{description}
+\item[${Per(f)}\subseteq\rec{f}:$] Seja $p\in{Per(f)}$, então para toda vizinhança $V_p$ de $p$, temos $f^{\tau(p)}(p)=p\in V_x$ e portanto $Per(f)\subseteq\rec{f}$.
+
+\item[$\rec{f}\subseteq\Omega(f):$] Seja $x\in\rec{f}$, então para cada vizinhança $V_x$ de $x$ dada, existe $n\in\N$ tal que $f^n(x)\in V_x$, em particular $f^n\big(V_x\big)\cap V_x\neq\emptyset$, como $\varepsilon>0$ é um qualquer, temos que $x\in\Omega(f)$ e portanto $\rec{f}\subseteq\Omega(f)$.
+
+\item[$\Omega(f)\subseteq\recc{f}:$] Seja $x\in\Omega(f)$, tomemos $\varepsilon>0$ tal que $V_x\subseteq B(x,\varepsilon)$, em que $V_x$ é uma vizinhança de $x$. Então, existem $n_0\in\N$ e $y\in V_x$ tais que $f^{n_0}(y)\in V_x$. Definamos a sequência $\{y_n\}_{n\in\Z}\subseteq M$ tal que $y_n=f^n(y)$, logo $d\big(f(y_{n_0-1}),x\big)<\varepsilon$. Como $\varepsilon>0$ é um qualquer, então $x\in \recc{f}$ e portanto $\Omega(f)\subseteq\recc{f}$.
+\end{description}
+\end{proof}
+
+\begin{corolario} Se $\fecho{Per(f)}=M$, então $\Omega(f)=M$.
+\end{corolario}
+
+\begin{proof} Aplicando $\fecho{Per(f)}=M$ na Proposição \ref{inclusoesdinamica} temos $\fecho{\Omega(f)}= M$, então basta provar que ${\Omega(f)}$ é um conjunto fechado e concluímos a demonstração. De fato, se $(x_k)_{k=1}^{+\infty}\subseteq\Omega(f)$ é uma sequência que converge para $x$, então dada uma vizinhança $V_x$ de $x$, existe um $k_0\in\N$ tal que para todo $k>k_0$ temos $x_k\in V_x$. Fixemos um $k>k_0$ e tomemos $\delta>0$ tal que $B(x_k,\delta)\subseteq V_x$. Daí, como $x_k$ é não errante, existe $n\in\N$ tal que $f^n\big(B(x_k,\delta)\big)\cap B(x_k,\delta)\neq\emptyset$, em particular $f^n(V_x)\cap V_x\neq\emptyset$. Como $V_x$ é uma vizinhança qualquer de $x$, então $x\in\Omega(f)$ e portanto $\Omega(f)$ é um conjunto fechado, concluindo a demonstração.
+\end{proof}
+
+Existem dinâmicas cuja órbita de qualquer aberto percorre todo o espaço, e para algum iterado futuro intersecta qualquer outro aberto.
+
+\begin{definicao} Seja $f:M\to M$ uma aplicação qualquer. Dizemos que $f$ é \textbf{topologicamente transitiva}, ou apenas \textbf{transitiva}, se para quaisquer abertos $U,V\subseteq M$ dados, existe $n\in\N$ tal que $f^n(U)\cap V\neq\emptyset$.
+\end{definicao}
+
+A transitividade de uma função pode ser definida, de forma equivalente, através da órbita de um ponto.
+
+\begin{proposicao}\label{minimaltransitiva} Sejam $f:M\to M$ uma aplicação contínua qualquer e $M$ um espaço métrico compacto, então $f$ é transitiva se, e somente se, existe $x_0\in M$ tal que $\fecho{\orb{x_0}}=M$.
+\end{proposicao}
+
+\begin{proof} Se $f$ é transitiva, então dados $U,V\subseteq M$ existe $n\in\N$ tal que $f^n(U)\cap V\neq\emptyset$ o que implica $f^{-n}(V)\cap U\neq\emptyset$, em que $f^{-n}(V)$ também é aberto, pois $f$ é contínua. Como $M$ é compacto, então admite uma base enumerável de abertos $B=\conjunto{B_1,B_2,\cdots}$.
+
+Construamos a seguinte sequência de compactos encaixados. Por hipótese, existe $n_1\in\N$ tal que o aberto $U_1=B_1\cap f^{-n_1}(B_2)\neq\emptyset$, então tomemos um compacto $K_1\subseteq U_1$. Por hipótese, existe $n_2\in\N$ tal que o aberto $U_2=U_1\cap f^{-n_2}(B_3)\neq\emptyset$, então tomemos um compacto $K_2\subseteq U_2$. Repetindo esse processo indefinidamente, obtemos uma sequência de compactos encaixados $$K_1\supseteq K_2\supseteq K_3\supseteq\cdots$$ em que a órbita futura dos pontos de $K_n$ começam em $B_1$ e intercecta $B_i$ após $n_i$ iterações, para $i\in\conjunto{1,2,\cdots,n}$.
+
+O conjunto $K=\bigcap_{i=1}^{+\infty}K_i$ é compacto não vazio, pois é uma intersecção enumerável de compactos não vazios encaixados. Portanto, dado $x_0\in K$ temos que $f^{n_i}(x_0)\in B_1$ para todo $i\in\N$, e como $B$ é uma base de $M$, ou seja, para todo aberto $A\subseteq M$ existe um $B_i\in B$ tal que $B_i\subseteq A$, então $\orbf{x_0}\cap A\neq\emptyset$, isto é, $\fecho{\orb{x_0}}=M$.
+
+Reciprocamente, dado dois abertos $U,V\subseteq M$. Se $\fecho{\orb{x_0}}=M$, então existe $n_1,n_2\in\N$ tais que $f^{n_1}(x_0)\in U$ e $f^{n_2}(x_0)\in V$; sem perda de generalidade podemos supor $n_1<n_2$, pois a órbita de $x_0$ retorna a $U$ e $V$ infinitas vezes. Daí, $f^{n_1}(x_0)\in U$ e $f^{n_2-n_1}\big(f^{n_1}(x_0)\big)=f^{n_2}(x_0)\in V$. Portanto tomando $n=n_2-n_1$ temos $f^n(U)\cap V\neq\emptyset$, ou seja, $f$ é transitiva.
+\end{proof}
+
+Se $\fecho{\orb{x}}=M$, para todo $x\in M$, isto é, a órbita de todo ponto é densa em $M$ dizemos que $f$ é \textbf{minimal}; essa definição equivale a dizer que $M$ não tem conjuntos próprios $f-$invariantes e fechados. De fato, observemos que dado $x\in M$, o conjunto $\orb{x}$ é o menor conjunto $f-$invariante contendo $x$, pois dado qualquer conjunto $A\subseteq M$, $f-$invariante e contendo $x$, então $f^n(x)\in A$ para todo $n\in\Z$, logo $\orb{x}\subseteq A$. Daí, se $A$ for $f-$invariante e fechado, então $M=\fecho{\orb{x}}\subseteq A$ e portanto $A$ não é próprio.
+
+\begin{corolario} Seja $f:M\to M$ uma aplicação qualquer. Se $f$ for minimal, então $f$ é transitiva.
+\end{corolario}
+
+\begin{proof} Como $f$ é minimal, então $\fecho{\orb{x}}=M$ para todo $x\in M$. Em particular existe um $x_0\in M$ tal que $\fecho{\orb{x_0}}=M$, e portanto pela Proposição \ref{minimaltransitiva}, $f$ é transitiva.
+\end{proof}
+
+Algumas dinâmicas possuem uma propriedade mais forte ainda do que a transitividade, em que além da órbita de um aberto percorrer todo o espaço, ela expande esse aberto de tal forma que a partir de um certo iterado, essa órbita continua intersectando consecutivamente qualquer outro aberto.
+
+\begin{definicao} Seja $f:M\to M$ uma aplicação qualquer. Dizemos que $f$ é \textbf{topologicamente mixing}, se para quaisquer abertos $U,V\subseteq M$ dados, existe $n_0\in\N$ tal que $f^n(U)\cap V\neq\emptyset$, para todo $n>n_0$.
+\end{definicao}
+
+\begin{proposicao}\label{mixingtransitiva} Seja $f:M\to M$ uma aplicação qualquer, se $f$ for topologicamente mixing, então $f$ é transitiva.
+\end{proposicao}
+
+\begin{proof}Sejam $U,V\subseteq M$ dois abertos quaisquer, como $f$ é topologicamente \textit{mixing} então existe um $n_0\in\N$ tal que para todo $n>n_0$ temos que $f^n(U)\cap V\neq\emptyset$. Em particular existe um $n\in\N$ tal que $f^n(U)\cap V\neq\emptyset$, ou seja, $f$ é transitiva.
+\end{proof}
+
+Esses comportamentos podem ser verificados em várias dinâmicas sobre um mesmo espaço ou em dinâmicas semelhantes sobre espaços diferentes. Algumas, apesar de possuírem leis de formação diferentes, possuem as mesmas propriedades que podem ser relacionadas através de conjugações.
+
+\begin{definicao} Sejam $f:M_1\to M_1$ e $g:M_2\to M_2$, aplicações quaisquer, em que $M_1$ e $M_2$ são espaços métricos. Dizemos que $h:M_1\to M_2$ é uma \textbf{conjugação} de $f$ e $g$, se $h$ for um homeomorfismo tal que o seguinte diagrama seja comutativo: 
+\vspace{-0.1cm}$$\xymatrix{
+        M_1 \ar[r]^f \ar[d]_h & M_1 \ar[d]^{h} \\
+        M_2 \ar[r]_{g}       & M_2 }$$
+
+Ou seja, $h\circ f= g\circ h$. Dizemos que $f$ e $g$ são \textbf{topologicamente conjugadas} quando existe uma conjugação $h$ entre elas. Lembrando que um homeomorfismo é uma função bijetora contínua com inversa contínua.
+\end{definicao}
+
+Veremos agora um resultado que mostra como duas dinâmicas topologicamente conjugadas possuem o mesmo comportamento assintótico.
+
+\begin{teorema}\label{conjugacao} Sejam $M_1$ e $M_2$ espaços métricos, $f:M_1\to M_1$ e $g:M_2\to M_2$ aplicações, e $h:M_1\to M_2$ uma conjugação de $f$ e $g$, então as seguintes afirmações são verdadeiras:
+\begin{enumerate}[i)]
+\item $h\circ f^n= g^n\circ h$;
+\item $h\big(Per(f)\big)=Per(g)$;
+\item $h\big(\rec{f}\big)=\rec{g}$;
+\item $h\big(\Omega(f)\big)=\Omega(g)$;
+%\item $h\big(\recc{f}\big)=\recc{g}$;
+\item $f$ é transitiva se, e somente se, $g$ é transitiva;
+\item $f$ é topologicamente mixing se, e somente se, $g$ é topologicamente mixing.
+\end{enumerate}
+\end{teorema}
+
+\begin{proof}
+\begin{description}
+\item[$i)$] Temos que $f=h^{-1}\circ g\circ h$, pois $h^{-1}$ existe porque $h$ é um homeomorfismo. Então \vspace{-0.5cm}\begin{eqnarray*}
+f^n & = & (h^{-1}\circ g\circ h)^n\\
+ & = &(h^{-1}\circ g\circ h)\circ(h^{-1}\circ g\circ h)\circ\cdots\circ(h^{-1}\circ g\circ h)\\
+ & = & h^{-1}\circ g\circ (h\circ h^{-1})\circ g\circ h\circ\cdots\circ h^{-1}\circ g\circ h\\
+ & = & h^{-1}\circ g\circ g\circ\cdots\circ g\circ h\\
+ & = & h^{-1}\circ g^n\circ h
+\end{eqnarray*}
+Portanto $h\circ f^n= g^n\circ h$.
+
+\item[$ii)$] Se $h(p)\in h\big(Per(f)\big)$ então $f^{\tau(p)}(p)=p$ e pelo item anterior temos $g^{\tau(p)}\big(h(p)\big)=h\big(f^{\tau(p)}(p)\big)\\=h(p)$. Logo $h(p)\in Per(g)$, o que significa que $h\big(Per(f)\big)\subseteq Per(g)$. Reciprocamente, se $q\in Per(g)$ então $g^{\tau(q)}(q)=q$ e como $h$ é um homeomorfismo podemos escrever $p=h^{-1}(q)\in M_1$ e pelo item anterior temos $f^{\tau(q)}(p)=f^{\tau(q)}\big(h^{-1}(q)\big)=h^{-1}\big(g^{\tau(q)}(q)\big)=h^{-1}(q)=p$. Logo $p=h^{-1}(q)\in Per(f)$ e então $q=h(p)\in h\big(Per(f)\big)$, o que significa que $Per(g)\subseteq h\big(Per(f)\big)$. Portanto $h\big(Per(f)\big)=Per(g)$.
+
+\item[$iii)$] Se $h(x)\in h\big(\rec{f}\big)$ então dado uma vizinhança $U_{h(x)}$ de $h(x)$, temos que $V_x=h^{-1}\big(U_{h(x)}\big)$ é uma vizinhança de $x$ e existe $n\in\N$ tal que $f^n(x)\in V_x$ e pelo primeiro item temos $g^n\big(h(x)\big)=h\big(f^n(x)\big)\in h(V_x)=U_{h(x)}$, logo $h(x)\in \Omega(g)$, o que significa que $h\big(\Omega(f)\big)\subseteq\Omega(g)$. Reciprocamente, se $y\in\Omega(g)$  então dada uma vizinhança $V_x$ de $x=h^{-1}(y)$, temos que $h(V_x)$ é uma vizinhança de $y$ e existe $n\in\N$ tal que $g^n(y)\in h(V_x)$ e pelo primeiro item $g^n(y)=g^n\big(h(x)\big)=h\big(f^n(x)\big)\in h(V_x)$ o que significa que $y=h(x)\in h\big(\Omega(f)\big)$. Portanto $h\big(\Omega(f)\big)=\Omega(g)$.
+
+
+\item[$iv)$] Se $h(x)\in h\big(\Omega(f)\big)$, então dado uma vizinhança $U_{h(x)}$ de $h(x)$, temos que $V_x=h^{-1}\big(U_{h(x)}\big)$ é uma vizinhança de $x$ e existe $n\in\N$ tal que $f^n(V_x)\cap V_x\neq\emptyset$, e pelo primeiro item temos $h\big(f^n(V_x)\big)=g^n\big(h(V_x)\big)=g^n\big(U_{h(x)}\big)$, logo $g^n\big(U_{h(x)}\big)\cap U_{h(x)}\neq\emptyset$ e $h(x)\in\Omega(g)$, o que significa que $h\big(\Omega(f)\big)\subseteq\Omega(g)$. Reciprocamente, se $y\in\Omega(g)$ então dada uma vizinhança $V_x$ de $x=h^{-1}(y)$, temos que $h(V_x)$ é uma vizinhança de $y$ e existe $n\in\N$ tal que $g^{n}\big(h(V_x)\big)\cap h(V_x)\neq\emptyset$ e pelo primeiro item $g^{n}\big(h(V_x)\big)=h\big(f^n(V_x)\bigcap)$, logo $h\big(f^n(V_x)\big)\cap h(V_x)\neq\emptyset$ e $y=h(x)\in h\big(\Omega(f)\big)$, o que significa que $\Omega(g)\subseteq h\big(\Omega(f)\big)$. Portanto $h\big(\Omega(f)\big)=\Omega(g)$.
+
+\item[$vi)$] Se $f$ é transitiva então dado dois abertos $U_2,V_2\subseteq M_2$ quaisquer, temos $U_1=h^{-1}(U_2)$ e $V_1=h^{-1}(V_2)$ são abertos em $M_1$, logo existe $n\in\N$ tal que $f^n(U_1)\cap V_1\neq\emptyset$ e pelo primeiro item $g^n(U_2)=g^n\big(h(U_1)\big)=h\big(f^n(U_1)\big)$, portanto $g^{n}(U_2)\cap V_2\neq\emptyset$, o que significa que $g$ é transitiva. Reciprocamente, se $g$ é transitiva então dado dois abertos $U_1,V_1\subseteq M_1$ quaisquer, temos $U_2=h(U_1)$ e $V_2=h(V_1)$ são abertos em $M_2$, pois a inversa de $h$ é contínua, logo existe $n\in\N$ tal que $g^n(U_2)\cap V_2\neq\emptyset$ e como $h^{-1}$ também é uma conjugação, pelo primeiro item $f^n(U_1)=f^n\big(h^{-1}(U_2)\big)=h^{-1}\big(g^n(U_2)\big)$, portanto $f^{n}(U_1)\cap V_1\neq\emptyset$, o que significa que $f$ é transitiva.
+
+\item[$vii)$] Se $f$ topologicamente mixing então dado dois abertos $U_2,V_2\subseteq M_2$ quaisquer, temos $U_1=h^{-1}(U_2)$ e $V_1=h^{-1}(V_1)$ são abertos em $M_1$, logo existe $n_0\in\N$ tal que para todo $n>n_0$ temos que $f^n(U_1)\cap V_1\neq\emptyset$ e pelo primeiro item $g^n(U_2)=g^n\big(h(U_1)\big)=h\big(f^n(U_1)\big)$, portanto $g^{n}(U_2)\cap V_2\neq\emptyset$, o que significa que $g$ é topologicamente mixing. Reciprocamente, se $g$ é topologicamente mixing então dado dois abertos $U_1,V_1\subseteq M_1$ quaisquer, temos $U_2=h(U_1)$ e $V_2=h(V_1)$ são abertos em $M_2$, pois a inversa de $h$ é contínua, logo existe $n_0\in\N$ tal que para todo $n>n_0$ temos que $g^n(U_2)\cap V_2\neq\emptyset$ e como $h^{-1}$ também é uma conjugação, pelo primeiro item $f^n(U_1)=f^n\big(h^{-1}(U_2)\big)=h^{-1}\big(g^n(U_2)\big)$, portanto $f^{n}(U_1)\cap V_1\neq\emptyset$, o que significa que $f$ é topologicamente mixing.
+\end{description}
+\end{proof}
+
+\begin{corolario}\label{conjminimal} Nas condições do Teorema \ref{conjugacao}, $f$ é minimal se, e somente se, $g$ é minimal.
+\end{corolario}
+
+\begin{proof} Dado $x\in M_1$, pelo primeiro item do Teorema \ref{conjugacao}, temos $h\big(\orb{x,f}\big)=\mathcal{O}\big(h(x),g\big)$. Como $f$ é minimal então $\fecho{\orb{x,f}}=M_1$ e portanto $\fecho{\mathcal{O}\big(h(x),g\big)}=h\big(\fecho{\orb{x,f}}\big)=h(M_1)=M_2$, e como $x$ é um ponto qualquer e $h$ é bijetora, concluímos que $g$ é minimal. Analogamente, aplicando o mesmo raciocínio para $h^{-1}$, concluímos que $g$ ser minimal implica em $f$ ser minimal.
+\end{proof}
+
+Um exemplo interessante de dinâmica, é a rotação irracional na esfera unitária $S^1=\big\{z\in\C;|z|=1\big\}=\big\{e^{2\pi ix};\ x\in[0,2\pi)\big\}$ em $\C$. Definamos o conjunto $\R/\Z=\big\{[x]\in [0,1);\ x\thicksim x'\Leftrightarrow x-x'\in\Z\big\}$, em que $[x]$ é a classe de equivalência pela relação $\thicksim$. Para facilitar a notação, ao invés de escrevermos $[x]\in\R/\Z$, escreveremos apenas $x\in\R/\Z$ onde o $x$ estará representando sua classe de equivalência $x\ (\mod 1)$. Dado um $\alpha\in\R$, definamos também sobre esses conjuntos as seguintes dinâmicas
+\begin{equation*}
+\funcao{R_{\alpha}}{S^1}{S^1}{e^{2\pi ix}}{e^{2\pi i(x+\alpha)}}\qquad\text{ e }\qquad \funcao{T_{\alpha}}{\R/\Z}{\R/\Z}{x}{x+\alpha}.
+\end{equation*}
+
+Note que $R_{\alpha}(x)$ é uma rotação do ponto $e^{2\pi ix}\in S^1$ pelo angulo $\alpha$ e $T_{\alpha}(x)$ é a parte decimal do ponto $x\in\R/\Z$ transladado por $\alpha$. Vamos mostrar que $R_\alpha$ é minimal quando $\alpha\in(\R-\Q)$, e pra isso vejamos que $R_\alpha$ e $T_\alpha$ são topologicamente conjugadas. Seja $h:\R/\Z\to S^1$ tal que $h(x)=e^{2\pi ix}$, então $h$ é uma conjugação de $T_{\alpha}$ e $R_{\alpha}$. 
+
+\begin{enumerate}[i)]
+\item $h$ é injetora: De fato, seja $x,y\in \R/\Z$ tal que $h(x)=h(y)$, então $e^{2\pi ix}=e^{2\pi iy}$ $\Rightarrow$ $e^{2\pi i(x-y)}=1$ $\Rightarrow$ $2\pi i(x-y)=\ln(1)$ $\Rightarrow$ $2\pi i(x-y)=0$ $\Rightarrow$ $x-y=0$ $\Rightarrow$ $x=y$.
+\item $h$ é sobrejetora: De fato, seja $z\in S^1$, então $z=e^{2\pi ix}$ para algum $x\in[0,2\pi)$, logo existe $x\in\R/\Z$ tal que $h(x)=e^{2\pi ix}=z$.
+\item $h$ é contínua com inversa contínua: De fato, a função exponencial é contínua, e sua inversa $h^{-1}$ definida por $h^{-1}(z)=x$, em que $z=e^{2\pi ix}$, é a função logarítmica e também é contínua.
+\item $h\circ T_{\alpha}=R_{\alpha}\circ h$: De fato, $\big(h\circ T_{\alpha}\big)(x)=h\big(T_{\alpha}(x)\big)=h(x+\alpha)=e^{2\pi i(x+\alpha)}=R_{\alpha}(e^{2\pi ix})=R_{\alpha}\big(h(x)\big)=\big(R_{\alpha}\circ h\big)(x)$.
+\end{enumerate}
+
+Então podemos trabalhar apenas com $T_{\alpha}$ e as propriedades do Teorema \ref{conjugacao} se aplicam a $R_{\alpha}$. Vamos ver abaixo dois resultados que caracterizam a dinâmica $R_{\alpha}$ em função do $\alpha$.
+
+\begin{proposicao} Se $\alpha$ for um número racional, então $Per(R_{\alpha})=S^1$.
+\end{proposicao}
+
+\begin{proof} Temos que $T_{\alpha}=x+\alpha$, $T_{\alpha}^2=(x+\alpha)+\alpha=x+2\alpha$ e $T_{\alpha}^n=\big(x+(n-1)\alpha\big)+\alpha=x+n\alpha$. Daí, dado $x\in\R/\Z$ e tomando $\alpha=\dfrac{p}{q}\in\Q$ temos 
+$$T_{\alpha}^q(x)=x+q\alpha=x+q\dfrac{p}{q}=x+q=x.$$
+Essa última igualdade é verdade porque $q$ é um número inteiro e então $x+q$ tem a mesma parte decimal que $x$. Portando $x$ é periódico, isto é, $Per(T_{\alpha})=\R/\Z$ e pelo Teorema \ref{conjugacao} item $ii)$, concluímos que $Per(R_{\alpha})=h\big(Per(T_{\alpha})\big)=h\big(\R/\Z\big)=S^1$.
+\end{proof}
+
+\begin{proposicao}\label{rotacaoirracional} Se $\alpha$ for um número irracional, então $R_{\alpha}$ é minimal.
+\end{proposicao}
+
+\begin{proof} Dado $x\in\R/\Z$, suponhamos que $\fecho{\orb{x}}\neq\R/\Z$, então $B=\R/\Z-\fecho{\orb{x}}\neq\emptyset$ é um conjunto $f-$invariante aberto e por isso pode ser escrito como a união de intervalos abertos e disjuntos. Tomemos $I\subseteq B$ o maior desses intervalos, e caso tenha mais de um sendo maior que os outros, tomemos $I$ um dos maiores. Seja $m(I)>0$ a medida desse intervalo, isto é, se $I=(a,b)$ então $m(I)=b-a$.
+
+\textit{Afirmação 1}: $T_{\alpha}(I)$ continua sendo o maior desses intervalos. De fato, se $I=(a,b)$ então $m\big(T_{\alpha}(I)\big)=m\big((a+\alpha,b+\alpha)\big)=b+\alpha-(a+\alpha)=b-a=m(I)$. 
+
+\textit{Afirmação 2}: $T_{\alpha}^n(I)\neq I$ para todo $n\in\N$. De fato, suponhamos que $T_{\alpha}^n(I)=I$ para algum $n\in\N$, então pelo Teorema do Valor Intermediário, existe um $c\in I$ tal que $T^n_{\alpha}(c)=c$, logo $c+n\alpha=c\ (\mod 1)$ o que significa que $d=n\alpha\in\Z$ e daí $\alpha=\frac{d}{n}$, o que é absurdo.
+
+\textit{Afirmação 3}: $T_{\alpha}^n(I)$ são dois a dois disjuntos, para todo $n\in\N$. De fato, suponhamos que exista $m,n\in\N$ tal que $T_{\alpha}^m(I)\cap T_{\alpha}^n(I)\neq\emptyset$, como $B$ é $f-$invariante e pela Afirmação 2 $T_{\alpha}^m(I)\neq T_{\alpha}^n(I)$, então $T_{\alpha}^m(I)\cup T_{\alpha}^n(I)\subseteq B$ seria o maior intervalo de $B$, o que é absurdo.
+
+Portanto, podemos concluir que 
+
+\begin{equation*}
+m\left(\bigcup_{n=0}^{+\infty}T_{\alpha}(I)\right)=\sum_{n=0}^{+\infty}m\big(T_{\alpha}^n(I)\big)=\sum_{n=0}^{+\infty}m(I)=+\infty.
+\end{equation*}
+
+Absurdo, pois $m\left(\bigcup_{n=0}^{+\infty}T_{\alpha}(I)\right)\leq m(\R/\Z)=m\big([0,1)\big)=1$. Logo $\fecho{\orb{x}}=\R/\Z$ e como $x$ é um ponto qualquer, concluímos que $T_{\alpha}$ é minimal. Daí, pelo Corolário \ref{conjminimal} $R_{\alpha}$ é minimal.
+\end{proof}
+
+
+\subsection{Hiperbolicidade}
+
+Quando o espaço $M$ possui certas propriedades, podemos mapear melhor a sua dinâmica. Então, sejam $M$ uma variedade diferenciável, $f:M\to M$ um difeomorfismo de classe $C^r$ e $p\in M$ um ponto periódico de período $\tau(p)$. Podemos decompor $T_pM$ através dos autoespaços do operador derivada $Df_p^{\tau(p)}:T_pM\to T_{p}M$. Chamamos de \textbf{subespaço estável} de $T_pM$ o subespaço $E_p^s$ gerado pelos autovalores $|\lambda|<1$, \textbf{subespaço instável} $E_p^u$ o gerado pelos autovalores $|\lambda|>1$, e \textbf{subespaço central} $E_p^c$ o gerado pelos autovalores $|\lambda|=1$. Temos portanto uma decomposição do espaço $T_pM$ em soma direta
+\begin{equation*}
+T_pM=E_p^s\oplus E_p^c\oplus E_p^u.
+\end{equation*}
+
+Dizemos que $p$ é um ponto \textbf{periódico hiperbólico} se $E^c=\{0\}$, ou seja, $Df_p^{\tau(p)}$ não possui autovalor $\lambda$ com $|\lambda|=1$ e portanto 
+\begin{equation*}
+T_pM=E_p^s\oplus E_p^u.
+\end{equation*}
+
+Essa definição pode ser estendida para os pontos que não são periódicos. Existem conjuntos $\Lambda\subseteq M$ que também admitem uma boa decomposição do fibrado tangente, que chamaremos de conjuntos hiperbólicos. Mais precisamente:
+
+\begin{definicao} Seja $f:M\to M$ um difeomorfismo de classe $C^r$ definido em uma variedade diferenciável $M$. Dizemos que um conjunto $\Lambda\subseteq M$ é um \textbf{conjunto hiperbólico} se $\Lambda$ é $f-$invariante e existem $0<\lambda<1$ e $C\in\R$, tais que para cada $x\in\Lambda$:
+\begin{enumerate}[i)]
+\item Existe a decomposição $T_xM=E_x^s\oplus E_x^u$;
+\item Essa decomposição é $Df-$invariante, ou seja, $Df(E_x^s)=E_{f(x)}^s$ e $Df(E_x^u)=E_{f(x)}^u$;
+\item $E^s_x$ e $E^u_x$ variam continuamente com $x$;
+\item $\|Df^n(x)|_{E_x^s}(v)\|\leq C\lambda^n\|v\|$ para todo $v\in E^s_x$ e para todo $n\in\N$;
+\item $\|Df^{-n}(x)|_{E_x^u}(v)\|\leq C\lambda^n\|v\|$ para todo $v\in E^u_x$ e para todo $n\in\N$.
+\end{enumerate}
+\end{definicao}
+
+Quando $M$ é um conjunto hiperbólico, chamamos $f:M\to M$ de \textbf{difeomorfismo de Anosov}. Dizemos que um conjunto hiperbólico $\Lambda$ é \textbf{isolado} ou \textbf{maximal} se existir uma vizinhança $U$ de $\Lambda$ tal que $$\Lambda=\bigcap_{n\in\Z}f^n(U).$$ 
+
+Definimos o \textbf{conjunto estável local} $W^s_{\varepsilon}(x)\subseteq M$ de $x$ e o \textbf{conjunto instável local} $W^u_{\varepsilon}(x)\subseteq M$ de $x$, respectivamente, por
+\begin{eqnarray*}
+W^s_{\varepsilon}(x) & = & \left\{y\in M;\ \lim_{n\to+\infty}d\big(f^n(x),f^n(y)\big)=0\ e\ d\big(f^n(x),f^n(y)\big)<\varepsilon,\forall n\in\N\right\},\\
+W^u_{\varepsilon}(x) & = & \left\{y\in M;\ \lim_{n\to+\infty}d\big(f^{-n}(x),f^{-n}(y)\big)=0\ e \ d\big(f^{-n}(x),f^{-n}(y)\big)<\varepsilon,\forall n\in\N\right\}.
+\end{eqnarray*}
+
+De modo geral, definimos o \textbf{conjunto estável} $W^s(x)\subseteq M$ de $x$ e o \textbf{conjunto instável} $W^u(x)\subseteq M$ de $x$, respectivamente, por
+\begin{eqnarray*}
+W^s(x) & = & \left\{y\in M;\ \lim_{n\to+\infty}d\big(f^n(x),f^n(y)\big)=0\right\},\\
+W^u(x) & = & \left\{y\in M;\ \lim_{n\to+\infty}d\big(f^{-n}(x),f^{-n}(y)\big)=0\right\}.
+\end{eqnarray*}
+
+É claro que $W^s_{\varepsilon}(x)\subseteq W^s(x)$ e $W^u_{\varepsilon}(x)\subseteq W^u(x)$. Caso precisemos deixar claro qual a função estamos nos referindo, denotaremos tais conjuntos por $W^s_{\varepsilon}(x,f)$, $W^u_{\varepsilon}(x,f)$, $W^s(x,f)$ e $W^u(x,f)$, respectivamente. O próximo resultado relaciona melhor esses conjuntos, e mais, mostra que localmente esse conjuntos tem um comportamento parecido com $E^s_x$ e $E^u_x$.
+
+\begin{teorema}\label{teovarest}(\textbf{Teorema da Variedade Estável}) Sejam $f:M\to M$ um difeomorfismo de classe $C^r$ definido em uma variedade diferenciável $M$, $\Lambda\subseteq M$ um conjunto hiperbólico e $x\in\Lambda$ um ponto qualquer, então $W^s_{\varepsilon}(x)$ e $W^u_{\varepsilon}(x)$ são subvariedades de $M$ tangentes a $E^s_x$ e $E^u_x$, respectivamente. Além disso,
+\begin{equation*}
+W^s(x)=\bigcup_{n=0}^{+\infty}f^{-n}\Big(W^s_{\varepsilon}\big(f^{n}(x)\big)\Big)\quad\text{ e }\quad W^u(x)=\bigcup_{n=0}^{+\infty}f^n\Big(W^u_{\varepsilon}\big(f^{-n}(x)\big)\Big)
+\end{equation*}
+também são subvariedades de $M$ de mesma dimensão que $E^s_x$ e $E^u_x$, respectivamente, e variam continuamente com o $x$. 
+\end{teorema}
+
+\begin{proof} Pode ser encontrada em \cite{robinson}, na Seção 8.1.3, Teorema 1.2.
+\end{proof}
+
+Um exemplo de dinâmica hiperbólica é o automorfismo hiperbólico no toro $\T^d=\R^d/\Z^d$, a fim de simplificar os cálculos usaremos o toro de dimensão 2, $\T^2=\R^2/\Z^2$, mas o raciocínio para dimensão $d>2$ é inteiramente análogo. Seja $A$ uma matriz de ordem 2 cujos elementos são números inteiros, $|det(A)|=1$ e se $\lambda$ for um autovalor de $A$ então $|\lambda|\neq1$. Definamos um operador linear $F:\R^2\to\R^2$ em que $F(z)=Az$; e seja $\pi:\R^2\to\T^2$ a projeção natural de $\R^2$ sobre o toro $\T^2$, isto é, $\pi(x,y)=[x,y]$ em que $[x,y]$ é a classe de equivalência de $(x,y)\ (\mod 1)$. Então $A$ induz uma uma função $F_A$ em $\T^2$ definida pelo seguinte diagrama $$\xymatrix{
+        \R^2 \ar[r]^{F} \ar[d]_{\pi} & \R^2 \ar[d]^{\pi} \\
+        \T^2 \ar[r]_{F_A}       & \T^2}$$
+
+Temos que $F_A$ é um difeomorfismo. De fato, a matriz Jacobiana de $F_A$ em todo ponto $x\in\T^2$ é $A$, e como $|\det(A)|=1$ então $F_A$ admite inversa e a Jacobiana da inversa é $A^{-1}$. Chamamos $F_A$ de \textbf{automorfismo hiperbólico no toro}. Apesar do método de construção da função $F_A$, a proposição seguinte mostra que ela possui um comportamento bem diferente de sua equivalente linear.
+
+\begin{proposicao} O conjunto $Per(F_A)$ é denso em $\T^2$.
+\end{proposicao}
+
+\begin{proof} Seja $p\in\T^2$ um ponto qualquer com coordenadas racionais. Encontrando um denominador comum se necessário, podemos assumir que $p=\left(\dfrac{\alpha}{k},\dfrac{\beta}{k}\right)$, com $\alpha,\beta,k\in\Z$. Sabemos que os pontos com coordenadas racionais são densos em $\T^2$, então basta mostrarmos que eles são periódicos.
+
+\textit{Afirmação}: $p$ é periódico, com período menor ou igual a $k^2$. De fato, assumindo $0\leq \alpha<k$ e $0\leq \beta<k$, sabemos que existem $k^2$ pontos da forma $p=\left(\dfrac{\alpha}{k},\dfrac{\beta}{k}\right)$. Como a matriz $A$ é inteira, podemos supor $A=\left[\begin{array}{cc}a & b\\ c & d\end{array}\right]$ com $a,b,c,d\in\Z$, então
+
+\begin{equation*}
+F_A\left(\dfrac{\alpha}{k},\dfrac{\beta}{k}\right)=\left[\begin{array}{cc}a & b\\ c & d\end{array}\right]\left[\begin{array}{c}\dfrac{\alpha}{k}\vspace{0.2cm}\\\dfrac{\beta}{k}\end{array}\right]=\left[\begin{array}{c}\dfrac{a\alpha}{k}+\dfrac{b\beta}{k}\vspace{0.2cm}\\ \dfrac{c\alpha}{k}+\dfrac{d\beta}{k}\end{array}\right]=\left[\begin{array}{c}\dfrac{a\alpha+b\beta}{k}\vspace{0.2cm}\\ \dfrac{c\alpha+d\beta}{k}\end{array}\right].
+\end{equation*}
+
+Ou seja, $F_A$ permuta os pontos da forma $p=\left(\dfrac{\alpha}{k},\dfrac{\beta}{k}\right)$. Logo, existem $m,n\in\N$ tais que $F_A^m(p)=F_A^n(p)$ com $|m-n|\leq k^2$. Supondo, sem perda de generalidade, que $m<n$ e fazendo $\tau(p)=n-m$ temos $F_A^{\tau(p)}(p)=F_A^{n-m}(p)=p$. Assim, $p$ é periódico de período $\tau(p)\leq k^2$.
+\end{proof}
+
+Os autovalores $\lambda_1$ e $\lambda_2$ de $A$ são números reais. De fato, o polinômio característico de $A$ é $p(\lambda)=\lambda^2-\lambda(a+d)+\det(A)$, sendo as raízes $\lambda_j=\dfrac{(a+d)+(-1)^j\sqrt{\Delta}}{2}$, $j=1,2$, em que $\Delta=(a+d)^2-4\det(A)$, então temos dois casos:
+
+Caso 1: $\det(A)=-1$, então $\Delta=(a+d)^2-4\det(A)=(a+d)^2+4>0$ logo $\lambda_1,\lambda_2\in\R$
+
+Caso 2: $\det(A)=ad-bc=1$, suponhamos $\Delta=(a+d)^2-4<0$, então $\lambda_1\in\C$ e $\lambda_1=\dfrac{(a+d)}{2}-\dfrac{i\sqrt{|\Delta|}}{2}$, daí temos $$|\lambda_1|^2=\dfrac{(a+d)^2}{4}+\dfrac{\Delta}{4}=\dfrac{(a+d)^2}{4}+\dfrac{-(a+d)^2+4}{4}=1.$$
+
+Absurdo, pois $|\lambda_1|\neq 1$. Portanto $\Delta>0$ e $\lambda_1,\lambda_2\in\R$.
+
+Como $|\det(A)|=|\lambda_1\lambda_2|=1$ e $|\lambda_j|\neq1$ para $j=1,2$ então um dos autovalores deve satisfazer $|\lambda_i|<1$ e $|\lambda_j|>1$ para $i\neq j$. Vamos denotar por $\lambda_s$ o primeiro caso, e $\lambda_u$ o segundo. Desta forma podemos concluir que os subespaços estáveis e instáveis, $E^s_z$ e $E^u_z$, para todo $z\in\T^2$, devem ser retas passando pela origem em $\R^2$ e com inclinação $\lambda_s$ e $\lambda_u$, respectivamente, e então $T_z\T^2=E^s_z\oplus E^u_z$. É clado que essa decomposição é $DF_{Az}-$invariante, pois $DF_{Az}=A$ para todo $z\in\T^2$ e portando $DF_{Az}(E^s_z)=AE^s_z=E^s_{F_A(z)}$, o mesmo vale para $E^u_z$. Como $F$ é uma transformação linear, então $E^s_z$ e $E^u_z$ variam continuamente com $z$. O que nos leva a concluir que $T^2$ é um conjunto hiperbólico para $F_A$.
+
+Dado $z\in\T^2$, então pelo Teorema da Variedade Estável \ref{teovarest}, temos que $W^s(z)$ e $W^u(z)$ são subvariedades de $\T^2$ de dimensão 1 tangentes a $E^s_z$ e $E^u_z$, respectivamente, e variam continuamente com o $z$. O que nos leva ao seguinte resultado.
+
+\begin{proposicao} Para todo ponto $z\in\T^2$, temos
+\begin{enumerate}[i)]
+\item $W^s(z)=\pi(E^s_z)$;
+\item $W^u(z)=\pi(E^u_z)$.
+\end{enumerate}
+\end{proposicao}
+
+\begin{proof} $i)$ Se $z'\in W^s(z)$, tomemos $l$ como sendo o segmento de reta que liga $z$ e $z'$. Suponhamos que $l\nsubseteq E^s_z$, logo $l$ possui uma componente na direção que expande $E^u_z$. Absurdo, pois $\lim_{n\to+\infty}d\big(F_A^n(z'),F_A^n(z)\big)=0$. Portanto $l\subseteq E^s_z$, e então $z'\in E^s_z$, ou seja, $W^s(z)\subseteq\pi(E^s_z)$. Reciprocamente, se $z'\in E^s_z$ tal que $z'\neq z$, tomemos $l$ como sendo o segmento de reta que liga $z$ e $z'$. Pela linearidade de $F$, temos que $F_A^n(l)$ é um segmento de reta paralelo a $W^s$ e como $|\lambda_s|<1$ então $\lim_{n\to+\infty}F^n(l)=\lambda_s^nl=0$, isto é, o tamanho desse segmento tende a zero. Portanto $l\subseteq W^s(z)$, e então $x'\in W^s(z)$, ou seja, $\pi(E^s_z)\subseteq W^s(z)$.
+
+$ii)$ Essa demonstração é inteiramente análoga ao item anterior, usando a inversa da função $F_A$.
+\end{proof}
+
+E o resultado mais interessante desse exemplo, é que para todo $z\in\T^2$, as suas variedades estáveis e instáveis são densas em $\T^2$, o que chamaremos no próximo capítulo de $s-$minimalidade e $u-$minimalidade, respectivamente.
+
+\begin{proposicao} Dado $z\in\T^2$ um ponto qualquer, então as variedades estável $W^s(z)$ e instável $W^u(z)$ de $z$ são densas em $\T^2$.
+\end{proposicao}
+
+\begin{proof} Comecemos por verificar que $E^s_z$ é uma reta com inclinação irracional em $\R^2$, ou seja, se $z=(x_0,y_0)$ e $E^s_z=\conjunto{(x,y)\in \R^2;\ (y-y_0)=\alpha(x-x_0)}$, então $\alpha\in(\R-\Q)$. De fato, suponhamos que $\alpha\in\Q$, então existe um ponto $k=(k_1,k_2)\in E^s_z$ tal que $k_1,k_2\in\Z$. E como $A$ é uma matriz de elementos inteiros, então $F_A^n(k)\in\Z^2$ para todo $n\in\N$. Absurdo, pois $\lim_{n\to+\infty}d\big(F_A^n(k),F_A^n(z)\big)=0$. 
+
+Agora, tomando os pontos da forma $(k_j,j)\in E^s_x$ que são a intersecção das retas da forma $y=n$, paralelas ao eixo $x$ em $\R^2$ com $E^s_z$, como a inclinação de $E^s_z$ é irracional, então $k_j\in(\R-\Q)$ para todo $j\in\Z$, e portando $\pi(k_j,j)=(\alpha_j,0)$ para algum irracional $0<\alpha<1$. Os pontos da forma $(x,0)\in\T^2$ define um circulo no toro e suas imagens por $F_A$ são uma rotação por um ângulo irracional, então pela Proposição \ref{rotacaoirracional} temos que a intersecção de $W^s(z)=\pi(E^s_z)$ com esse círculo é denso nele, ou seja, $W^s(z)$ é densa verticalmente no toro. Basta verificarmos então para a segunda coordenada.
+
+Tomando os pontos de $W^s(z)$ que interceptam as retas da forma $y=n+\beta$, em que $\beta\in\Q\cap(0,1)$, temos que para cada $\beta$ a variedade estável $W^s(z)$ é densa no circulo formados pelos pontos da forma $(x,\beta)$, e como os racionais são densos em $[0,1)$, os círculos também são densos no toro. Portanto $W^s(z)$ é denso em $\T^2$.
+
+Para $W^u(z)$ a demonstração é análoga.
+\end{proof}
+
+
+\section{Dinâmica Ergódica}
+
+Nessa seção vamos estudar uma dinâmica sob o olhar da teoria ergódica, cujo foco são as dinâmicas que preservam uma medida. Começaremos vendo as condições necessárias pra garantir a existência de pontos recorrentes e de medidas invariantes, para podermos definir ergodicidade e provar seus resultados.
+
+O resultado que garante que quase todo ponto é recorrente, relativamente a uma medida finita $f-$invariante, é o Teorema da Recorrência de Poincaré. Usaremos com frequência, para estudarmos medida de um conjunto, a \textbf{função característica} $\carac{E}:M\to \R$ do conjunto $E$, isto é, $\carac{E}(x)=1$ se $x\in E$, e $\carac{E}(x)=0$ se $x\notin E$. Definimos $\mu:\B(M)\to\fecho{\R}$ uma \textbf{medida} em $M$, onde $\fecho{\R}=\R\cup\conjunto{-\infty,+\infty}$ é a reta estendida. Denotaremos essa medida apenas por $\mu$; dizemos que $\mu$ é uma \textbf{medida finita} se $\mu(M)<+\infty$ e $\mu$ é uma \textbf{probabilidade} se $\mu(M)=1$. Dizemos que $\mu$ é \textbf{$f-$invariante} se para todo conjunto $E\subseteq M$ mensurável vale $\mu\big(f^{-1}(E)\big)=\mu(E)$.
+
+Dizemos que uma propriedade $P$ vale para \textbf{$\mu-$quase todo ponto} $x\in E$, quando existe um conjunto $N\subseteq E$ com $\mu(N)=0$, tal que $P$ vale para todo ponto $x\in (E-N)$. Finalmente podemos enunciar o primeiro resultado.
+
+\begin{teorema}\label{trp_vm} (\textbf{Teorema de Recorrência de Poincaré - versão mensurável}) Sejam $f:M\to M$ uma aplicação mensurável e $\mu$ uma medida $f-$invariante finita. Se $E\subseteq M$ é um conjunto mensurável qualquer com $\mu(E)>0$, então para $\mu-$quase todo ponto $x\in E$, existe $n\in\N$ tal que $f^n(x)\in E$.
+\end{teorema}
+
+\begin{proof}
+Chamemos $E^0\subseteq E$ o conjunto dos pontos $x\in E$ que não retornam a $E$, ou seja, $x\in E^0$ implica que para todo $n\in\N_{*}$ temos que $f^n(x)\notin E$. Basta provarmos que $E^0$ tem medida nula, e concluímos a demonstração. 
+
+\textit{Afirmação}: As suas pré-imagens $f^{-n}\big(E^0\big)$ são duas a duas disjuntas. De fato, suponhamos que existam $m,n\in\N_{*}$ com $m>n$ tais que $f^{-m}\big(E^0\big)\cap f^{-n}\big(E^0\big)\neq\emptyset$, tomemos $x$ um ponto dessa intersecção e seja $y=f^{n}(x)$. Então $y\in E^0$ e $f^{m-n}(y)=f^{m-n}\circ f^n(x)=f^{m}(x)\in E^0\subseteq E$, isso significa que $y$ retorna a $E$, o que é absurdo pois $y\in E^0$. Logo as pré-imagens de $E^0$ por $f$ são duas a duas disjuntas. Então, pela $\sigma-$aditividade de $\mu$, temos
+
+\begin{equation*}
+\mu\left(\bigcup_{n=0}^{+\infty}f^{-n}\big(E^0\big)\right)=\sum_{n=0}^{+\infty}\mu\Big(f^{-n}\big(E^0\big)\Big)=\sum_{n=0}^{+\infty}\mu\big(E^0\big).
+\end{equation*}\vspace{0.1cm}
+
+Na última igualdade usamos a hipótese de que $\mu$ é $f$-invariante, ou seja, $\mu\Big(f^{-n}\big(E^0\big)\Big)=\mu\big(E^0\big)$  para todo $n\in\N$. Como $\mu$ é finita, temos que $\mu\Big(\bigcup_{n=0}^{+\infty}f^{-n}\big(E^0\big)\Big)<+\infty$, por outro lado, à direita temos que $\sum_{n=0}^{+\infty}\mu\big(E^0\big)$ é uma soma infinita de termos constantes. A única forma dessa soma ser finita, é se todas as suas parcelas forem nulas. Portanto concluímos que $\mu\big(E^0\big)=0$, como queríamos provar. 
+\end{proof}
+
+Esse resultado têm uma consequência direta mais forte, em que além de $\mu-$ quase todo ponto voltar a $E$, eles continuam voltando uma infinidade de vezes.
+
+\begin{corolario}
+Nas condições do Teorema \ref{trp_vm}, para $\mu-$quase todo ponto $x\in E$, existem infinitos valores $n\in\N$, tais que $f^{n}(x)\in E$.
+\end{corolario}
+
+\begin{proof} Chamemos $E_k\subseteq E$ o conjunto dos pontos $x\in E$ que retornam a $E$ exatamente $k$ vezes, ou seja, $x\in E_k$ implica que existem exatamente $n_1,n_2,\cdots,n_k\in\N$, tais que $f^{n_i}(x)\in E$, onde $i\in\conjunto{1,2,\cdots,k}$. Logo o conjunto dos pontos que retornam a $E$ um número finito de vezes é $\bigcup_{k=1}^{+\infty}E_k$ e então
+$$\mu\left(\bigcup_{k=1}^{+\infty}E_k\right)\leq\sum_{k=1}^{+\infty}\mu\big(E_k\big) .$$\vspace{0.2cm}
+Basta provarmos que $E_k$ tem medida nula, para todo $k\in\N$, e concluímos a demonstração do corolário. Suponhamos que $\mu\big(E_k\big)>0$, então pelo Teorema \ref{trp_vm} temos que para $\mu-$quase todo ponto $x\in E_k$ existe $n\in \N$ tal que $f^n(x)\in E_k$. Fixemos um desses $x$ e denotemos $y=f^n(x)\in E_k$. Pela definição de $E_k$, temos que $y$ tem exatamente $k$ iterados em $E_k$, mas como $y$ é um iterado de $x$, então $x$ tem pelo menos $k+1$ iterados em $E_k$ o que é absurdo. Logo $\mu\big(E_k\big)=0$, como queríamos provar.
+\end{proof}
+
+Na sequência vamos mostrar uma versão topológica desse resultado, que é útil para relacionarmos com os resultados da seção de dinâmica topológica.
+
+\begin{teorema}\label{trp_vt} (\textbf{Teorema de Recorrência de Poincaré - versão topológica}) Sejam $f:M \to M$ uma aplicação mensurável e $\mu$ uma medida $f-$invariante finita. Se $M$ admite uma base enumerável de abertos, então $\mu-$quase todo ponto $x\in M$ é recorrente.
+\end{teorema}
+
+\begin{proof}
+Seja $B=\{U_k;\ k\in\N\}$ uma base enumerável de abertos de $M$. Para cada $k\in\N$, representaremos por $U_{k}^{0}$ o conjunto dos pontos $x\in U_k$ que nunca regressam a $U_k$, ou seja, $x\in U_{k}^{0}$ implica que para todo $n\in\N$ temos que $f^n(x)\notin U_k$. Então, pelo Teorema \ref{trp_vm}, $U_{k}^{0}$ tem medida nula pra todo $k$, e portanto se $\tilde{U}=\bigcup_{k=1}^{+\infty}{U_{k}^{0}}$, temos que
+
+\begin{equation*}
+0\leq\mu\big(\tilde{U}\big)=\mu\left(\bigcup_{k=1}^{+\infty}{U_{k}^{0}}\right)\leq\sum_{k=1}^{+\infty}\mu\big(U_{k}^{0}\big)=0.
+\end{equation*}\vspace{0.1cm}
+
+Logo $\mu\big(\tilde{U}\big)=0$. Então basta provarmos que para todo $x\in M$ tal que $x\notin \tilde{U}$, temos que $x$ é recorrente, e assim concluímos a demonstração. Sejam $x\in\big(M-\tilde{U}\big)$ e $V_x$ uma vizinhança aberta qualquer de $x$, como $B$ é uma base de $M$ então existe $U_k\in B$ tal que $x\in U_k\subseteq V_x$. Como $x\notin \tilde{U}$, então $x\notin U_{k}^{0}$, ou seja, existe um $n\in\N$, tal que $f^n(x)\in U_k\subseteq V_x$. Como $V_x$ é uma vizinhança arbitrária, então $x$ é um ponto recorrente, como queríamos mostrar.
+\end{proof}
+
+Esses resultados acima dependem fortemente da medida ser $f-$invariantes, o que será garantido pelo próximo teorema.
+
+\begin{teorema}\label{temi}(\textbf{Teorema da Existência de Medidas $f-$invariantes}) Seja $M$ um espaço métrico compacto. Se $f:M\to M$ é uma aplicação contínua, então existe pelo menos uma probabilidade $f-$invariante.
+\end{teorema}
+
+\begin{proof} Pode ser encontrada em \cite{viana}, no Capítulo 2, Teorema 2.1.
+\end{proof}
+
+Podemos então concluir que com hipóteses relativamente fracas, conseguimos sempre encontrar pontos recorrentes em uma dinâmica.
+
+\begin{corolario}\label{trb} (\textbf{Teorema da Recorrência de Birkhoff}) Seja $M$ um espaço métrico compacto. Se $f:M\to M$ é uma aplicação contínua, então $f$ tem algum ponto recorrente.
+\end{corolario}
+
+\begin{proof} Pelo Teorema \ref{temi}, existe uma probabilidade $f-$invariante $\mu$. Como $M$ é compacto, então admite uma base enumerável de abertos, logo pelo Teorema \ref{trp_vt} $\mu-$quase todo ponto $x\in M$ é recorrente. Em particular o conjunto dos pontos recorrentes é não vazio, concluindo a demonstração.
+\end{proof}
+
+O próximo resultado é o Teorema Ergódico de Birkhoff que nos permitirá um bom entendimento das dinâmicas em termos da densidade de suas órbitas em relação a uma medida. Sejam $f:M\to M$ uma aplicação mensurável, $x\in M$ um ponto qualquer e $E\subseteq M$ um conjunto mensurável, vamos fixar $n\in\N$ e definir $I_n=\conjunto{0,1,\cdots,n-1}\subseteq\N$, o conjunto dos $n$ primeiros números naturais, e então vamos considerar $\tau_n(E,x)$ como sendo a fração dos $j\in I_n$ tal que $f^j(x)\in E$, ou seja, $\tau_n(E,x) = \frac{1}{n}\#\big\{f^j(x)\in E;\ j\in I_n\big\}$, onde $\#\big\{f^j(x)\in E;\ j\in I_n\big\}$ é a cardinalidade do conjunto. Observe que podemos rescrever $\tau_n(E,x)$ da seguinte forma
+\begin{equation}\label{L40}
+\tau_n(E,x) = \dfrac{1}{n}\sum_{j=0}^{n-1}\carac{E}\big(f^j(x)\big).
+\end{equation}
+
+\begin{definicao} Sejam $f:M\to M$ uma plicação mensurável e $x\in M$ um ponto qualquer. Definimos $\tau(E,x)$, o \textbf{tempo médio de permanência} da órbita de $x$ em $E$, como sendo o limite de $\tau_n(E,x)$ quando $n$ tende ao infinito, ou seja,
+\begin{equation*}
+\tau(E,x)=\lim_{n\to+\infty}\tau_n(E,x).
+\end{equation*}
+\end{definicao}
+
+Em geral, esse limite pode não existir. Mas quando existe, podemos garantir que ele não varia na órbita do ponto.
+
+\begin{lema}\label{tmpo} Sejam $f:M\to M$ uma plicação mensurável e $x\in M$ um ponto qualquer. Se o tempo médio de permanência $\tau(E,x)$ existe, então $$\tau\big(E,f(x)\big)=\tau(E,x).$$
+\end{lema}
+
+\begin{proof} Por definição temos 
+\begin{eqnarray*}
+\tau\big(E,f(x)\big) & = & \lim_{n\to+\infty}\tau_n\big(E,f(x)\big)\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}\carac{E}\Big(f^j\big(f(x)\big)\Big)\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=1}^{n}\carac{E}\big(f^j(x)\big)\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\left(\sum_{j=0}^{n-1}\carac{E}\big(f^j(x)\big)-\dfrac{1}{n}\Big[\carac{E}(x)-\carac{E}\big(f^n(x)\big)\Big]\right)\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}\carac{E}\big(f^j(x)\big)-\lim_{n\to\infty}\dfrac{1}{n}\Big[\carac{E}(x)-\carac{E}\big(f^n(x)\big)\Big]\\
+& = & \tau(E,x)-\lim_{n\to+\infty}\dfrac{1}{n}\Big[\carac{E}(x)-\carac{E}\big(f^n(x)\big)\Big].
+\end{eqnarray*}
+Como a função característica é limitada, esse ultimo limite é igual a zero, e o lema está demonstrado.
+\end{proof}
+
+Com esses resultados, podemos provar o próximo teorema, que garante a existência desse limite e dá um método para calcular sua integral.
+
+\begin{teorema}\label{teb1} Sejam $f:M\to M$ uma aplicação mensurável e $\mu$ uma probabilidade $f-$in\-va\-ri\-an\-te. Dado qualquer conjunto mensurável $E\subseteq M$, o tempo médio de permanência $\tau(E,x)$ existe para $\mu-$quase todo ponto $x\in M$. Além disso, 
+\begin{equation}\label{eqteb1}
+\int_{M}\tau(E,x)d\mu(x)=\mu(E).
+\end{equation}
+\end{teorema}
+
+\begin{proof}
+Seja $E\subseteq M$ um conjunto mensurável qualquer. Para cada $x\in M$, definamos
+\begin{eqnarray*}
+\overline{\tau}(E,x) & = & \limsup_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}\carac{E}\big(f^j(x)\big)\text{ e }\\
+\underline{\tau}(E,x) & = & \liminf_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}\carac{E}\big(f^j(x)\big).
+\end{eqnarray*}
+
+Para todo $x\in M$ temos que
+\begin{equation}\label{L42}
+\overline{\tau}\big(E,f(x)\big)=\overline{\tau}(E,x)\quad\text{e}\quad\underline{\tau}\big(E,f(x)\big)=\underline{\tau}(E,x).
+\end{equation}
+
+A demonstração das equações em \eqref{L42} é análoga a do Lema \ref{tmpo}.
+
+Para demonstrar a existência do tempo médio $\tau(E,x)$, basta mostrar que para $\mu-$quase todo ponto $x\in M$, temos
+\begin{equation}
+\overline{\tau}(E,x)=\underline{\tau}(E,x).
+\end{equation}
+
+Como $0\leq\underline{\tau}(E,x)\leq\overline{\tau}(E,x)$ para todo $x\in M$, então $\int_{M}\underline{\tau}(E,x)d\mu(x)\leq\int_{M}\overline{\tau}(E,x)d\mu(x)$. E caso $\tau(E,x)$ exista, pela definição de $\liminf$ e $\limsup$ teremos $0\leq\underline{\tau}(E,x)\leq\tau(E,x)\leq\overline{\tau}(E,x)$ para todo $x\in M$, e então $\int_{M}\underline{\tau}(E,x)d\mu(x)\leq\int_{M}\tau(E,x)d\mu(x)\leq\int_{M}\overline{\tau}(E,x)d\mu(x)$. Logo, pra demonstrarmos a igualdade dada no teorema, basta provarmos a seguinte desigualdade \eqref{L44}, e concluímos a demonstração.
+\begin{equation}\label{L44}
+\int_{M}\underline{\tau}(E,x)d\mu(x)\geq\mu(E)\geq\int_{M}\overline{\tau}(E,x)d\mu(x).
+\end{equation}
+
+Vamos provar a segunda desigualdade em \eqref{L44}. Seja $\varepsilon>0$ dado, por definição de $\limsup$ existem $t\in\N$, tais que para todo $x\in M$, temos
+
+\vspace{-0.5cm}\begin{equation}\label{L45}
+\tau_t(E,x)\geq\overline{\tau}(E,x)-\varepsilon.
+\end{equation}
+
+Definamos $t:M \rightarrow \N$ uma função que leva o ponto $x\in M$ ao primeiro $t$ que satisfaça \eqref{L45}. Agora dividiremos a demonstração em dois casos.
+
+\textbf{Caso Particular:} Suponhamos que a função $t$ seja limitada, ou seja, existe um $K\in\N$ tal que $t(x)\leq K$ para todo $x\in M$. Fixando um $n\in\N$ e dado $x \in M$, definamos uma sequência $x_0,x_1,\cdots,x_s$ de pontos de $M$ e uma sequência $t_0,t_1,\cdots,t_s$ de número naturais, do seguinte modo:
+
+\begin{enumerate}
+\item Tomemos $x_0=x$.
+\item Depois fazemos $t_i=t(x_i)$ e $x_{i+1}=f^{t_i}(x_i)$.
+\item Terminamos quando encontrarmos $x_s$ tal que $t_0+t_1+\cdots+t_s\geq n$.
+\end{enumerate}
+
+Pela definição de $\tau_t(E,x)$ em \eqref{L40}, temos
+\begin{equation*}
+\tau_{t_i}(E,x)=\dfrac{1}{t_i}\sum_{j=0}^{t_i-1}\carac{E}\big(f^j(x)\big)\quad\Longrightarrow\quad\sum_{j=0}^{t_i-1}\carac{E}\big(f^j(x)\big)=t_i\tau_{t_i}(E,x).
+\end{equation*}
+
+Como essa equação vale para todo $x\in M$ em particular vale para todo $x_i$, e aplicando em \eqref{L45}, temos
+\begin{eqnarray}
+\sum_{j=0}^{t_i-1}\carac{E}\big(f^j(x_i)\big) & = &  t_i\tau_{t_i}(E,x_i)\nonumber\\
+ & \geq & t_i\big(\overline{\tau}(E,x_i)-\varepsilon\big).\label{L46}
+\end{eqnarray}
+
+Pela definição da sequência $x_i$ temos que
+\begin{eqnarray*} 
+x_0 & = & x\\
+x_1 & = & f^{t_0}(x_0) = f^{t_0}(x)\\
+x_2 & = & f^{t_1}(x_1) = f^{t_1}\big(f^{t_0}(x)\big) = f^{t_0+t_1}(x)\\
+x_3 & = & f^{t_2}(x_2) = f^{t_2}\big(f^{t_0+t_1}(x)\big) = f^{t_0+t_1+t_2}(x)\\
+& \vdots & \\
+x_s & = & f^{t_0+t_1+\cdots+t_{s-1}}(x).
+\end{eqnarray*}
+
+E pelo item 3 da definição das sequências, temos que $t_0+t_1+\cdots+t_{s}\geq n$, então $t_0+t_1+\cdots+t_{s-1}\geq n-t_s$, e como todo $t_i=t(x_i)\leq K$ temos que $t_0+t_1+\cdots+t_{s-1}\geq n-K$. Note que aplicando $x_i=f^{t_0+t_1+\cdots+t_{i}}(x)$ em \eqref{L42}, temos $\overline{\tau}(E,x_i)=\overline{\tau}(E,x)$ para todo $x_i$ da sequência. Como $t_s$ é o menor número tal que $t_0+t_1+\cdots+t_{s}\geq n$, se tirarmos ele dessa soma teremos, $t_0+t_1+\cdots+t_{s-1}<n$ o que implica na seguinte desigualdade $t_0+t_1+\cdots+t_{s-1}-1< n-1$. Então podemos reescrever \eqref{L46}, colocando $x_i$ em função de $x$ para todo $x_i$ da sequência, e somar todos eles, em que 
+\begin{eqnarray}
+\sum_{j=0}^{n-1}\carac{E}\big(f^j(x)\big) & \geq & \sum_{j=0}^{t_0+\cdots+t_{s-1}-1}\carac{E}\big(f^j(x)\big)\nonumber\\
+& \geq & \left(t_0+t_1+\cdots+t_{s-1}\right)\big(\overline{\tau}(E,x)-\varepsilon\big)\nonumber\\
+& \geq & (n-K)\big(\overline{\tau}(E,x)-\varepsilon\big).\label{L477}
+\end{eqnarray}
+
+Como o $x\in M$ é um qualquer, então essa desigualdade vale para todo $x\in M$, e como as funções características são integráveis e não negativas, a integral preserva a desigualdade e temos
+\begin{eqnarray}
+\int_{M}\sum_{j=0}^{n-1}\carac{E}\big(f^j(x)\big)d\mu(x) & \geq & \int_{M}(n-K)\big(\overline{\tau}(E,x)-\varepsilon\big)d\mu(x)\nonumber\\
+\sum_{j=0}^{n-1}\int_{M}\carac{E}\big(f^j(x)\big)d\mu(x) & \geq & (n-K)\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\int_{M} d\mu(x)\right)\label{eqprob}\\
+\sum_{j=0}^{n-1}\mu(E) & \geq & (n-K)\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\mu(M)\right)\nonumber\\
+n\mu(E) & \geq & (n-K)\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\right)\nonumber\\
+\mu(E) & \geq & \dfrac{(n-K)}{n}\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\right).\nonumber
+\end{eqnarray}
+
+No membro da esquerda em \eqref{eqprob}, todas as parcelas da soma é igual a $\mu(E)$ pois $\mu$ é $f-$invariante. Esse resultado vale para todo $n\in\N$, então passando ao limite quando $n\to+\infty$, temos
+\begin{eqnarray*}
+\mu(E) & \geq & \lim_{n\to+\infty}\left[\dfrac{(n-K)}{n}\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\right)\right]\\
+& = & \lim_{n\to+\infty}\left[\dfrac{(n-K)}{n}\right]\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\right)\\
+& = & \int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon.
+\end{eqnarray*}
+
+Esse resultado vale para todo $\varepsilon>0$, então podemos passar ao limite quando $\varepsilon\to0$, e temos
+\begin{equation*}
+\mu(E)\geq\int_{M}\overline{\tau}(E,x)d\mu(x).
+\end{equation*}
+
+Terminando assim a demonstração para esse caso, onde a função $t$ é limitada.
+
+\textbf{Caso Geral:} Quando $t$ for ilimitada, partindo do $\varepsilon>0$ dado em \eqref{L45}, fixemos $K\in\N$, suficientemente grande, de modo que o conjunto $B=\big\{y\in M;\ t(y)>K\big\}$ seja tal que $\mu(B)<\varepsilon$. 
+
+Vamos mostrar que esse $K$ de fato existe. Definamos, para todo $m\in \N$, $A_m=\big\{y\in M;\ t(y)\leq m\big\}$. Temos que $A_m\subseteq A_{m+1}$ e $\bigcup_{m=0}^{+\infty}A_m=M$, então $\lim_{m\to+\infty}\mu(A_m)=\mu\left(\bigcup_{m=0}^{+\infty}A_m\right)\\ = \mu(M)=1$, ou seja, para todo $\delta>0$ dado, existe $m_0\in\N$, tal que $m>m_0$ implica $\mu(A_m)>1-\delta$. Tomemos então $K>m_0$ e $\delta=\varepsilon$, então $\mu(A_K)>1-\varepsilon$, isso implica $\mu(M-A_K)<\varepsilon$. Agora observe que $(M-A_K)=\big\{y\in M;\ t(y)\leq K\big\}=B$. 
+
+De maneira similar ao caso particular, fixando um $n\in\N$ e dado $x \in M$, definamos uma sequência $x_0,x_1,\cdots,x_s$ de pontos de $M$ e uma sequência $t_0,t_1,\cdots,t_s$ de número naturais, do seguinte modo:
+
+\begin{enumerate}
+\item Tomemos $x_0=x$.
+\item Se $t(x_i)\leq K$, fazemos $t_i=t(x_i)$ e $x_{i+1}=f^{t_i}(x_i)$.
+\item Se $t(x_i)> K$, fazemos $t_i=1$ e $x_{i+1}=f(x_i)$.
+\item Terminamos quando encontrarmos $x_s$ tal que $t_0+t_1+\cdots+t_s\geq n$.
+\end{enumerate}
+
+Do caso particular, temos que para todo $i\in\N$, tal que $t(x_i)\leq K$, a desigualdade \eqref{L46} continua valendo
+\begin{equation}\label{L47}
+\sum_{j=0}^{t_i-1}\carac{E}\big(f^j(x_i)\big)\geq t_i\big(\overline{\tau}(E,x)-\varepsilon\big).
+\end{equation}
+
+A partir da desigualdade acima podemos escrever a seguinte
+\begin{equation}\label{L48}
+\sum_{j=0}^{t_i-1}\carac{E}\big(f^j(x_i)\big)\geq t_i\big(\overline{\tau}(E,x)-\varepsilon\big)-\sum_{j=0}^{t_i-1}\carac{B}\big(f^j(x_i)\big).
+\end{equation}
+
+Essa desigualdade tem a vantagem de valer para todos os $x_i$. De fato, basta vermos que quando $x_i$ for tal que $t(x_i)\leq K$, o ultimo somatório fica igual a zero, e decorre diretamente de \eqref{L47}, e quando $t(x_i)> K$, temos que $t_{i}=1$ e esses somatórios terão apenas um elemento, ficando
+\begin{eqnarray*}
+\sum_{j=0}^{t_i-1}\carac{E}\big(f^j(x_i)\big) & \geq & t_i\big(\overline{\tau}(E,x_i)-\varepsilon\big)-\sum_{j=0}^{t_i-1}\carac{B}\big(f^j(x_i)\big)\\
+\carac{E}\big(f(x_i)\big) & \geq & \big(\overline{\tau}(E,x_i)-\varepsilon\big)-\carac{B}\big(f(x_i)\big).
+\end{eqnarray*}
+
+E temos que $\big(\overline{\tau}(E,x_i)-\varepsilon\big)<1$ pois $\overline{\tau}(E,x_i)\leq1$ e $\varepsilon>0$, e como $\carac{B}\big(f(x_i)\big)=1$ pela definição de $B$ e pela escolha do $x_i$, então podemos concluir que a desigualdade é verdadeira, pois o membro da esquerda é maior do que ou igual a zero, pela definição de função característica, e o da direita é menor que zero.
+
+Agora usando o mesmo método que usamos pra concluir \eqref{L477}, fazendo novamente $x_i = f^{t_0+t_1+\cdots+t_{i-1}}(x)$ para todo $x_i$ da sequência. Temos que $t_0+t_1+\cdots+t_{s-1}\geq n-t_s \geq n-K$, pois pelo o item 4 da definição da sequência, $t_i\leq K$ para todo $t_i$. Aplicando novamente $x_i=f^{t_0+t_1+\cdots+t_{i}}(x)$ em \eqref{L42}, temos $\overline{\tau}(E,x_i)=\overline{\tau}(E,x)$ para todo $x_i$ da sequência. E temos também que vale a desigualdade $t_0+t_1+\cdots+t_{s-1}-1< n-1$, então podemos generalizar,
+\begin{eqnarray*}
+\sum_{j=0}^{n-1}\carac{E}(f^j(x)) & \geq & \sum_{j=0}^{t_0+\cdots+t_{s-1}-1}\carac{E}(f^j(x))\nonumber\\
+ & \geq & (t_0+t_1+\cdots+t_{s-1})\big(\overline{\tau}(E,x)-\varepsilon\big)-\sum_{j=0}^{t_0+\cdots+t_{s-1}-1}\carac{B}\big(f^j(x)\big)\\
+ & \geq & (n-K)\big(\overline{\tau}(E,x)-\varepsilon\big)-\sum_{j=0}^{n-1}\carac{B}\big(f^j(x)\big).\\
+\end{eqnarray*}
+
+Como o $x\in M$ é um qualquer, então essa desigualdade vale para todo $x\in M$, e como as funções características são integráveis e não negativas, a integral preserva a desigualdade e temos
+\begin{eqnarray*}
+\int_{M}\sum_{j=0}^{n-1}\carac{E}\big(f^j(x)\big)d\mu(x) & \geq & \int_{M}\left((n-K)\big(\overline{\tau}(E,x)-\varepsilon\big)-\sum_{j=0}^{n-1}\carac{B}\big(f^j(x)\big)\right)d\mu(x)\\
+\sum_{j=0}^{n-1}\int_{M}\carac{E}\big(f^j(x)\big)d\mu(x) & \geq & (n-K)\int_{M}\big(\overline{\tau}(E,x)-\varepsilon\big)d\mu(x)-\sum_{j=0}^{n-1}\int_{M}\carac{B}\big(f^j(x)\big)d\mu(x)\\
+\sum_{j=0}^{n-1}\mu(E) & \geq & (n-K)\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\right)-\sum_{j=0}^{n-1}\mu(B)\\
+n\mu(E) & \geq & (n-K)\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\right)-n\mu(B)\\
+\mu(E) & \geq & \dfrac{(n-K)}{n}\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\right)-\mu(B).
+\end{eqnarray*}\vspace{0.1cm}
+
+Como esse resultado vale para todo $n\in\N$, então passando ao limite quando $n\to+\infty$, e lembrando que $\mu(B)<\varepsilon$, temos
+\begin{eqnarray*}
+\mu(E) & \geq & \lim_{n\to+\infty}\left[\dfrac{(n-K)}{n}\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\right)-\varepsilon\right]\\
+& = & \lim_{n\to+\infty}\left[\dfrac{(n-K)}{n}\right]\left(\int_{M}\overline{\tau}(E,x)d\mu(x)-\varepsilon\right)-\varepsilon\\
+& = & \int_{M}\overline{\tau}(E,x)d\mu(x)-2\varepsilon.
+\end{eqnarray*}
+
+Esse resultado vale para todo $\varepsilon>0$, então podemos passar ao limite quando $\varepsilon\to0$, e temos
+\begin{equation}\label{primdesig}
+\mu(E)\geq\int_{M}\overline{\tau}(E,x)d\mu(x).
+\end{equation}
+Isso completa a demonstração do caso geral, para a segunda desigualdade em \eqref{L44}. E para a primeira, basta notarmos que $\underline{\tau}(E,x)=1-\overline{\tau}(M-E,x)$. De fato, pois $\carac{M-E}=1-\carac{E}$ o que implica $\carac{E}=1-\carac{M-E}$, logo
+\begin{eqnarray*}
+\underline{\tau}(E,x) & = & \liminf_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}\carac{E}\big(f^j(x)\big)\\
+\underline{\tau}(E,x) & = & \liminf_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}\Big(1-\carac{M-E}\big(f^j(x)\big)\Big)\\
+\underline{\tau}(E,x) & = & 1-\limsup_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}\carac{M-E}\big(f^j(x)\big)\\
+\underline{\tau}(E,x) & = & 1-\overline{\tau}(M-E,x).
+\end{eqnarray*}
+
+Então $\overline{\tau}(M-E,x)=1-\underline{\tau}(E,x)$, e aplicando o conjunto mensurável $M-E$ na desigualdade \eqref{primdesig} temos
+\begin{eqnarray*}
+\int_{M}\overline{\tau}(M-E,x)d\mu(x) & \leq & \mu(M-E)\\
+\int_{M}1-\underline{\tau}(E,x)d\mu(x) & \leq & 1-\mu(E)\\
+1-\int_{M}\underline{\tau}(E,x)d\mu(x) & \leq & 1-\mu(E)\\
+\int_{M}\underline{\tau}(E,x)d\mu(x) & \geq & \mu(E).\\
+\end{eqnarray*}
+
+Portanto mostramos que $\int_{M}\tau(E,x)d\mu(x)=\mu(E)$, o que garante a existência do tempo médio para $\tau(E,x)$ para $\mu-$quase todo ponto $x\in M$, provando assim o teorema.
+\end{proof}
+
+Para uma aplicação mensurável $f:M\to M$, uma função integrável $\varphi:M\to \R$, e um ponto qualquer $x\in M$. Definimos $\tilde{\varphi}(x)$, a \textbf{média temporal} da órbita de $x$ pelo potencial $\varphi$, como sendo o seguinte limite
+\begin{equation*}
+\tilde{\varphi}(x) = \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}{\varphi\big(f^j(x)\big)}.
+\end{equation*}
+
+Em geral esse limite pode não existir. Definimos também $\fecho{\varphi}$, a \textbf{média espacial} da função $\varphi$ em $M$, como sendo 
+\begin{equation*}
+\fecho{\varphi}=\dfrac{1}{\mu(M)}\int_{M}\varphi\ d\mu.
+\end{equation*}
+
+Um caso mais geral do Teorema \ref{teb1}, conhecido como Teorema Ergódico de Birkhoff, é um dos resultados principais dessa seção, e será enunciado a seguir.
+
+\begin{teorema}\label{teb} {\bf (Teorema Ergódico de Birkhoff)} Sejam $f : M \to M$ uma aplicação mensurável e $\mu$ uma probabilidade $f-$invariante. Dada qualquer função integrável $\varphi : M \to \R$, a média temporal $\tilde{\varphi}(x)$ existe em $\mu-$quase todo ponto $x\in M$. Além disso,
+\begin{equation*}
+\int_{M}{\tilde{\varphi}\ d\mu}=\int_{M}{\varphi\ d\mu}.
+\end{equation*}
+\end{teorema}
+
+\begin{proof} Este enunciado mais geral pode ser provado usando uma versão um pouco mais elaborada do argumento usado pra provar o Teorema \ref{teb1}, que pode ser encontrada em \cite{viana}, no Capítulo 3, Teorema 3.2.3.
+\end{proof}
+
+O Teorema \ref{teb1} é o caso particular do Teorema Ergódico de Birkhoff \ref{teb} quando $\varphi=\carac{E}$, a função característica do conjunto $E$.
+
+\subsection{Ergodicidade} 
+
+Dizemos que uma aplicação $f:M\to M$ é \textbf{ergódica} para uma probabilidade $f-$invariante $\mu$ (também dizemos que a probabilidade $\mu$ é ergódica pra $f$, ou que o sistema $(f,\mu)$ é ergódico) se as médias temporais coincidirem $\mu-$quase todo ponto $x\in M$ com as respectivas médias espaciais, ou seja, $\tilde{\varphi}(x)=\fecho{\varphi}$ para $\mu-$quase todo ponto $x\in M$ e para toda função integrável $\varphi:M\to\R$. Uma função $\psi:M\to\R$ é dita \textbf{$f-$invariante} se $(\psi\circ f)(x)=\psi(x)$ para $\mu-$quase todo ponto $x\in M$.
+
+\begin{proposicao}\label{tempinv} Sejam $f:M\to M$ uma aplicação mensurável e $\varphi:M\to \R$ uma função integrável. Então a média temporal $\tilde{\varphi}$ é $f-$invariante.
+\end{proposicao}
+
+\begin{proof} Para demonstrarmos essa Proposição, precisaremos enunciar o seguinte Lema, cuja demonstração é encontrada em \cite{viana}, no Capítulo 3, Lema 3.2.5.
+
+\begin{lema}\label{limitezero} Sejam $f:M\to M$ uma aplicação mensurável e $\phi:M\to\R$ uma função integrável, então $\lim_{n\to+\infty}\dfrac{1}{n}\phi\big(f^n(x)\big)=0$ para $\mu-$quase todo ponto $x\in M$.
+\end{lema}
+
+Então, sejam $\varphi:M\to\R$ um função integrável qualquer e a sua média temporal
+\begin{equation*}
+\tilde{\varphi}(x) = \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}{\varphi\big(f^j(x)\big)}.
+\end{equation*} 
+
+Fixemos um $x\in M$, e temos
+\begin{eqnarray*}
+\big(\tilde{\varphi}\circ f\big)(x) & = & \tilde{\varphi}\big(f(x)\big)\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}{\varphi\Big(f^j\big(f(x)\big)\Big)}\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}{\varphi\big(f^{j+1}(x)\big)}\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=1}^{n}{\varphi\big(f^{j}(x)\big)}\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\left[\sum_{j=0}^{n-1}{\varphi\big(f^{j}(x)\big)}+\varphi\big(f^n(x)\big)-\varphi\big(f^0(x)\big)\right]\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}{\varphi\big(f^{j}(x)\big)}+\lim_{n\to+\infty}\dfrac{1}{n}\varphi\big(f^n(x)\big)-\lim_{n\to+\infty}\dfrac{1}{n}\varphi(x)\\
+& = & \tilde{\varphi}(x)+\lim_{n\to+\infty}\dfrac{1}{n}\varphi\big(f^n(x)\big).\\
+\end{eqnarray*}
+
+E pelo Lema \ref{limitezero} temos $\lim_{n\to+\infty}\dfrac{1}{n}\varphi\big(f^n(x)\big)=0$ para $\mu-$quase todo ponto $x\in M$. Portanto $\tilde{\varphi}$ é $f-$invariante. 
+\end{proof}
+
+Existem várias maneiras equivalentes de definir a ergodicidade de uma aplicação, o próximo teorema relaciona alguma delas.
+
+\begin{teorema}\label{eqiverg} Sejam $f:M\to M$ uma aplicação mensurável e $\mu$ uma probabilidade $f-$in\-va\-ri\-an\-te. São equivalentes:
+\begin{enumerate}[i)]
+\item O sistema $(f,\mu)$ é ergódico.
+\item Se $E\subseteq M$ é um conjunto mensurável $f-$invariante, então $\mu(E)=0$ ou $\mu(E)=1$.
+\item Se $\psi:M\to\R$ é uma função mensurável $f-$invariante, então $\psi$ é constante para $\mu-$qua\-se todo ponto $x\in M$.
+\end{enumerate}
+\end{teorema}
+
+\begin{proof} $i) \Rightarrow ii)$ Seja $E\subseteq M$ um conjunto mensurável, como $f$ é ergódica, então $\tilde{\varphi}(x)=\int_{M}\varphi\ d\mu$ para toda função $\varphi$ integrável e para $\mu-$quase todo ponto $x\in M$. Tomemos $\varphi=\carac{E}$, a função característica do conjunto $E$, então
+\begin{equation*}
+\tilde{\carac{\text{$E$}}}(x)=\int_{M}\carac{E}d\mu=\mu(E)
+\end{equation*}
+
+Temos também que $f(E)=E$, pois $E$ é $f-$invariante, então
+\begin{eqnarray*}
+\mu(E) & = & \tilde{\carac{\text{$E$}}}(x)\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}{\carac{E}\big(f^j(x)\big)}\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}{\carac{E}(x)}\\
+& = & \lim_{n\to+\infty}\dfrac{1}{n}\big(n{\carac{E}(x)\big)}\\
+& = & \carac{E}(x)
+\end{eqnarray*}
+
+E como $\carac{E}(x)$ só assume valores em $\conjunto{0,1}$, então $\mu(E)=0$ ou $\mu(E)=1$.
+
+$ii) \Rightarrow iii)$ Sejam $\psi:M\to\R$ uma função mensurável $f-$invariante e $c\in\R$ uma constante qualquer, então os conjuntos $\psi^{-1}(c)\subseteq M$ são $f-$invariantes. De fato, se $x\in\psi^{-1}(c)$ então $\psi(x)=c$, e como $\psi$ é $f-$invariante temos que $\psi\big(f(x)\big)=\psi(x)=c$, logo $f(x)\in\psi^{-1}(c)$. O que implica que $f\big(\psi^{-1}(c)\big)\subseteq \psi^{-1}(c)$. Reciprocamente, se $f(x)\in f\big(\psi^{-1}(c)\big)$ então $\psi\big(f(x)\big)=c$, e como $\psi$ é $f-$invariante temos que $\psi(x)=\psi\big(f(x)\big)=c$, logo $x\in\psi^{-1}(c)$. O que implica que $\psi^{-1}(c)\subseteq f\big(\psi^{-1}(c)\big)$. Portando $\psi^{-1}(c)=f\big(\psi^{-1}(c)\big)$.
+
+Logo, por hipótese temos que $\mu\big(\psi^{-1}(c)\big)=0$ ou $\mu\big(\psi^{-1}(c)\big)=1$, e como $c$ é uma constante qualquer, então existe $c\in\R$ tal que $\mu\big(\psi^{-1}(c)\big)=1$. De fato, suponhamos que não exista $c\in\R$ tal que $\mu\big(\psi^{-1}(c)\big)=1$. Então $\mu\big(\psi^{-1}(c)\big)=0$ para todo $c\in\R$, logo
+\begin{equation*}
+0\leq\mu(M)=\mu\big(\psi^{-1}(\R)\big)=\mu\left(\psi^{-1}\left(\bigcup_{c\in\R}\conjunto{c}\right)\right)\leq\sum_{c\in\R}\mu\big(\psi^{-1}(c)\big)=0,
+\end{equation*}
+o que é um absurdo pois $\mu(M)=1$. Portanto existe uma constante $c\in\R$ tal que $\psi(x)=c$ para $\mu-$quase todo ponto $x\in M$.
+
+$iii) \Rightarrow i)$ Seja $\varphi:M\to\R$ uma função integrável. Pela Proposição \ref{tempinv}, $\tilde{\varphi}$ é uma função $f-$invariante. Então, por hipótese, $\tilde{\varphi}$ é constante para $\mu-$quase todo ponto $x\in M$ e, pelo Teorema Ergódico de Birkhoff \ref{teb}, temos
+\begin{equation*}
+\fecho{\varphi}=\int_{M}{\varphi\ d\mu}=\int_{M}{\tilde{\varphi}\ d\mu}=\tilde{\varphi}\int_{M}{1\ d\mu}=\tilde{\varphi}\mu(M)=\tilde{\varphi}.
+\end{equation*}
+
+Portanto $(f,\mu)$ é ergódico.
+\end{proof}
+
+Dizemos que uma medida $\nu$ é \textbf{absolutamente contínua} em relação a outra medida $\mu$, e denotamos por $\nu\ll\mu$, se para todo conjunto mensurável $E\subseteq M$ tal que $\mu(E)=0$, então $\nu(E)=0$. O próximo resultado mostra que duas medidas absolutamente contínua e $f-$invariante, se forem ergódicas então são iguais.
+
+\begin{proposicao} Sejam $f:M\to M$ uma aplicação mensurável e, $\mu$ e $\nu$ probabilidades invariantes. Se $\mu$ é ergódica pra $f$ e $\nu$ é absolutamente contínua em relação a $\mu$, então $\mu=\nu$.
+\end{proposicao}
+
+\begin{proof} Sejam $E\subseteq M$ um conjunto mensurável qualquer e $\carac{E}:M\to\R$ a sua função característica. Como $\mu$ é ergódica pra $f$, então $\tilde{\carac{\text{$E$}}}(x)=\fecho{\carac{E}}=\int_{M}{\carac{E}}d\mu=\mu(E)$ para $\mu-$quase todo ponto $x\in M$, e como $\nu\ll\mu$, então $\tilde{\carac{\text{$E$}}}(x)=\mu(E)$ para $\nu-$quase todo ponto $x\in M$. Logo, 
+\begin{equation*}
+\int_{M}\tilde{\carac{\text{$E$}}}(x)\ d\nu=\int_{M}\mu(E)\ d\nu=\mu(E)\int_{M}1\ d\nu=\mu(E).
+\end{equation*}
+
+E pelo Teorema Ergódico de Birkhoff \ref{teb}, temos
+
+\begin{equation*}
+\mu(E)=\int_{M}\tilde{\carac{\text{$E$}}}(x)\ d\nu=\int_{M}\carac{E}\ d\nu=\nu(E).
+\end{equation*}
+
+Como $E\subseteq M$ é um conjunto mensurável qualquer, então $\mu=\nu$.
+\end{proof}
+
+%\end{document}

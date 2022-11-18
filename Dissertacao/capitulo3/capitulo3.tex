@@ -1,0 +1,228 @@
+%\include{../preambulo/preambulo.tex}
+
+\chapter{Densidade das Variedades Estáveis e Instáveis dos Difeomorfismos Parcialmente Hiperbólicos}
+
+Neste capítulo enfraqueceremos as hipóteses usadas na construção do conjunto hiperbólico, não teremos os mesmos resultados do caso Anosov, mas ainda assim podemos extrair resultados interessantes. Começaremos por supor que o subespaço central não é o subespaço trivial, isto é, $E^c_x\neq\{0\}$, para todo $x\in M$. E para isso, introduziremos um novo conceito de decomposição do espaço tangente, em que um subespaço domina o outro, mais precisamente:
+
+\begin{definicao} Seja $f:M\to M$ um difeomorfismo de classe $C^k$ definido em uma variedade diferenciável $M$. Dizemos que um conjunto $\Lambda\subseteq M$ admite uma \textbf{decomposição dominada} no espaço tangente se $\Lambda$ é $f-$invariante e existem $0<\lambda<1$ e $C\in\R$, tais que para cada $x\in M$:
+\begin{enumerate}[i)]
+\item Existe uma decomposição $T_xM=E_x\oplus F_x$;
+\item Essa decomposição é $Df-$invariante, ou seja, $Df(E_x)=E_{f(x)}^s$ e $Df(F_x)=F_{f(x)}$;
+\item $E_x$ e $F_x$ variam continuamente com $x$;
+\item $\dfrac{\|Df^n|_{E_x}(v)\|}{\|Df^{n}|_{F_x}(v)\|}\leq C\lambda^n\|v\|$ para todo $v\in T_xM$  e todo $n\in\N$.
+\end{enumerate}
+\end{definicao}
+
+Essa decomposição estabelece uma relação entre os subespaços $E_x$ e $F_x$, embora eles possam não contrair nem expandir sempre, sabemos que quando $E_x$ contrai, ele o faz exponencialmente mais rápido que o $F_x$, e quando $E_x$ expande, $F_x$ também expande exponencialmente mais rápido. Note que um conjunto hiperbólico possui uma decomposição dominada, basta tomar $E_x=E_x^s$ e $F_x=E_x^u$. Podemos então definir uma decomposição parcialmente hiperbólica.
+
+\begin{definicao} Seja $f:M\to M$ um difeomorfismo de classe $C^k$ definido em uma variedade diferenciável $M$. Dizemos que $\Lambda\subseteq M$ é um conjunto \textbf{parcialmente hiperbólico}, se $\Lambda$ é $f-$invariante e existem $0<\lambda<1$ e $C\in\R$, tais que para cada $x\in\Lambda$:
+\begin{enumerate}[i)]
+\item Existe a decomposição $T_xM=E_x^s\oplus E_x^c\oplus E_x^u$;
+\item Essa decomposição é $Df_x-$invariante, ou seja, $Df(E_x^s)=E_{f(x)}^s$, $Df(E_x^c)=E_{f(x)}^c$ e $Df(E_x^u)=E_{f(x)}^u$;
+\item $E^s_x$, $E^c_x$ e $E^u_x$ variam continuamente com $x$;
+\item $\|Df^n|_{E_x^s}(v)\|\leq C\lambda^n\|v\|$ para todo $v\in E^s_x$ e todo $n\in\N$;
+\item $\|Df^{-n}|_{E_x^u}(v)\|\leq C\lambda^n\|v\|$ para todo $v\in E^u_x$ e todo $n\in\N$;
+\item $\dfrac{\|Df^n|_{E^s_x}(v)\|}{\|Df^{n}|_{E^c_x}(v)\|}\leq C\lambda^n\|v\|$ e $\dfrac{\|Df^n|_{E^c_x}(v)\|}{\|Df^{n}|_{E^u_x}(v)\|}\leq C\lambda^n\|v\|$, para todo $v\in T_xM$ e todo $n\in\N$.
+\end{enumerate}
+\end{definicao}
+
+Quando $M$ é um conjunto parcialmente hiperbólico, chamamos $f:M\to M$ de \textbf{difeomorfismo Parcialmente Hiperbólico}. Note que o subespaço $E_x^c$ forma uma decomposição dominada com $E_x^s$ e $E_x^u$, isto é, nos pontos em que $E_x^c$ contrai, $E_x^s$ contrai exponencialmente mais rápido, e nos pontos em que $E_x^c$ expande, $E_x^u$ expande exponencialmente mais rápido. Isso significa que os subespaços centrais são dominados em ambos os extremos pelos subespaços estáveis e instáveis. Analogamente ao caso Anosov, podemos garantir a existência de variedades estáveis e instáveis forte locais, embora elas possuam um comportamento diferente, como veremos no próximo resultado.
+
+\begin{teorema} Sejam $f:M\to M$ um difeomorfismo de classe $C^r$ definido em uma variedade diferenciável $M$, $\Lambda\subseteq M$ um conjunto parcialmente hiperbólico e $x\in\Lambda$ um ponto qualquer, então existem variedades locais únicas $W^{ss}_{loc}(x)$ e $W^{uu}_{loc}(x)$ que integram $E^s_x$ e $E^u_x$, respectivamente, em que $f\big(W^{ss}_{loc}(x)\big)\subseteq W^{ss}_{loc}\big(f(x)\big)$ e $f^{-1}\big(W^{uu}_{loc}f(x)\big)\subseteq W^{uu}_{loc}(x)$. Além disso,
+\begin{equation*}
+W^{ss}(x)=\bigcup_{n=0}^{+\infty}f^{-n}\Big(W^{ss}_{loc}\big(f^{n}(x)\big)\Big)\quad\text{ e }\quad W^{uu}(x)=\bigcup_{n=0}^{+\infty}f^n\Big(W^{uu}_{loc}\big(f^{-n}(x)\big)\Big)
+\end{equation*}
+também são subvariedades de $M$ de mesma dimensão que $E^s_x$ e $E^u_x$, respectivamente, e variam continuamente com o $x$. E $W^{ss}(x)$ é chamada de \textbf{variedade estável forte} de $x$ e $W^{uu}(x)$ de \textbf{variedade instável forte} de $x$.
+\end{teorema}
+
+\begin{proof} Pode ser encontrada em \cite{HPS}, no Capítulo 5, Teorema 5.5 e Corolário 5.6.
+\end{proof}
+
+É claro que $W^{ss}(x)$ e $W^{uu}(x)$ estão contidas, respectivamente, nos conjuntos estáveis e instáveis, que em geral não são subvariedades. Nosso objetivo principal desse capítulo é estudar as propriedades provenientes da densidade das variedades fortes.
+\begin{definicao} Seja $f:M\to M$ um difeomorfismo parcialmente hiperbólico. Dizemos que $f$ é \textbf{$ss-$minimal} se para todo ponto $x\in M$, a variedade estável forte $W^{ss}(x)$ é densa em $M$. Analogamente, dizemos que $f$ é \textbf{$uu-$minimal} se para todo ponto $x\in M$, a variedade instável forte $W^{uu}(x)$ é densa em $M$. 
+\end{definicao}
+
+Chamamos de \textbf{disco estável forte} de $x$ de tamanho $k$, a bola fechada $D_k^{ss}(x)\subseteq W^{ss}(x)$ de raio $k$ pela métrica em $W^{ss}(x)$ e centrada em $x$. Analogamente, definimos o \textbf{disco instável forte} $D_k^{uu}(x)\subseteq W^{uu}(x)$ de $x$ de tamanho $k$. Caso precisemos deixar claro qual a função estamos nos referindo, denotaremos tais discos por $D^{ss}_{k}(x,f)$ e $D^{uu}_{k}(x,f)$, respectivamente.
+
+Vejamos que $ss(uu)-$minimalidade também tem implicações topológicas na dinâmica assim como o Teorema \ref{TeoEquivMinimal}.
+
+\begin{teorema} Seja $f:M\to M$ um difeomorfismo parcialmente hiperbólico. Se $f$ for $ss-$minimal ou $uu-$minimal, então $f$ é topologicamente \textit{mixing}.
+\end{teorema}
+
+A demonstração desse teorema é inteiramente análoga a apresentada no passo $iii)\Rightarrow iv)$ do Teorema \ref{TeoEquivMinimal}.
+
+
+Esse teorema não é uma equivalência, como no caso Anosov, porque a demonstração de topologicamente mixing implicar $s(u)-$minimal depende fortemente da existência de um $\delta>0$ tal que se $d(z,w)<\delta$ então $W^{s(u)}_{\varepsilon}(z)\cap W^{u(s)}_{\varepsilon}(w)\neq \emptyset$, o que nesse caso não acontece, pois a dimensão de $E^c_x$ é diferente de 0, daí não podemos garantir que as variedades estáveis e instáveis fortes locais desses pontos se intersectam, por transversalidade.
+
+A seguir estudaremos o caso em que a $ss-$minimalidade e $uu-$minimalidade existe a menos de conjuntos de medida nula.
+
+\section{$m-$minimalidade}
+
+Existem difeomorfismos parcialmente hiperbólicos em que o conjunto dos pontos cuja variedade estável e instável forte são densas em $M$ é um conjunto grande em termos de medida. Para estudarmos esse caso, precisaremos de algumas definições adicionais. 
+
+\begin{definicao} Sejam $f:M\to M$ um difeomorfismo parcialmente hiperbólico e $m$ uma medida de Lebesgue $f-$invariante tal que $m(M)=1$. Definimos os conjuntos $\mathcal{X}^s(f)=\conjunto{x\in M;\ \fecho{W^{ss}(x)}=M}$ e $\mathcal{X}^u(f)=\conjunto{x\in M;\ \fecho{W^{uu}(x)}=M}$, o conjunto dos pontos que possuem variedade estável forte densa em $M$ e o conjunto dos pontos que possuem variedade instável forte densa em $M$, respectivamente; e $\mathcal{X}(f)=\mathcal{X}^s(f)\cap \mathcal{X}^u(f)$. Dizemos que $f$ é \textbf{$ms-$minimal} se $m\big(\mathcal{X}^s(f)\big)=1$. Analogamente, dizemos que $f$ é \textbf{$mu-$minimal} $m\big(\mathcal{X}^u(f)\big)=1$. Finalmente, dizemos que $f$ é \textbf{$m-$minimal} se for ambos, $ms-$minimal e $mu-$minimal, isto é, $m\big(\mathcal{X}(f)\big)=1$.
+\end{definicao}
+
+Em (Arbieto/Catalan/Nobili \cite{art}), eles mostram que difeomorfismos $m-$minimais são abundantes no conjunto dos difeomorfismos. Mais precisamente:
+
+\begin{teorema} Seja $\diff^1_m(M)$ o conjunto dos difeomorfismos de $M$ em $M$ de classe $C^1$ que preservam a medida $m$. Então, existe um conjunto aberto $\mathcal{G}\subseteq\diff^1_m(M)$ tal que todo difeomorfismo de classe $C^2$ parcialmente hiperbólico $f\in \mathcal{G}$ é $m-$minimal.
+\end{teorema}
+
+\begin{proof} Pode ser encontrada em \cite{art}, Teorema 1.4.
+\end{proof}
+
+Na sequência enunciaremos o resultado principal desse capítulo.
+
+\begin{teorema}\label{mminimal} Seja $f:M\to M$ um difeomorfismo parcialmente hiperbólico preservando a medida de Lebesgue $m$. Se $f$ for $ms-$minimal ou $mu-$minimal, então $f$ é topologicamente \textit{mixing}.
+\end{teorema}
+
+Para provar esse teorema, demonstraremos alguns resultados preliminares, como o Lema a seguir.
+
+\begin{lema}\label{vit} Sejam $M$ uma variedade diferenciável compacta contando com uma $\sigma-$álgebra de Borel, e $m$ uma medida de Lebesgue em $M$ tal que $m(M)=1$. Se $A\subseteq M$ é um conjunto aberto e $A\subseteq\bigcup_{x\in A}B(x,\delta_x)$, em que $B(x,\delta_x)$ é uma bola aberta contida em $A$ para todo $x\in A$, então para todo $\varepsilon>0$ dado, existe um conjunto finito $\conjunto{x_1,x_2,\cdots,x_k}\subseteq A$ tal que $$m\left(A-\bigcup_{i=1}^{k}B(x_i,\delta_{x_i})\right)<\varepsilon$$
+\end{lema}
+
+\begin{proof} Para uniformizar a demonstração, faremos uma substituição de notação, façamos $\delta_x^1=\delta_x$.
+
+Tomemos $\gamma_1=\sup\conjunto{\delta_{x}^1;\ x\in A}$. Pela compacidade de $M$ temos que $\gamma_1\in\R$ e pela definição de supremo existe $x_1\in A$ tal que $\delta_{x_1}^1>\frac{\gamma_1}{2}$. 
+
+Se $A\subseteq \fecho{B(x_1,\delta_{x_1}^1)}$, como $m\Big(\fecho{B(x_1,\delta_{x_1}^1)}-B(x_1,\delta_{x_1}^1)\Big)=0$, então $m\big(A-B(x_1,\delta_{x_1}^1)\big)=0<\varepsilon$ finalizando a demonstração. 
+
+Se $A\nsubseteq\fecho{B(x_1,\delta_{x_1}^1)}$, então $A-\fecho{B(x_1,\delta_{x_1}^1)}\neq\emptyset$ é um conjunto aberto e podemos tomar $\delta_x^2<\delta_x^1$ de forma que $$A-\fecho{B(x_1,\delta_{x_1}^1)}\subseteq\bigcup_{x\in A-\fecho{B(x_1,\delta_{x_1}^1)}}B(x,\delta_x^2).$$
+
+Assim, tomemos $\gamma_2=\sup\conjunto{\delta_{x}^2;\ x\in A-\fecho{B(x_1,\delta_{x_1}^1)}}$. Pela definição de supremo existe $x_2\in A-\fecho{B(x_1,\delta_{x_1}^1)}$ tal que $\delta_{x_2}^2>\frac{\gamma_2}{2}$. Note que por construção temos $B(x_1,\delta_{x_1}^1)\cap B(x_2,\delta_{x_2}^2)=\emptyset$.
+
+Seguindo recursivamente esse processo de construção, podemos chegar a um dos dois casos:
+
+\textbf{Caso 1:} Existe um $k\in\N$ tal que $$A\subseteq \bigcup_{i=1}^{k}\fecho{B(x_i,\delta_{x_i}^i)}.$$
+
+\textbf{Caso 2:} Existe uma sequência infinita de pontos $x_i\in A$ tal que $\delta_{x_i}^i>0$ e $B_i=B(x_i,\delta_{x_i}^i)\subseteq A$ é uma sequência de abertos dois a dois disjuntos. 
+
+Se vale o Caso 1, então a demonstração está concluída. Por outro lado vejamos o cenário do Caso 2. Observemos que como os $B_i$ são dois a dois disjuntos e $m(A)\leq m(M)=1$, temos que $\displaystyle\lim_{i\to+\infty}\delta_{x_i}^i=0$. Usando isso mostraremos a seguinte afirmação.
+
+\textit{Afirmação:} $\displaystyle m\left(A-\bigcup_{i=1}^{+\infty}B_i\right)=0$.\\
+
+De fato, seja $D_i=B(x_i,5\delta_{x_i}^i)$. Como $\displaystyle\lim_{i\to+\infty}\delta_{x_i}^i=0$, temos que $\displaystyle\lim_{i\to+\infty}m(D_i)=0$ e portanto $\displaystyle\lim_{n\to+\infty}\left(\sum_{i=n+1}^{+\infty}m(D_i)\right)=0$. Vamos mostrar agora que $A-\bigcup_{i=1}^{n}B_i\subseteq\bigcup_{i=n+1}^{\infty}D_i$. Dado $x\in A-\bigcup_{i=1}^{n}B_i$, por definição de $\gamma_i$ existe $n_0>n$ tal que $d(x,x_{n_0})<4\delta_{x_{n_0}}^{n_0}$. Daí, $x\in B(x_{n_0},5\delta_{x_i}^i)=D_{n_0}$, logo $x\in \bigcup_{i=n+1}^{\infty}D_i$. Como $x\in A-\bigcup_{i=1}^{n}B_i$ é um qualquer, temos que $A-\bigcup_{i=1}^{n}B_i\subseteq\bigcup_{i=n+1}^{\infty}D_i$.
+
+Logo, 
+\begin{eqnarray*}
+m\left(A-\bigcup_{i=1}^{+\infty}B_i\right) & = & \lim_{n\to+\infty}m\left(A-\bigcup_{i=1}^{n}B_i\right)\\
+&\leq & \lim_{n\to+\infty}m\left(\bigcup_{i=n+1}^{n}D_i\right)\\
+& \leq & \lim_{n\to+\infty}\left(\sum_{i=n+1}^{+\infty}m(D_i)\right)\\
+& = & 0.
+\end{eqnarray*}
+
+Mostrando a Afirmação.
+
+Portanto, dado $\varepsilon>0$ existe $k\in\N$ tal que $m\big(A-\bigcup_{i=1}^{k}B_i\big)<\varepsilon$. Como $\delta_{x_i}^i\leq\delta_{x_i}$ temos 
+
+\begin{equation*}
+m\left(A-\bigcup_{i=1}^{k}B(x_i,\delta_{x_i})\right)\leq m\left(A-\bigcup_{i=1}^{k}B_i\right)<\varepsilon.
+\end{equation*}
+
+E assim, concluímos a demonstração.
+\end{proof}
+
+Definamos os conjuntos $\mathcal{X}^s_{\delta}(f)=\conjunto{x\in M;\ W^{ss}(x) \text{ é $\delta-$denso em $M$}}$ e $\mathcal{X}^u_{\delta}(f)=\conjunto{x\in M;\ W^{uu}(x) \text{ é $\delta-$denso em $M$}}$. Note que tais conjuntos são abertos, pois $W^{ss}(x)$ e $W^{uu}(x)$ variam continuamente com $x$, e temos as seguintes inclusões: $\mathcal{X}^s(f)\subseteq \mathcal{X}^s_{\delta}(f)$ e $\mathcal{X}^u(f)\subseteq \mathcal{X}^u_{\delta}(f)$. A seguinte proposição é uma consequência da definição de $ms-$minimal e do Lema \ref{vit}.
+
+\begin{proposicao}\label{deltadensoMS} Sejam $f:M\to M$ um difeomorfismo parcialmente hiperbólico e $\varepsilon\in(0,1]$ dado, se $f$ for $ms-$minimal ou $mu-$minimal, então para todo $\delta>0$, existe um conjunto $W\subseteq\mathcal{X}^{s(u)}(f)$ e $K>0$ suficientemente grande tal que $D_K^{ss(uu)}(x)$ é $\delta-$denso em $M$ para todo $x\in W$ e $m(W)>1-\varepsilon$. 
+\end{proposicao}
+
+\begin{proof} Vamos provar para o caso $ms-$minimal. Para o caso $mu-$minimal a demonstração é análoga.
+
+Seja $\delta>0$ e $x\in\mathcal{X}^s(f)$ um ponto qualquer. Então, existe $k_x>0$ tal que $D^{ss}_{k_x}(x)$ é $\delta-$denso em $M$. Pela continuidade das variedades estáveis fortes, existe uma vizinhança $V_x\subseteq \mathcal{X}^s_{\delta}(f)$ tal que $D^{ss}_{k_x}(y)$ é $\delta-$denso em $M$ para todo $y\in V_x$. Como $x$ é um ponto qualquer de $\mathcal{X}^s_{\delta}(f)$, então $\bigcup_{x\in \mathcal{X}^s_{\delta}(f)}V_x$ é uma cobertura aberta, e portanto mensurável, de $\mathcal{X}^s_{\delta}(f)$. Temos que $m\big(\mathcal{X}^s_{\delta}(f)\big)=1$, pois $\mathcal{X}^s(f)\subseteq \mathcal{X}^s_{\delta}(f)$ e, por $ms-$minimalidade, $m\big(\mathcal{X}^s(f)\big)=1$. Logo, pelo Lema \ref{vit}, dado $\varepsilon>0$ existe $n\in \N$ tal que $m\left(\bigcup_{x_i=1}^{n}V_{x_i}\right)>1-\varepsilon$. 
+
+Seja $k_i\in\N$ tal que $D_{k_{x_i}}^{ss}(x_i)$ seja $\delta-$denso em $M$, tomemos $K=\max\conjunto{k_{x_1},k_{x_2},\cdots,k_{x_n}}$ e $W=\mathcal{X}^s(f)\cap\left(\bigcup_{x_i=1}^{n}V_{x_i}\right)$. Note que $m(W)=m\left(\bigcup_{x_i=1}^{n}V_{x_i}\right)>1-\varepsilon$, pois $m\big(\mathcal{X}^s(f)\big)=1$. Então, para todo $x\in W$ temos que $x\in V_{x_i}$, para algum $i\in\N$, logo $D_{K}^{ss}(x)$ contém $D_{k_{x_i}}^{ss}(x)$, e portanto é $\delta-$denso em $M$, concluindo a demonstração. 
+\end{proof}
+
+Agora podemos demonstrar o Teorema \ref{mminimal}.
+
+\begin{proof}[Demonstração do Teorema \ref{mminimal}] Vamos provar para o caso $mu-$minimal. Para o caso $ms-$mi\-ni\-mal a demonstração é análoga.
+
+Sejam $U,V\subseteq M$ dois abertos quaisquer. Tomemos $\varepsilon>0$ tal que $U$ contenha uma bola aberta $B$ de raio $\varepsilon$, e $D^{uu}_{\varepsilon}(x)\subseteq U$ para todo $x\in B$. Como $B$ é aberto, então $b=m(B)>0$.
+
+Seja $\delta>0$ tal que $V$ contenha uma bola de raio $\delta$. Como $f$ é $mu-$minimal, pela Proposição \ref{deltadensoMS} existem $W\subseteq M$ e $K>0$ suficientemente grande, tal que $D^{uu}_{K}(x)$ é $\delta-$denso para todo $x\in W$ e $m(W)>1-b$. Por hiperbolicidade, existe $n_0\in\N$ tal que $f^{n}\big(D^{uu}_{\varepsilon}(x)\big)\supseteq D^{uu}_{K}\big(f^n(x)\big)$ para todo $n>n_0$ e para todo $x\in M$. Observemos que $m\big(f^{-n}(W)\big)=m(W)$ pois $f$ preserva a medida. Fixemos $n>n_0$.
+
+\textit{Afirmação: $f^{-n}(W)\cap B\neq\emptyset$.} 
+
+De fato, suponhamos que $f^{-n}(W)\cap B=\emptyset$. Daí, por aditividade da medida, temos que se $f^{-n}(W)\cap B=\emptyset$ então $m\big(f^{-n}(W)\cup B\big)=m\big(f^{-n}(W)\big)+m(B)>b+1-b=1$. Absurdo pois $f^{-n}(W)\cup B\subseteq M$ e $m(M)=1$. Logo $f^{-n}(W)\cap B\neq\emptyset$. 
+
+Tomemos, agora, $z\in f^{-n}(W)\cap B$. Como $z\in f^{-n}(W)$ temos também que $f^n(z)\in W$, logo $f^{n}\big(D^{uu}_{\varepsilon}(z)\big)\supseteq D^{uu}_{K}\big(f^{n}(z)\big)$ é $\delta-$denso em $M$. Por escolha de $B$, temos $D^{uu}_{\varepsilon}(z)\subseteq U$ e por escolha de $\delta$, temos $f^{n}\big(D^{uu}_{\varepsilon}(z)\big)$ é $\delta-$denso, logo intersecta $V$, ou seja, $f^n(U)\cap V\neq\emptyset$. Como $n>n_0$ foi fixado arbitrariamente, então $f^n(U)\cap V\neq\emptyset$ para todo $n>n_0$ e portanto temos que $f$ é topologicamente mixing.
+\end{proof}
+
+\subsection{Propriedades Ergódicas}
+
+Além das propriedades topológicas, a $m-$minimalidade também desfruta de propriedades ergódicas interessantes. Lembrando que uma dinâmica é ergódica para uma probabilidade $\mu$, se as médias temporais coincidirem $\mu-$quase todo ponto $x\in M$ com as respectivas médias espaciais, isto é, $\tilde{\varphi}(x)=\fecho{\varphi}$ para $\mu-$quase todo ponto $x\in M$ e para toda função integrável $\varphi:M\to\R$, em que 
+\begin{equation*}
+\tilde{\varphi}(x)=\lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}{\varphi\big(f^j(x)\big)}\quad\text{ e }\quad \fecho{\varphi}=\int_{M}\varphi\ d\mu.
+\end{equation*}
+
+Definiremos a seguir, uma propriedade ergódica satisfeita pelos difeomorfismos $m-$mi\-ni\-mais.
+
+\begin{definicao} Um difeomorfismo $f:M\to M$ é \textbf{fracamente ergódico} em relação a medida $f-$invariante $\mu$, se a órbita de $\mu-$quase todo ponto $x\in M$, é densa em $M$.
+\end{definicao}
+
+A ergodicidade fraca, como já diz no nome, é uma definição mais geral do que a de ergodicidade propriamente dita, como mostra a proposição a seguir.
+
+\begin{proposicao} Seja $f:M\to M$ um difeomorfismo ergódico em relação a uma probabilidade $\mu$ absolutamente contínua em relação a medida de Lebesgue $m$. Então, $f$ é fracamente ergódico.
+\end{proposicao}
+
+\begin{proof} Por compacidade, $M$ admite uma base enumerável de abertos $\conjunto{B_n}_{n\in\N}$. Dado $k\in \N$, definamos o seguinte conjunto: $$A_k=\conjunto{x\in M;\ \orb{x}\cap B_k\neq\emptyset}.$$ 
+
+\textit{Afirmação 1: $A_k$ é um conjunto aberto $f-$invariante e $\mu(A_k$)=1.}
+
+De fato, claramente $A_k$ é $f-$invariante porque $x\in A_k$ se, e somente se, $\orb{x}\subseteq A_k$. Dado $x\in A_k$ existe $j\in\N$ tal que $f^j(x)\in B_k$. Daí, como $B_k$ é aberto e $f$ é um difeomorfismo, existe um aberto $U$ contendo $x$, tal que $f^j(U)\subseteq B_k$ e portando $U\subseteq A_k$, ou seja, $A_k$ é aberto. Como $\mu$ é absolutamente contínua em relação a medida de Lebesgue $m$ e todo conjunto aberto é mensurável na $\sigma-$álgebra de Borel e possui medida de Lebesgue positiva, então $\mu(A_k)>0$. Pelo item $ii)$ do Teorema \ref{eqiverg}, temos que $\mu(A_k)=1$.
+
+Portanto $A=\bigcap_{k=1}^{\infty}A_k$ é o conjunto dos pontos que possuem órbitas densas em $M$. Como $\mu(A_k)=1$ para todo $k\in\N$, então $\mu(A)=\mu\big(\bigcap_{k=1}^{\infty}A_k\big)=\mu\big(\bigcup_{k=1}^{\infty} (M-A_k)\big)=1$, pois $\mu(M-A_k)=0$ para todo $k\in\N$. Logo, $f$ é fracamente ergódico.
+\end{proof}
+
+No âmbito dos difeomorfismos parcialmente hiperbólicos, para demonstrarmos a propriedade de ergodicidade fraca, usaremos um resultado demonstrado por (Zhang\cite{zang}) que garante que as variedades estáveis fortes e as instáveis fortes estão contidas em um conjunto mensurável.
+
+\begin{teorema}\label{zang} Sejam $f:M\to M$ um difeomorfismo de classe $C^r$, em que $r>1$, $\mu$ uma probabilidade $f-$invariante absolutamente contínua em relação a medida de Lebesgue $m$ e $\Lambda\subseteq M$ um conjunto mensurável parcialmente hiperbólico. Então, para cada ponto $x\in\Lambda$, tem-se $W^{ss}(x)\subseteq \Lambda$ e $W^{uu}(x)\subseteq \Lambda$.
+\end{teorema}
+
+\begin{proof} Pode ser encontrada em \cite{zang}, Corolário 1 do Teorema 3.3.
+\end{proof}
+
+Esse teorema nos leva a concluir, no lema seguinte, que se $f:M\to M$ é um difeomorfismo $ms(mu)-$minimal, então não existe subconjunto $f-$invariante próprio de $M$, com medida positiva, que seja compacto.
+
+\begin{lema}\label{lzang} Seja $f:M\to M$ um difeomorfismo de classe $C^{1+\alpha}$ parcialmente hiperbólico $ms-$minimal ou $mu-$minimal. Se $\Lambda\subseteq M$ é um conjunto compacto $f-$invariante com $m(\Lambda)>0$, então $\Lambda=M$.
+\end{lema} 
+
+\begin{proof} Seja $\Lambda\subseteq M$ um conjunto compacto $f-$invariante com $m(\Lambda)>0$, pelo Teorema \ref{zang}, $W^{ss}(x)\subseteq \Lambda$ e $W^{uu}(x)\subseteq \Lambda$. Como $m\big(\mathcal{X}^s(f)\big)=1$, pois $f$ é $ms-$minimal, temos $m\big(\Lambda\cap\mathcal{X}^s(f)\big)=m(\Lambda)>0$ e daí $\mathcal{X}^s(f)\neq\emptyset$. Então, para todo $x\in\Lambda\cap\mathcal{X}^s(f)$ temos $W^{ss}(x)\subseteq \Lambda$ e $\fecho{W^{ss}(x)}=M$, e como $\Lambda$ é fechado, temos $\Lambda=M$.
+\end{proof}
+
+A seguinte proposição, que é uma consequência direta do lema anterior, relaciona a $ms(mu)-$ mi\-ni\-ma\-li\-da\-de com $ss(uu)-$mi\-ni\-ma\-li\-da\-de.
+
+\begin{proposicao} Seja $f:M\to M$ um difeomorfismo de classe $C^{1+\alpha}$ parcialmente hiperbólico. Então, são verdadeiras as seguintes afirmações:
+\begin{enumerate}[i)]
+\item Se $f$ é $ms-$minimal e existe um conjunto compacto $f-$invariante $\Lambda\subseteq\mathcal{X}^s$ com $m(\Lambda)>0$, então $f$ é $ss-$minimal. 
+\item Se $f$ é $mu-$minimal e existe um conjunto compacto $f-$invariante $\Lambda\subseteq\mathcal{X}^u$ com $m(\Lambda)>0$, então $f$ é $uu-$minimal. 
+\end{enumerate}
+\end{proposicao}
+
+\begin{proof} Vamos provar o primeiro item. Para o segundo item a demonstração é análoga.
+
+Pelo Lema \ref{lzang}, temos que $\Lambda=M$. Portanto, como $\Lambda\subseteq \mathcal{X}^s(f)$, temos $\mathcal{X}^s(f)=M$, ou seja, $f$ é $ss-$minimal.
+\end{proof}
+
+Agora podemos enunciar e demonstrar o teorema que garante a ergodicidade fraca dos difeomorfismos $ms(mu)-$minimal.
+
+\begin{teorema}\label{ergofraca} Seja $f:M\to M$ um difeomorfismo de classe $C^{1+\alpha}$ parcialmente hiperbólico. Se $f$ é $ms-$minimal ou $mu-$minimal, então $f$ é fracamente ergódico.
+\end{teorema}
+
+\begin{proof} Por compacidade, $M$ admite uma base enumerável de abertos $\conjunto{B_n}_{n\in\N}$. Dado $k\in \N$, definamos o seguinte conjunto: $$A_k=\conjunto{x\in M;\ \orb{x}\cap B_k=\emptyset}.$$ 
+
+\textit{Afirmação 1: $A_k$ é um conjunto compacto $f-$invariante.}
+
+De fato, claramente $A_k$ é $f-$invariante porque $x\in A_k$ se, e somente se, $\orb{x}\subseteq A_k$. E seja $(M-A_k)=\conjunto{x\in M;\ \orb{x}\cap B_k\neq\emptyset}$. Então, dado $x\in (M-A_k)$ existe $j\in\N$ tal que $f^j(x)\in B_k$. Daí, como $B_k$ é aberto e $f$ é um difeomorfismo, existe um aberto $U$ contendo $x$, tal que $f^j(U)\subseteq B_k$ e portando $U\subseteq (M-A_k)$, ou seja, $(M-A_k)$ é aberto e por isso $A_k$ é fechado. Logo, $A_k\subseteq M$ é compacto, pois é um fechado contido em um compacto. 
+
+Como $A_k\cap B_k=\emptyset$ e $m(B_k)>0$ pois é um aberto, temos que $m(A_k)<m(A_k\cup B_k)\leq1$. 
+
+\textit{Afirmação 2: $m(A_k)=0$ para todo $k\in\N$.}
+
+De fato, suponhamos que $m(A_k)>0$. Logo, $A_k$ é um conjunto compacto $f-$invariante com $m(A_k)>0$, e pelo Lema \ref{lzang}, $A_k=M$. Absurdo, pois $A_k\cap B_k=\emptyset$.
+
+Portando, por construção de $A_k$, para cada $k\in\N$ o conjunto $(M-A_k)$ é o conjunto dos pontos cujas órbitas passam por $B_k$. Logo, $\bigcap_{k\in\N}(M-A_k)$ é o conjunto dos pontos cujas órbitas passam por todos os abertos da base. Daí, para concluir a demonstração, basta mostrarmos que $m\left(\bigcap_{k\in\N}(M-A_k)\right)=1$. De fato, $m\left(\bigcup_{k\in\N}A_k\right)=0$ o que implica $m\left(\bigcap_{k\in\N}(M-A_k)\right)=m\left(M-\bigcup_{k\in\N}A_k\right)=1.$
+\end{proof}
+
+%\end{document}

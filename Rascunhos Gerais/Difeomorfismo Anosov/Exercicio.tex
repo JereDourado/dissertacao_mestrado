@@ -1,0 +1,190 @@
+\include{preambulo}
+
+\chapter{Caso Anosov}
+
+\begin{teorema}\label{TeoEquivMinimal}
+Seja $f : M \to M$ um difeomorfismo de Anosov. As seguintes afirmações são equivalentes:
+\begin{enumerate}[\hspace{0.5cm}i)]
+\item $\Omega(f)=M$
+\item $\overline{Per(f)}=M$
+\item $f$ é $s-$minimal;
+\item $f$ é $u-$minimal;
+\item $f$ é topologicamente \textit{mixing}.
+\item $f$ é topologicamente transitiva;
+\end{enumerate}
+\end{teorema}
+
+Para demonstrarmos esse teorema, antes vamos precisar de alguns lemas.
+
+%\begin{definicao} Seja $f:M\to M$ um difeomorfismo de Anosov. Considerando $W^{s(u)}(x)\subseteq M$ a variedade estável (respectivamente instável) de $x$, chamamos de \textbf{disco estável} (respectivamente \textbf{instável}) \textbf{de $x$ de tamanho $K$}, a bola fechada $D_K^{s(u)}(x)\subseteq W^{s(u)}(x)$ de raio $K/2$, pela métrica em $W^{s(u)}(x)$, e centrada em $x$.
+%\end{definicao}
+
+\begin{definicao} Seja $f:M\to M$ um difeomorfismo de Anosov. Considerando $W^{s}(x)\subseteq M$ a variedade estável de $x$, chamamos de \textbf{disco estável de $x$ de tamanho $K$}, a bola fechada $D_K^{s}(x)\subseteq W^{s}(x)$ de raio $K$, pela métrica em $W^{s}(x)$, e centrada em $x$. De modo análogo podemos definir o \textbf{disco instável de $x$ de tamanho $K$}.
+\end{definicao}
+
+\begin{lema}\label{lemadeltadenso} Seja $f:M\to M$ um difeomorfismo de Anosov, se $f$ for $s-$minimal ou $u-$minimal, então dado $\delta>0$, existe um $K>0$ suficientemente grande tal que $D_K^{s(u)}(x)$ é $\delta-$denso em $M$ para todo $x\in M$.
+\end{lema}
+
+\begin{proof} Vamos demonstrar para o caso de $f$ ser $s-$minimal, para $u-$minimal a demonstração é análoga.
+
+Seja $\delta>0$, $x\in M$ um ponto qualquer e $D_{k}^{s}(x)$ o disco estável de $x$ de tamanho $k$. Como $\overline{W^{s}(x)}=M$, pois $f$ é $s-$minimal, então existe $k_x\in\N$ tal que $D_{k}^{s}(x)$ é $\delta-$denso em $M$. 
+
+Pelo teorema \ref{XXXXXXXXXXXXX} existe uma vizinhança aberta $U_x$ de $x$ tal que para todo $y\in U_x$, existe $k_y\in\N$ tal que $D_{k}^{s}(x)$ também é $\delta-$denso em $M$. Como $f$ é Anosov e $x$ é um ponto qualquer de $M$, então $\cup_{x\in M}{U_x}$ é uma cobertura aberta de $M$, e pela compacidade de $M$ existe $n\in \N$ tal que $M\subseteq \cup_{i=1}^{n}{U_{x_i}}$. Seja $k_i\in \N$ tal que $D_{k_{x_i}}^{s}(x_i)$ seja $\delta-$denso em $M$, tomemos $K=\max\conjunto{k_{x_1},k_{x_2},\cdots,k_{x_n}}$ e então para qualquer $x\in M$ temos que $x\in U_{x_i}$ para algum $i\in\N$, logo $D_{K}^{s}(x)$ é $\delta-$denso em $M$.
+\end{proof}
+
+\begin{definicao} Dizemos que uma sequência de pontos $\{x_n\}_{n\in\Z}\subseteq M$ é uma \textbf{$\varepsilon-$pseudo-órbita} para $f$ se $d(f(x_n),x_{n+1})\leq\varepsilon$. Seja $x\in\{x_n\}_{n\in\Z}$ se existe um $n_0\in\N$ tal que $d(f(x_{n_0}),x)\leq\varepsilon$, dizemos que $\{x_n\}_{n\in\Z}$ é uma \textbf{$\varepsilon-$pseudo-órbita periódica contendo $x$}. Um ponto $y\in M$ \textbf{$\delta-$sombreia} a sequência $\{x_n\}_{n\in\Z}$ se $d(f^n(y),x_{n+1})\leq\delta$ para todo $n\in\Z$.
+
+\end{definicao}
+
+\begin{lema}\label{lemadosombrea} (\textbf{Lema do Sombreamento}) Para todo $\varepsilon>0$ dado, existe um $\delta>0$ tal que toda $\delta-$pseudo órbita periódica $\{x_0,x_1,\cdots,x_{n_0}\}\subseteq M$ é $\varepsilon-$sombreada por uma orbita periódica.
+\end{lema}
+
+\begin{proof} \cite{XXXXXXXXXXXXX}
+\end{proof}
+
+\begin{lema}\label{ligafinita} Seja $f:M\to M$ um difeomorfismo de Anosov e $p\in Per(f)$. Se $\overline{Per(f)}=M$, então para todo $x\in M$, podemos ligar $x$ a $p$ por finitos $W^s$ e $W^u$, ou seja, para todo $x\in M$ existem $x_1,x_2,\cdots,x_k\in M$ tal que podemos ligar o ponto $x$ a $p$ pelas variáveis instáveis ou estáveis desses pontos $x_i$.
+\end{lema}
+
+\begin{proof} Seja $p\in Per(f)$, construamos o conjunto $A_p\subseteq M$, da seguinte forma: $A_p=\big\{x\in M;\ x$ pode ser ligado a $p$ por finitos $W^s$ e $W^u\big\}$.\\
+\textbf{Afirmação 1.} $A_p$ é um conjunto aberto. De fato, seja $x\in A_p$. Suponhamos que $W^s(x)$ intercepta transversalmente $W^u(p_1)$ (para o caso de $W^u(x)$ interceptar transversalmente $W^s(p_1)$, o raciocínio é análogo), então pela continuidade das variedades instáveis, existe $\delta>0$ tal que para todo $y\in B(x,\delta)$, implica em $W^s(y)$ também intercepta transversalmente $W^u(p_1)$, ou seja, $B(x,\delta)\subseteq A_p$ e portanto $A_p$ é aberto.\\
+\textbf{Afirmação 2.} $A_p$ é um conjunto fechado. De fato, seja $(x_n)_{n=1}^{+\infty}\subseteq A_p$ uma sequencia convergente, e $x$ o seu limite. Pela continuidade das variedades instáveis, $W^u(x_n)$ converge pra $W^u(x)$. Tomemos $\delta>0$ tal que para todo $y\in B(x,\delta)$ implica em $W^s(y)$ intercepta transversalmente $W^u(x)$, e como $\overline{Per(f)}=M$, então existe $p'\in Per(f)\cap B(x,\delta)$, logo $W^s(p')$ intercepta $W^u(x)$, e assim existe um $n_0\in\N$  tal que para todo $n>n_0$, implica que $W^u(x_n)$ também intercepta $W^s(p')$. Fixando um $N>n_0$, então $W^u(x_N)$ intercepta $W^s(p')$ e $W^s(p')$ intercepta $W^s(x)$, logo $x$ pode ser ligado a $p$ por finitos $W^s$ e $W^u$, ou seja, $x\in A_p$ e portanto $A_p$ é fechado.
+
+Como $M$ é conexo, a Afirmação 1 e 2 implica que $A_p=M$.
+\end{proof}
+
+\begin{lema}\label{lambdalema}(\textbf{$\lambda-$Lemma}) Seja $f:M\to M$ um difeomorfismo, $p\in M$ um ponto fixo hiperbólico e $D^{u}_k$ o disco instável compacto de $x$ de tamanho $k$. Se $D$ é um disco qualquer de mesma dimensão que $W^u(p)$ e intercepta transversalmente $W^s(p)$, então dado $\varepsilon>0$, podemos fixar $n_0\in\N$ tal que para todo $n>n_0$, existe um disco $D_n\subseteq D$ tal que $f^n\big(D_n\big)$ está $\varepsilon-C^1$ próximo de $D^u_k$.	
+\end{lema}
+
+Agora podemos demonstrar o teorema inicialmente proposto.
+
+\begin{proof}(Do Teorema \ref{TeoEquivMinimal}) $i\Rightarrow ii)$
+
+$ii)\Rightarrow iii)$ Vamos dividir a demonstração em dois casos, primeiro vamos provar que a variedade estável de um ponto periódico é densa, e depois provaremos pra qualquer ponto.\\
+\textbf{Caso particular} Seja $p\in Per(f)$ e $V\subseteq M$ um aberto qualquer. Como $\overline{Per(f)}=M$ então existe $q\in Per(f)\cap V$, pelo Lema \ref{ligafinita}, existem $x_1,x_2,\cdots,x_k\in M$, pontos que ligam $q$ a $p$ pelas suas respectivas variáveis instáveis ou estáveis. Fixando um $\varepsilon>0$ satisfazendo a condição de hiperbolicidade que se $d(z,w)<\varepsilon$ então $W^{s(u)}_{\gamma}(z)\cap W^{u(s)}_{\gamma}(w)\neq \emptyset$ e de forma que $B(q,\varepsilon)\subseteq V$, pela densidade dos pontos periódicos, existem $p_1,p_2,\cdots,p_k\in M$, periódicos, tais que $p_i\in B(x_i,\varepsilon)$, para todo $i=1,2,\cdots,k$; e então $p$ está ligado a $q$ pela variedades estáveis ou instáveis desses pontos periódicos. Definamos $g:M\to M$ tal que $g=f^{-\tau(p)\tau(p_1)\tau(p_2)\cdots\tau(p_k)\tau(q)}$, note que $g$ também é um difeomorfismo nas condições do teorema, os pontos $p$, $p_i$ e $q$ são pontos fixos de $g$, e iterar $g$ positivamente é equivalente a iterar $f$ negativamente.
+
+Considere o disco estável $D^s_{r_1}(p_1)$ de tal forma que $B(q,\varepsilon)\cap W^s(p)\subseteq D^s_{r_1}(p_1)$, esse disco existe porque $p_1\in W^s(q)$, pelo $\lambda-$Lemma \ref{lambdalema} aplicado a $g$, podemos fixar um $n_0\in\N$ tal que para todo $n>n_0$ existe um disco $D_n\subseteq D^s_{r_2}(p_2)$ tal que $g^n\big(D_n\big)$ está $\varepsilon-C^1$ próximo de $D^s_{r_1}(p_1)$, logo intercepta $V$. Passando ao ponto $p_3$, e tomando $D^s_{r_2}(p_2)\subseteq$
+
+
+
+
+
+\newpage
+
+
+
+
+
+
+
+
+
+$iii)\Rightarrow iv)$ Seja $U\subset M$ um aberto qualquer e $x\in M$ um ponto qualquer. Dado $y\in U$ tal que $W^{s}_{\gamma}(y)\subseteq U$ e , tomemos $\varepsilon>0$ satisfazendo a condição de hiperbolicidade que se $d(z,w)<\varepsilon$ então $W^{s(u)}_{\gamma}(z)\cap W^{u(s)}_{\gamma}(w)\neq \emptyset$, pelo Lema \ref{lemadeltadenso} existe $K>0$ uniforme tal que $D^{s}_{K}(x)$ é $\varepsilon-$denso em $M$ para todo $x\in M$, e por hiperbolicidade, existe $n\in\N$ tal que $f^{-n}\big(W^{s}_{\gamma}(y)\big)$ contém $D_{K}^{s}\big(f^{-n}(y)\big)$, logo $f^{-n}\big(W^{s}_{\gamma}(y)\big)$ também é $\varepsilon-$denso em $M$.
+
+Por escolha de $\varepsilon$ temos que $W^{u}_{\gamma}\big(f^{-n}(x)\big)\cap f^{-n}\big(W^{s}_{\gamma}(y)\big)\neq \emptyset$, pois $f^{-n}\big(W^{s}_{\gamma}(y)\big)$ passa $\varepsilon$ próximo de $f^{-n}(x)$, e então existe pontos $w\in f^{-n}\big(W^{s}_{\gamma}(y)\big)$ onde $d\big(w,f^{-n}(x)\big)<\varepsilon$, o que implica que existe $q\in W^{u}\big(f^{-n}(x)\big)\cap f^{-n}\big(W^{s}_{\gamma}(y)\big)$. Como $q\in W^{u}\big(f^{-n}(x)\big)$ então $f^n(q)\in f^n\Big(W^{u}\big(f^{-n}(x)\big)\Big)=W^{u}(x)$ e como $q\in f^{-n}\big(W^{s}_{\gamma}(y)\big)$ então $f^n(q)\in f^{n}\Big(f^{-n}\big(W^{s}_{\gamma}(x)\big)\Big)=W^{s}_{\gamma}(x)\subseteq U$.
+
+Portanto, $f^n(q)\in W^{u}(x)\cap U$, ou seja, a intersecção $W^{u}(x)\cap U\neq\emptyset$. Como $U\subseteq M$ foi tomado um aberto qualquer e $x\in M$ um ponto qualquer, isso prova que $f$ é $u-$minimal.
+
+$iv)\Rightarrow v)$ Sejam $U,V\subseteq M$ dois abertos quaisquer. Tomemos $x\in U$ um ponto qualquer e $\delta>0$ tal que $B(x,\delta)\subseteq U$. Pelo Lema \ref{lemadeltadenso} existe um $K>0$ uniforme tal que $D_{K}^{u}(x)$ é $\delta-$denso em $M$.
+
+Seja $\varepsilon>0$ tal que $W^{u}_{\varepsilon}(x)\subseteq U$. Pela hiperbolicidade existe $n_0\in\N$ tal que para todo $n>n_0$, temos que $f^n\big(W^{u}_{\varepsilon}(x)\big)$ contém $D_{K}^{u}\big(f^n(x)\big)$, ou seja, $D_{k}^{u}\big(f^n(x)\big)\subseteq f^n\big(W^{u}_{\varepsilon}(x)\big)\subseteq W^{u}\big(f^n(x)\big)$; e como para cada $n>n_0$ temos que $f^n(x)\in U_{x_i}$ para algum $i\in\N$, então $D^{u}_{K}\big(f^n(x)\big)$ é $\delta-$denso em $M$ e como $D^{u}_{K}\big(f^n(x)\big)\subseteq f^n\big(W^{u}_{\varepsilon}(x)\big)$ então $f^n\big(W^{u}_{\varepsilon}(x)\big)$ também é $\delta-$denso em $M$. 
+
+Portanto $W^{u}_{\varepsilon}(x)\subseteq U$ e $f^n\big(W^{u}_{\varepsilon}(x)\big)\cap V\neq\emptyset$ para todo $n>n_0$, ou seja, $f$ é topologicamente \textit{mixing}.
+
+$v)\Rightarrow vi)$ Seja $U,V\subseteq M$ dois abertos quaisquer, como $f$ é topologicamente \textit{mixing} então existe um $n_0\in\N$ tal que para todo $n>n_0$ temos que $f^n(U)\cap V\neq\emptyset$. Em particular existe um $n\in\N$ tal que $f^n(U)\cap V\neq\emptyset$, ou seja, $f$ é transitiva.
+
+$vi)\Rightarrow i)$
+\end{proof}
+
+
+
+%Seja $U\subset M$ um aberto qualquer e $x\in M$ um ponto qualquer. Dado $y\in U$ e $\varepsilon>0$ satisfazendo a condição de hiperbolicidade que se $d(z,w)<\varepsilon$ então $W^{s(u)}_{\varepsilon}(z)\cap W^{u(s)}_{\varepsilon}(w)\neq \emptyset$. Tomemos $W^{u}_{\varepsilon}(y)\subseteq U$, como $f$ é transitiva, então existe um $n\in\N$ tal que $f^{n}\big(W^{u}_{\varepsilon}(y)\big)\cap B\big(f^{n}(x),\varepsilon\big)\neq\emptyset$, e pela escolha de $\varepsilon$ existe um ponto $q\in W^{u}\big(f^{n}(x)\big)\cap W^{s}\big(f^{n}(y)\big)$ pois $f^{n}\big(W^{u}_{\varepsilon}(y)\big)\subseteq W^{u}\big(f^{n}(y)\big)$. Pela instabilidade de $W^{u}\big(f^{n}(y)\big)$ temos que $f^{-n}(q)\in U$ e como $q\in W^{s}\big(f^{n}(x)\big)$ então $f^{-n}(q)\in f^{-n}\Big(W^{s}\big(f^{n}(x)\big)\Big)=W^{s}(x)$.
+
+%Portanto, $f^{-n}(q)\in W^{s}(x)\cap U$, ou seja, a intersecção $W^{s}(x)\cap U\neq\emptyset$ para todo aberto $U\subseteq M$ e todo ponto $x\in M$, provando que $f$ é $s-$minimal.
+
+%\begin{proposicao} Se $f:M\to M$ é um difeomorfismo de Anosov $u-$minimal, então $f$ é topologicamente \textit{mixing}.
+%\end{proposicao}
+%
+%\begin{proof} Sejam $U,V\subseteq M$ dois abertos quaisquer. Tomemos $x\in U$, $\delta>0$ tal que $B(x,\delta)\subseteq U$ e pelo Lema \ref{lemadeltadenso} existe um $K>0$ uniforme tal que $D_{K}^{u}(x)$ é $\delta-$denso em $M$.
+%
+%Seja $\varepsilon>0$ tal que $W^{u}_{\varepsilon}(x)\subseteq U$. Pela instabilidade de $W^{u}_{\varepsilon}(x)\subseteq U$ existe $n_0\in\N$ tal que para todo $n>n_0$, temos que $f^n\big(W^{u}_{\varepsilon}(x)\big)$ contém $D_{K}^{u}\big(f^n(x)\big)$, ou seja, $D_{k}^{u}\big(f^n(x)\big)\subseteq f^n\big(W^{u}_{\varepsilon}(x)\big)\subseteq W^{u}\big(f^n(x)\big)$; e como para cada $n>n_0$ temos que $f^n(x)\in U_{x_i}$ para algum $i\in\N$, então $D^{u}_{K}\big(f^n(x)\big)$ é $\delta-$denso em $M$ e como $D^{u}_{K}\big(f^n(x)\big)\subseteq f^n\big(W^{u}_{\varepsilon}(x)\big)$ então $f^n\big(W^{u}_{\varepsilon}(x)\big)$ também é $\delta-$denso em $M$. 
+%
+%Portanto $W^{u}_{\varepsilon}(x)\subseteq U$ e $f^n\big(W^{u}_{\varepsilon}(x)\big)\cap V\neq\emptyset$ para todo $n>n_0$, ou seja, $f$ é topologicamente \textbf{mixing}.
+%\end{proof}
+
+%\begin{proposicao} Se $f:M\to M$ é um difeomorfismo de Anosov $s-$minimal, então $f$ é $u-$minimal.
+%\end{proposicao}
+%
+%\begin{proof} Seja $U\subset M$ um aberto qualquer e $x\in M$ um ponto qualquer. Dado $y\in U$, tomemos $\varepsilon>0$ tal que $W^{s}_{\varepsilon}(y)\subseteq B(y,\varepsilon)\subseteq U$ e satisfazendo a condição de hiperbolicidade que se $d(z,w)<\varepsilon$ então $W^{s(u)}_{\varepsilon}(z)\cap W^{u(s)}_{\varepsilon}(w)\neq \emptyset$, pelo Lema \ref{lemadeltadenso} existe $K>0$ uniforme tal que $D_{K}^{s}(x)$ é $\varepsilon-$denso em $M$, e pela estabilidade de $W^{s}_{\varepsilon}(y)$, existe $n\in\N$ tal que $f^{-n}\big(W^{s}_{\varepsilon}(y)\big)$ contém $D_{K}^{s}\big(f^{-n}(y)\big)$, logo $f^{-n}\big(W^{s}_{\varepsilon}(y)\big)$ também é $\varepsilon-$denso em $M$.
+%
+%Por escolha de $\varepsilon$ temos que $W^{u}_{\varepsilon}\big(f^{-n}(x)\big)\cap f^{-n}\big(W^{s}_{\varepsilon}(y)\big)\neq \emptyset$, pois $f^{-n}\big(W^{s}_{\varepsilon}(y)\big)$ passa $\varepsilon$ próximo de $f^{-n}(x)$, e então existe pontos $w\in f^{-n}\big(W^{s}_{\varepsilon}(y)\big)$ onde $d\big(w,f^{-n}(x)\big)<\varepsilon$, o que implica que existe $q\in W^{u}\big(f^{-n}(x)\big)\cap f^{-n}\big(W^{s}_{\varepsilon}(y)\big)$. Como $q\in W^{u}\big(f^{-n}(x)\big)$ então $f^n(q)\in f^n\Big(W^{u}\big(f^{-n}(x)\big)\Big)=W^{u}(x)$ e como $q\in f^{-n}\big(W^{s}_{\varepsilon}(y)\big)$ então $f^n(q)\in f^{n}\Big(f^{-n}\big(W^{s}_{\varepsilon}(x)\big)\Big)=W^{s}_{\varepsilon}(x)\subseteq U$.
+%
+%Portanto, $f^n(q)\in W^{u}(x)\cap U$, ou seja, a intersecção $W^{u}(x)\cap U\neq\emptyset$ para todo aberto $U\subseteq M$ e todo ponto $x\in M$, provando que $f$ é $u-$minimal.
+%\end{proof}
+
+%\begin{proposicao} Se $f:M\to M$ é um difeomorfismo de Anosov topologicamente transitivo, então $f$ é $s-$minimal.
+%\end{proposicao}
+%
+%\begin{proof} Seja $U\subset M$ um aberto qualquer e $x\in M$ um ponto qualquer. Dado $y\in U$ e $\varepsilon>0$ satisfazendo a condição de hiperbolicidade que se $d(z,w)<\varepsilon$ então $W^{s(u)}_{\varepsilon}(z)\cap W^{u(s)}_{\varepsilon}(w)\neq \emptyset$. Tomemos $W^{u}_{\varepsilon}(y)\subseteq U$, como $f$ é transitiva, então existe um $n\in\N$ tal que $f^{n}\big(W^{u}_{\varepsilon}(y)\big)\cap B\big(f^{n}(x),\varepsilon\big)\neq\emptyset$, e pela escolha de $\varepsilon$ existe um ponto $q\in W^{u}\big(f^{n}(x)\big)\cap W^{s}\big(f^{n}(y)\big)$ pois $f^{n}\big(W^{u}_{\varepsilon}(y)\big)\subseteq W^{u}\big(f^{n}(y)\big)$. Pela instabilidade de $W^{u}\big(f^{n}(y)\big)$ temos que $f^{-n}(q)\in U$ e como $q\in W^{s}\big(f^{n}(x)\big)$ então $f^{-n}(q)\in f^{-n}\Big(W^{s}\big(f^{n}(x)\big)\Big)=W^{s}(x)$.
+%
+%Portanto, $f^{-n}(q)\in W^{s}(x)\cap U$, ou seja, a intersecção $W^{s}(x)\cap U\neq\emptyset$ para todo aberto $U\subseteq M$ e todo ponto $x\in M$, provando que $f$ é $s-$minimal.
+%\end{proof}
+
+
+
+
+\end{document}
+
+
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[height=5cm]{Imagem.png}
+%\caption{legenda}
+%\label{Imagem}
+%\end{figure}
+
+%\begin{equation*}
+
+%\end{equation*}\vspace{0.1cm}
+
+%\begin{eqnarray*}
+
+%\end{eqnarray*}
+
+%\begin{propriedade}
+
+%\end{propriedade}
+
+%\begin{definicao}
+
+%\end{definicao}
+
+%\begin{ex}
+
+%\end{ex}
+
+%\begin{solucao}
+
+%\end{solucao}
+
+%\begin{teorema}
+
+%\end{teorema}
+
+%\begin{proof}
+
+%\end{proof}
+
+%\begin{corolario}
+
+%\end{corolario}
+
+%\begin{proposicao}
+
+%\end{proposicao}
+
+%\begin{flushright}
+%\begin{minipage}{7cm}
+%\small
+%\end{minipage}\vspace{1cm}
+%\end{flushright}

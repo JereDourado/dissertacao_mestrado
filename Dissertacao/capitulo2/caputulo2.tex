@@ -1,0 +1,132 @@
+%\include{../preambulo/preambulo.tex}
+
+\chapter{Densidade das Variedades Estáveis e Instáveis dos Difeomorfismos de Anosov}
+
+Neste capítulo estudaremos o comportamento das variedades estáveis e instáveis para difeomorfismos de Anosov. Para tal precisaremos de algumas definições adicionais. Seja $f:M\to M$ um difeomorfismo de Anosov. Considerando $W^{s}(x)\subseteq M$ a variedade estável do ponto $x\in M$, chamamos de \textbf{disco estável} de $x$ de tamanho $k$, a bola fechada $D_k^{s}(x)\subseteq W^{s}(x)$ de raio $k$, pela métrica em $W^{s}(x)$, e centrada em $x$. Analogamente, definimos o \textbf{disco instável} $D_k^{u}(x)\subseteq W^{u}(x)$ de $x$ de tamanho $k$. Caso precisemos deixar claro qual a função estamos nos referindo, denotaremos tais discos $D^s_{k}(x,f)$ e $D^u_{x}(x,f)$, respectivamente. Dizemos que um conjunto $A\subseteq M$ é \textbf{$\delta-$denso} em $M$ se para qualquer aberto $U$ contendo uma bola de raio $\delta$, tem-se que $U\cap A\neq\emptyset$. É claro que $A\subseteq M$ é denso em $M$ se, e somente se, $A$ é $\delta-$denso em $M$, para todo $\delta>0$.
+
+Nosso principal objetivo, nesse capítulo, é estudar a $s-$minimalidade e $u-$minimalidade dos difeomorfismos de Anosov, definidas a seguir.
+
+\begin{definicao} Seja $f:M\to M$ um difeomorfismo de Anosov. Dizemos que $f$ é \textbf{$s-$minimal} se para todo ponto $x\in M$, a variedade estável $W^{s}(x)$ é densa em $M$. Analogamente, dizemos que $f$ é \textbf{$u-$minimal} se para todo ponto $x\in M$, a variedade instável $W^{u}(x)$ é densa em $M$. 
+\end{definicao}
+
+Decorre diretamente da definição acima, a seguinte proposição.
+
+\begin{proposicao}\label{deltadenso} Seja $f:M\to M$ um difeomorfismo de Anosov. Se $f$ for $s-$minimal ou $u-$minimal, então dado $\delta>0$, existe um $K>0$ suficientemente grande tal que $D_K^{s(u)}(x)$ é $\delta-$denso em $M$ para todo $x\in M$.
+\end{proposicao}
+
+\begin{proof} Vamos demonstrar para o caso de $f$ ser $s-$minimal. Para $u-$minimal a demonstração é a mesma trocando os papéis de $f$ por $f^{
+-1}$.
+
+Sejam $\delta>0$ e $x\in M$ um ponto qualquer. Como $\overline{W^{s}(x)}=M$, pois $f$ é $s-$minimal, então existe $k_x\in\N$ tal que $D_{k_x}^{s}(x)$ é $\delta-$denso em $M$. De fato, pois $W^{s}(x)=\bigcup_{k_x\in\N}D_{k_x}^{s}(x)$.
+
+Pela continuidade das variedades estáveis e instáveis existe uma vizinhança aberta $V_x$ de $x$ tal que para todo $y\in V_x$, temos que $D_{k_x}^{s}(y)$ também é $\delta-$denso em $M$. Como $x$ é um ponto qualquer de $M$, então $\bigcup_{x\in M}{V_x}$ é uma cobertura aberta de $M$. Pela compacidade de $M$ existe $n\in \N$ tal que $M\subseteq \bigcup_{i=1}^{n}{V_{x_i}}$. Seja $k_i\in \N$ tal que $D_{k_{x_i}}^{s}(x_i)$ seja $\delta-$denso em $M$, e tomemos $K=\max\conjunto{k_{x_1},k_{x_2},\cdots,k_{x_n}}$. Então, para qualquer $x\in M$ temos que $x\in V_{x_i}$ para algum $i\in\N$, logo $D_{K}^{s}(x)$ contém $D_{k_{x_i}}^{s}(x)$, e portanto é $\delta-$denso em $M$.
+\end{proof}
+
+Os próximos resultados são fundamentais para demonstrarmos o teorema principal dessa seção. Dizemos que um difeomorfismo $f:M\to M$ tem \textbf{acessibilidade}, ou é \textbf{acessível}, se para todo $x,y\in M$, podemos ligar $x$ a $y$ por finitos $W^s$ e $W^u$, ou seja, para todo $x,y\in M$ existem $x_1,x_2,\cdots,x_k\in M$ tais que podemos ligar o ponto $x$ a $y$ pelas variedades estáveis e instáveis desses pontos $x_i$, para $i=1,2,\cdots,k$.
+
+\begin{proposicao}\label{ligafinita} Se $f:M\to M$ é um difeomorfismo de Anosov, então $f$ tem acessibilidade. 
+\end{proposicao}
+
+\begin{proof} Dado $x\in M$, definamos o seguinte conjunto: $$A_x=\big\{y\in M;\ y\text{ pode ser ligado a }x\text{ por finitos }W^s\text{ e }W^u\big\}.$$
+
+\textit{Afirmação 1}. $A_x\neq\emptyset$.
+
+De fato, pela continuidade das variedades estáveis e instáveis, existe uma vizinhança de $x$, tal que todo ponto dessa vizinhança está em $A_x$.
+
+\textit{Afirmação 2}. \textit{$A_x$ é um conjunto aberto.} 
+
+De fato, seja $y\in A_x$. Consideremos $x_1,x_2,\cdots,x_k\in M$ os pontos que dão a acessibilidade de $x$ a $y$ e assim suponhamos que $W^s(y)$ intercecta transversalmente $W^u(x_1)$ (para o caso de $W^u(y)$ interceptar transversalmente $W^s(x_1)$, o raciocínio é análogo). Logo, pela continuidade das variedades estáveis, existe $\delta>0$ tal que se $z\in B(y,\delta)$, então $W^s(z)$ intercecta transversalmente $W^u(x_1)$, ou seja, $z$ é acessível também a $x$, logo $B(y,\delta)\subseteq A_x$ e portanto $A_x$ é aberto.
+
+\textit{Afirmação 3}. \textit{$A_x$ é um conjunto fechado.} 
+
+De fato, seja $(y_n)_{n=1}^{+\infty}\subseteq A_x$ uma sequência convergente, e $y$ o seu limite. Pela continuidade das variedades instáveis, $W^u(y_n)$ converge pra $W^u(y)$. Tomemos $\delta>0$ de modo que se $z\in B(y,\delta)$, então $W^s(z)$ intercecta transversalmente $W^u(y)$. Logo, existe um $n_0\in\N$  tal que para todo $n>n_0$, $y_n\in B(y,\delta)$ e portanto $W^u(y_n)$ intercecta $W^s(y)$. Assim, fixando um $N>n_0$, $W^u(y_N)$ intercecta $W^s(y)$, logo $y$ pode ser ligado a $x$ por finitos $W^s$ e $W^u$, ou seja, $y\in A_x$ e portanto $A_x$ é fechado.
+
+%, e como $\fecho{Per(f)}=M$, então existe $p\in Per(f)\cap B(x,\delta)$, logo $W^s(p)$ intercecta $W^u(x)$,
+
+Como $M$ é conexo, as Afirmações 1, 2 e 3 implicam que $A_x=M$.
+\end{proof}
+
+Vamos enunciar na sequência um famoso resultado da teoria clássica de sistemas dinâmicos.
+
+\begin{teorema}\label{lambdalema}(\textbf{$\lambda-$Lemma}) Sejam $f:M\to M$ um difeomorfismo, $p\in M$ um ponto fixo hiperbólico e $D^{u}_k(p)$ o disco instável compacto de $p$ de tamanho $k$. Se $D$ é um disco qualquer de mesma dimensão que $W^u(p)$ e intercecta transversalmente $W^s(p)$, então dado $\varepsilon>0$, podemos fixar $n_0\in\N$ tal que para todo $n>n_0$, existe um disco $D_n\subseteq D$ tal que $f^n\big(D_n\big)$ está $\varepsilon-C^1$ próximo de $D^u_k(p)$.	
+\end{teorema}
+
+\begin{proof} Pode ser encontrada em \cite{jacob}, na Seção 2.7, Teorema 7.1.
+\end{proof}
+
+\begin{corolario}\label{wproximo} Sejam $p,q\in Per(f)$ pontos periódicos hiperbólicos de $f$. Se $W^s(p)\cap W^u(q)\neq\emptyset$, então $W^u(p)\subseteq \fecho{W^u(q)}$ e $W^s(q)\subseteq \fecho{W^s(p)}$.
+%Então, dado $\varepsilon>0$ podemos fixar $n_0\in\N$ tal que para todo $n>n_0$, existe $D_n\subseteq W^u(q)$ tal que $f^n(D_n)$ está $\varepsilon-C^1$ próximo de $W^u(p)$.
+\end{corolario}
+
+\begin{proof} Definamos $g:M\to M$ tal que $g=f^{\tau(p)\tau(q)}$, note que $g$ também é um difeomorfismo e $p,q\in Fix(g)$ são pontos fixos hiperbólicos de $g$, ou seja, $g^n\big(W^u(q,g)\big)=W^u(q,g)$, para todo $n\in\Z$. Seja $x\in W^u(p,g)$, então existe $D^u_k(p,g)\subseteq W^u(p,g)$ um disco instável compacto que contém $x$. Tomemos um disco $D\subseteq W^u(q,g)$, em que $W^s(p,g)\cap D\neq\emptyset$, ou seja, $D$ intersecta transversalmente $W^s(p,g)$. Então, pelo $\lambda-$Lemma (Teorema \ref{lambdalema}), dado $\varepsilon>0$ podemos fixar $n_0\in\N$ tal que para todo $n>n_0$, existe $D_n\subseteq D$ tal que $g^n(D_n)\subseteq g^n\big(W^u(q,g)\big)=W^u(q,g)$ está $\varepsilon-C^1$ próximo de $D^u_k(p,g)\subseteq W^u(p,g)$. 
+
+Logo, como $\varepsilon>0$ é dado arbitrariamente, $x\in\fecho{W^u(q,g)}$. E como $x$ é um qualquer, então $W^u(p,f)=W^u(p,g)\subseteq \fecho{W^u(q,g)}=\fecho{W^u(q,f)}$, como queríamos demonstrar.
+
+Para $W^s(q)\subseteq \fecho{W^s(p)}$ a demonstração é análoga, basta notar que nesse caso a aproximação acontece no passado.
+\end{proof}
+
+%\vspace{2cm}
+%E como $$W^u(q,g)=W^u\Big(q,f^{\tau(p)\tau(q)}\Big)=f^{\tau(p)\tau(q)}\big(W^u(q,f)\big)=W^u(q,f),$$ então $f^n\big(W^u(p,g)\big)=f^n\big(W^u(p,f)\big)$, o que implica em $f^n\big(W^u(q,f)\big)$ está $\varepsilon-C^1$ próximo de $W^u(p,f)$ para todo $n>n_0\tau(p)\tau(q)$.
+%
+%Como $f^{\tau(q)}\big(W^u(q,f)\big)=W^u(q,f)$, então $W^u(q,f)$ está $\varepsilon-$próximo de $W^u(p,f)$, e como $\varepsilon$ é um qualquer, temos $W^u(p,f)\subseteq \fecho{W^u(q,f)}$.
+
+Lembremos que uma $\delta-$pseudo-órbita para $f$ é uma sequência $\{x_n\}_{n\in\Z}\subseteq M$, em que $d\big(f(x_n),x_{n+1}\big)\leq\delta$. Dizemos que $\{x_n\}_{n\in\Z}$ é uma $\delta-$pseudo-órbita periódica, se existe um $n_0\in\N$ tal que $x_{n_0}=x_1$. E um ponto $y\in M$ $\varepsilon-$sombreia uma pseudo-órbita $\{x_n\}_{n\in\Z}$ se $d\big(f^n(y),x_{n}\big)\leq\varepsilon$ para todo $n\in\Z$. Quando $f$ é um difeomorfismo de Anosov, as pseudo-órbitas periódicas são sombreadas por um ponto periódico, mais precisamente:
+
+\begin{lema}\label{lemadosombrea} (\textbf{Lema do Sombreamento}) Sejam $f:M\to M$ um difeomorfismo e $\Lambda\subseteq M$ um conjunto hiperbólico compacto. Para todo $\varepsilon>0$ dado, existe um $\delta>0$ tal que toda $\delta-$pseudo-órbita periódica $\{x_0,x_1,\cdots,x_{n_0}\}\subseteq \Lambda$ é $\varepsilon-$sombreada por um ponto periódico.
+\end{lema}
+
+\begin{proof} Pode ser encontrada em \cite{robinson}, na Seção 10.3, Teorema 3.1.
+\end{proof}
+
+Agora vamos enunciar e demonstrar o resultado principal desse capítulo.
+
+\begin{teorema}\label{TeoEquivMinimal}
+Seja $f : M \to M$ um difeomorfismo de Anosov. As seguintes afirmações são equivalentes:
+\begin{enumerate}[\hspace{0.5cm}i)]
+\item $\Omega(f)=M$; 
+\item $\overline{Per(f)}=M$;
+\item $f$ é $s-$minimal;
+\item $f$ é $u-$minimal;
+\item $f$ é topologicamente \textit{mixing};
+\item $f$ é topologicamente transitiva.
+\end{enumerate}
+\end{teorema}
+
+\begin{proof}\begin{description}
+\item[$i)\Rightarrow ii)$] Seja $U\subseteq M$ um aberto qualquer. Tomemos $B\subseteq U$ e $\varepsilon>0$ pequeno o suficiente, tal que $B(x,\varepsilon)\subseteq U$, para todo $x\in B$. Pelo Lema do Sombreamento \ref{lemadosombrea} existe um $\delta>0$ tal que toda $\delta-$pseudo órbita periódica é $\varepsilon-$sombreada por um ponto periódico. Fixemos um $x\in B$, e como todo ponto $x\subseteq M$ é não errante, existe $n\in\N$ tal que $f^n(x)\in B(x,\delta)$. Logo, a sequência $\{x,f(x),\cdots,f^{n-1}(x)\}\subseteq M$ é uma $\delta-$pseudo-órbita periódica contendo $x$. Assim, pela Lema do Sombreamento \ref{lemadosombrea}, existe $p\in Per(f)$ que $\varepsilon-$sombreia esta $\delta-$pseudo-órbita periódica.
+
+Portanto, existe um ponto periódico $p\in B(x,\varepsilon)\subseteq U$. Como $U\subseteq M$ é um aberto qualquer, temos $\fecho{Per(f)}=M$.
+
+\item[$ii)\Rightarrow iii)$] Vamos dividir a demonstração em dois casos, primeiro vamos provar que a variedade estável de um ponto periódico qualquer é densa, e depois provaremos para um ponto qualquer.
+
+\textbf{Caso Particular:} Sejam $p\in Per(f)$ e $V\subseteq M$ um aberto qualquer. Como $\overline{Per(f)}=M$, então existe $p_0\in Per(f)\cap V$. Pela Proposição \ref{ligafinita}, existem $x_1,x_2,\cdots,x_k\in M$, pontos que ligam $p_0$ a $p$ pelas suas respectivas variáveis instáveis ou estáveis. Pela continuidade das variedades estáveis e instáveis podemos tomar um $\varepsilon>0$ pequeno o suficiente de forma que $B(p_0,\varepsilon)\subseteq V$, e se $d(z,w)<\varepsilon$ então $W^{s(u)}_{\gamma}(z)\cap W^{u(s)}_{\gamma}(w)\neq \emptyset$, em que  $W^{s(u)}_{\gamma}(z)$ e $W^{u(s)}_{\gamma}(w)$ são as variedades estáveis (e instáveis) locais de $z$ e $w$, respectivamente, e $\gamma>0$. Pela densidade dos pontos periódicos, existem $p_1,p_2,\cdots,p_k\in Per(f)$, tais que $p_i\in B(x_i,\varepsilon)$, para todo $i=1,2,\cdots,k$. Assim, por escolha de $\varepsilon>0$, $p_0$ pode ser ligado a $p$ pela variedades estáveis ou instáveis desses pontos periódicos. 
+
+Como $W^s(p)\cap W^u(p_k)\neq\emptyset$, então $W^s(p_k)\subseteq\fecho{W^s(p)}$, pelo Corolário \ref{wproximo}. E como $W^s(p_k)\cap W^u(p_{k-1})\neq\emptyset$, então $W^s(p_{k-1})\subseteq\fecho{W^s(p_k)}$, pelo mesmo Corolário \ref{wproximo}. O que implica ${W^s(p_{k-1})}\subseteq\fecho{W^s(p_k)}\subseteq\fecho{W^s(p)}$. Aplicando esse raciocínio recursivamente, temos $$W^s(p_0)\subseteq\fecho{W^s(p_1)}\subseteq\cdots\subseteq\fecho{W^s(p_{k-1})}\subseteq\fecho{W^s(p_k)}\subseteq\fecho{W^s(p)}.$$ Então, $p_0\in\fecho{W^s(p)}$ e portanto $W^s(p)\cap V\neq\emptyset$.
+De modo análogo concluímos que $W^u(p)$ também é densa em $M$, aplicando o Corolário \ref{wproximo} nas variedades instáveis dos pontos $p_i$, para $i=1,2,\cdots,k$.
+
+\textbf{Caso Geral:} Seja $x\in M$ um ponto qualquer. Dado $\varepsilon>0$, existe $k\in\N$ e um conjunto $P=\conjunto{p_i\in Per(f);\ 1\leq i\leq k}$ $\varepsilon-$denso em $M$. De fato, $\bigcup_{p\in Per(f)}B(p,\varepsilon)$ é uma cobertura aberta de $M$, e de sua compacidade, existe $k\in\N$ tal que $M\subseteq\bigcup_{i=1}^{k}B(p_i,\varepsilon)$, em que $p_i\in Per(f)$.
+
+Fixando um ponto $z\in M$, como $\fecho{W^u(p_i)}=M$, então existe $z_i\in W^s(z)\cap W^u(p_i)$, para todo $i=1,2,\cdots,k$. Logo, existe $n_i\in\N$ tal que para todo $n>n_i$ temos $f^{-n}(z_i)\in W^u_{\varepsilon}(p_i)$. Tomemos $\displaystyle N_z=\max\conjunto{n_1,n_2,\cdots,n_k}$, logo para todo $n>N_z$ temos $f^{-n}(z_i)\in W^u_{\varepsilon}(p_i)$, ou seja, o conjunto $\conjunto{f^{-n}(z_1),f^{-n}(z_2),\cdots,f^{-n}(z_k)}$ é também $\varepsilon-$denso em $M$ para todo $n>N_z$; o que implica que $f^{-n}\big(W^s(z)\big)$ é $\varepsilon-$denso em $M$ para todo $n>N_z$.
+
+Pela continuidade das variedades estáveis e instáveis, existe $\delta_z$ tal que o argumento acima é verdadeiro para todo $y\in B(z,\delta_z)$, isto é, $f^{-n}(W^s(y))$ também é $\varepsilon-$denso para todo $n>N_z$. Como $\bigcup_{z\in M}B(z,\delta_z)$ é uma cobertura aberta de $M$, de sua compacidade, existe $t\in\N$ tal que $M\subseteq\bigcup_{i=1}^{t}B(z_i,\delta_{z_i})$. Tomemos $\displaystyle N=\max\conjunto{N_{z_1},N_{z_2},\cdots,N_{z_t}}$, logo para todo $y\in M$ temos que $f^{-n}\big(W^s(y)\big)$ é $\varepsilon-$denso em $M$, para todo $n>N$. Em particular, $W^s(x)=f^{-n}\Big(W^s\big(f^n(x)\big)\Big)$ é $\varepsilon-$denso em $M$.
+
+Portanto, como $\varepsilon$ é tomado arbitrário, $\fecho{W^s(x)}=M$. 
+
+\item[$iii)\Rightarrow iv)$] Sejam $U\subseteq M$ um aberto qualquer e $x\in M$ um ponto qualquer. Sejam $y\in U$ e $\gamma>0$ tais que $W^{s}_{\gamma}(y)\subseteq U$. Tomemos um $\varepsilon>0$, suficientemente pequeno, de forma que se $d(z,w)<\varepsilon$ então $W^{s(u)}_{\gamma}(z)\cap W^{u(s)}_{\gamma}(w)\neq \emptyset$, o que é possível pois as variedades estáveis e instáveis variam continuamente. Pela Proposição \ref{deltadenso}, como $f$ é $s-$minimal, existe $K>0$ uniforme tal que $D^{s}_{K}(z)\subseteq W^s(z)$ é $\varepsilon-$denso em $M$ para todo $z\in M$. Por hiperbolicidade, existe $n\in\N$ tal que $f^{-n}\big(W^{s}_{\gamma}(y)\big)$ contém $D_{K}^{s}\big(f^{-n}(y)\big)$, logo $f^{-n}\big(W^{s}_{\gamma}(y)\big)$ é $\varepsilon-$denso em $M$.
+
+Por escolha de $\varepsilon$ temos que $W^{u}_{\gamma}\big(f^{-n}(x)\big)\cap f^{-n}\big(W^{s}_{\gamma}(y)\big)\neq \emptyset$, pois $f^{-n}\big(W^{s}_{\gamma}(y)\big)$ passa $\varepsilon$ próximo de $f^{-n}(x)$, ou seja, existe $w\in f^{-n}\big(W^{s}_{\gamma}(y)\big)$ tal que $d\big(w,f^{-n}(x)\big)<\varepsilon$, o que implica que existe $q\in W^{u}\big(f^{-n}(x)\big)\cap f^{-n}\big(W^{s}_{\gamma}(y)\big)$. Como $q\in W^{u}\big(f^{-n}(x)\big)$ então $f^n(q)\in f^n\Big(W^{u}\big(f^{-n}(x)\big)\Big)=W^{u}(x)$ e como $q\in f^{-n}\big(W^{s}_{\gamma}(y)\big)$ então $f^n(q)\in f^{n}\Big(f^{-n}\big(W^{s}_{\gamma}(y)\big)\Big)=W^{s}_{\gamma}(y)\subseteq U$.
+
+Portanto, $f^n(q)\in W^{u}(x)\cap U$, ou seja, $W^{u}(x)\cap U\neq\emptyset$. Como $U\subseteq M$ é um aberto qualquer e $x\in M$ um ponto qualquer, isso prova que $f$ é $u-$minimal.
+
+\item[$iv)\Rightarrow v)$] Sejam $U,V\subseteq M$ dois abertos quaisquer. Tomemos $x\in U$ um ponto qualquer e $\delta>0$ tal que $V$ contenha uma bola de raio $\delta$. Como $f$ é $u-$minimal, pela Proposição \ref{deltadenso} existe um $K>0$ uniforme tal que $D_{K}^{u}(z)\subseteq W^u(z)$ é $\delta-$denso em $M$, para todo $z\in M$.
+
+Tomemos $\varepsilon>0$ tal que $W^{u}_{\varepsilon}(x)\subseteq U$. Por hiperbolicidade existe $n_0\in\N$ tal que para todo $n>n_0$, temos que $f^n\big(W^{u}_{\varepsilon}(x)\big)$ contém $D_{K}^{u}\big(f^n(x)\big)$, ou seja, $D_{k}^{u}\big(f^n(x)\big)\subseteq f^n\big(W^{u}_{\varepsilon}(x)\big)\subseteq W^{u}\big(f^n(x)\big)$. Como $D^{u}_{K}\big(f^n(x)\big)$ é $\delta-$denso em $M$ e como $D^{u}_{K}\big(f^n(x)\big)\subseteq f^n\big(W^{u}_{\varepsilon}(x)\big)$, então $f^n\big(W^{u}_{\varepsilon}(x)\big)$ também é $\delta-$denso em $M$, para todo $n>n_0$. 
+
+Portanto $W^{u}_{\varepsilon}(x)\subseteq U$ e $f^n\big(W^{u}_{\varepsilon}(x)\big)\cap V\neq\emptyset$ para todo $n>n_0$, ou seja, $f$ é topologicamente \textit{mixing}.
+
+\item[$v)\Rightarrow vi)$] Demonstrado na Proposição \ref{mixingtransitiva}.
+
+\item[$vi)\Rightarrow i)$] Sejam $x\in M$ um ponto qualquer e $V_x$ uma vizinhança qualquer de $x$. Como $f$ é transitiva, então existe $n\in\N$ tal que $f^n(V_x)\cap V_x\neq\emptyset$. Logo, $x\in\Omega(f)$ e portanto $\Omega(f)=M$.
+\end{description}\end{proof}
+
+%\end{document}

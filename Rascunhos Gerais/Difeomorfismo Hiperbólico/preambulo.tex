@@ -1,0 +1,194 @@
+\documentclass[a4paper,12pt,dvipdfm]{report}
+\usepackage[brazil]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[pdftex]{color,graphicx}
+\usepackage{geometry}
+\geometry{top=3cm ,bottom=2cm,left=2.5cm,right=2cm}
+%\usepackage{dingbat}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amssymb}
+%\usepackage{subfigure}
+\usepackage{amsmath}
+%\usepackage{amscd}
+%\usepackage{graphics}
+%\usepackage{picinpar}
+\usepackage{multicol}
+\usepackage{multirow}
+%\usepackage{epigraph}
+%\usepackage{natbib}
+%\usepackage{setspace}
+\usepackage{mathrsfs}
+\usepackage{lscape}
+%\usepackage{pdfpages}
+\usepackage[normalem]{ulem}
+%\usepackage{tikz}
+%\usepackage[all]{xy}
+\usepackage{enumerate}
+\usepackage{mathdesign}
+%\usepackage[T1]{fontenc}
+%\usepackage{indentfirst}
+%\usepackage[dvips]{color}
+%\usepackage{caption}
+%\usepackage{float}
+%\usepackage[nottoc]{tocbibind} %inclui referencias no indice.
+%\usepackage{enumerate}
+%\usepackage{amsmath,amsfonts,amssymb}
+%\usepackage{graphicx}
+%\usepackage{verbatim}
+\usepackage{amsthm}
+%\usepackage{natbib}
+%\usepackage{subfigure}
+%\usepackage{setspace}
+
+
+
+
+
+
+
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\nulo}{\varnothing}
+\newcommand{\x}{\times}
+\newcommand{\carac}[1]{\mathcal{X}_{#1}}
+%\newcommand{\ital}[1]{\textit{#1}}
+%\newcommand{\negr}[1]{\textbf{#1}}
+\newcommand{\duascolunas}[2]{\begin{minipage}{7cm} #1 \end{minipage}\hfill\begin{minipage}{7cm} #2 \end{minipage}\\\\} 
+\newcommand {\expo}[1]{\exp{\left(#1\right)}}
+\newcommand {\expi}[1]{\exp{i\left(#1\right)}}
+\newcommand{\arc}[1]{\ensuremath{\overset{\frown}{\raisebox{0pt}[6pt]{#1}}}}
+\newcommand*{\mes}{\ifthenelse{\the\month < 2}{Janeiro}
+                  {\ifthenelse{\the\month < 3}{Fevereiro}
+                  {\ifthenelse{\the\month < 4}{Março}
+                  {\ifthenelse{\the\month < 5}{Abril}
+                  {\ifthenelse{\the\month < 6}{Maio}
+                  {\ifthenelse{\the\month < 7}{Junho}
+                  {\ifthenelse{\the\month < 8}{Julho}
+                  {\ifthenelse{\the\month < 9}{Agosto}
+                  {\ifthenelse{\the\month < 10}{Setembro}
+                  {\ifthenelse{\the\month < 11}{Outubro}
+                  {\ifthenelse{\the\month < 12}{Novembro}{Dezembro}}}}}}}}}}}} %plota o mês atual
+\newcommand {\sen}[1]{\sin{\left(#1\right)}}
+\newcommand {\cossen}[1]{\cos{\left(#1\right)}}
+\newcommand {\tg}[1]{\tan{\left(#1\right)}}
+\newcommand {\cotg}[1]{\cot{\left(#1\right)}}
+\newcommand {\seca}[1]{\sec{\left(#1\right)}}
+\newcommand {\cossec}[1]{\csc{\left(#1\right)}}
+\newcommand{\E}{\xi}
+\newcommand {\refe}[1]{(\ref{#1})}
+%\newcommand {\L}{\mathscr{L}}
+\newcommand {\Ima}[1]{\mathrm{Im}{\left[#1\right]}}
+\newcommand {\F}{\mathscr{F}}
+%\newcommand {\L}{\mathscr{L}}
+\newcommand {\om}{\Omega}
+\newcommand {\fii}{\varphi}
+\newcommand {\lap}{\Delta}
+\newcommand {\gra}{\nabla}
+\newcommand {\pc}{\vskip 1pc}
+\newcommand {\fim}{\nl\rightline{$\square$}\vskip 2pc}
+\newcommand {\nl}{\newline}
+\newcommand {\cl}{\centerline}
+\newcommand {\R}{\mathbb{R}}
+\newcommand {\N}{\mathbb{N}}
+\newcommand {\Z}{\mathbb{Z}}
+\newcommand {\V}{\mathcal{V}^{hp}}
+\newcommand {\Q}{\mathbb{Q}}
+%\newcommand {\F}{\mathbb{F}}
+\newcommand {\G}{\mathbb{G}}
+\newcommand {\C}{\mathbb{C}}
+\newcommand {\Ss}{\mathbb{S}}
+\newcommand {\Ph}{\mathcal{P}_{\!h}}
+\newcommand {\B}{\mathcal{B}}
+\newcommand {\f}{\mathcal{F}}
+\newcommand {\Lh}{\mathcal{L}}
+\newcommand {\La}{\Lambda}
+\newcommand{\Ri}{\Rightarrow}
+\newcommand{\Li}{\Leftarrow}
+\newcommand{\lr}{\Longleftrightarrow}
+\newcommand{\dis}{\displaystyle}
+\newcommand{\lon}{\longrightarrow}
+\newcommand{\nin}{/\!\!\!\!\!\in}
+%\newcommand {\la}{\lambda}
+\newcommand {\al}{\alpha}
+\newcommand {\bt}{\beta}
+\newcommand {\til}{\widetilde}
+\newcommand {\lb}{\linebreak}
+\newcommand {\esp}{\hskip 1pc}
+\newcommand {\be}{\nl\cl }
+\newcommand {\normf}[3]{\Big| \!\! \; \Big|  \dfrac{#1}{#2} \Big| \!\! \; \Big|_{#3}}
+\newcommand {\norma}[2] {{\parallel  \! #1 \!  \parallel}_{#2}}
+\newcommand {\normp}[1] {{|\!|\!| #1 |\!|\!|}_{\! \Ph}}
+\newcommand {\adsum}{\addcontentsline{toc}{subsection}}
+\newcommand {\T}{\mathcal{T}}
+\newcommand {\fecho}[1]{\overline{#1}}
+\newcommand {\pref}[1]{(\ref{#1})}
+\newcommand {\prcr}[2]{(#1\cup #2)_{\al,L}\rtimes\N}
+\newcommand {\tp}[2]{\T(#1\cup #2)}
+\newcommand{\mdc}{\text{mdc}}
+\newcommand{\funcao}[5]{\begin{array}{cccc}
+#1:&\!\!\!#2 & \rightarrow & #3 \\
+  &\!\!\! #4 & \mapsto & #5
+\end{array}}
+\newcommand{\n}{{\bf n}}
+\newcommand{\soma}[2]{\displaystyle\sum_{#1}^{#2}}
+\newcommand {\flecha}[1] {\stackrel{#1 \rightarrow \infty}\longrightarrow}
+\newcommand{\canto}[1]{\begin{flushright} #1 \end{flushright}}
+\newcommand{\fd}{\vspace{-0,5cm} \begin{flushright} $\square$ \end{flushright} \vspace{-0,5cm}}
+\newcommand{\der}{\partial}
+%\newcommand{\sen}{{\rm  \ \! sen}}
+\newcommand{\orb}[1]{\mathcal{O}\left(#1\right)}
+\newcommand{\orbf}[1]{\mathcal{O}^{+}\left(#1\right)}
+\newcommand{\orbp}[1]{\mathcal{O}^{-}\left(#1\right)}
+\newcommand{\conjunto}[1]{\big\{#1\big\}}
+
+
+
+
+
+
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\textrm{sen\hspace{2pt}}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\textrm{tg\hspace{2pt}}}
+\providecommand{\arctan}{} \renewcommand{\arctan}{\hspace{2pt}\textrm{arctg\hspace{2pt}}}
+\providecommand{\arcsin}{} \renewcommand{\arcsin}{\hspace{2pt}\textrm{arcsen\hspace{2pt}}}
+
+
+
+
+
+
+
+\theoremstyle{plain}
+%\theoremstyle{definition}
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{corolario}[teorema]{Corol\'ario}
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{proposicao}[teorema]{Proposi\c{c}\~ao}
+\newtheorem{definicao}[teorema]{Defini\c{c}\~{a}o}
+\newtheorem{propriedade}[teorema]{Propriedades}
+\newtheorem*{obs}{Observa\c{c}\~{a}o}
+\newtheorem{ex}[teorema]{Exemplo}
+\newtheorem*{solucao}{Solu\c{c}\~{a}o}
+\newtheorem*{demo}{Demonstra\c{c}\~{a}o}
+
+
+
+
+
+
+%\setcounter{secnumdepth}{5}
+%\setcounter{tocdepth}{5}
+\setlength{\parindent}{1.5cm}
+%\onehalfspace
+%\everymath{\displaystyle}
+\setcounter{secnumdepth}{3}
+%\voffset 3.8cm
+
+
+
+\begin{document}
+\DeclareGraphicsExtensions{.pdf,.png,.mps,.jpg}

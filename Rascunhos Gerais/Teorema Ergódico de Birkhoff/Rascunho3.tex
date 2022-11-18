@@ -1,0 +1,334 @@
+\include{preambulo}
+
+\chapter{Teorema Ergódico de Birkhoff}
+
+Seja $x\in M$ e um conjunto mensurável $E\subset M$, vamos tomar os $n$ primeiros iterados da orbita de $x$, e vamos considerar a fração desses iterados que estão em $E$:
+
+\begin{eqnarray}
+\tau_n(E,x) & = &\dfrac{1}{n}\#\big\{f^j(x)\in E:0\leq j\leq n-1\big\}\vspace{0.1cm}\nonumber\\
+& = & \dfrac{1}{n}\sum_{j=0}^{n-1}\carac{E}(f^j(x))\label{L40}
+\end{eqnarray}\vspace{0.1cm}
+
+Onde $\carac{E}$ é a função característica do conjunto $E$, isto é, $\carac{E}(x)=1$ se $x\in E$ e $\carac{E}(x)=0$ se $x\notin E$.
+
+Definimos o \textit{tempo médio de permanência} da orbita de $x$ em $E$, sendo o limite dessas frações fazendo $n$ tender ao infinito:
+
+\begin{equation*}
+\tau(E,x)=\lim_{n\to+\infty}\tau_n(E,x)
+\end{equation*}\vspace{0.1cm}
+
+Em geral, esse limite pode não existir.
+
+\begin{lema}\label{tmpo}
+
+Se o tempo médio de permanência existe para um ponto $x\in M$, então
+
+\begin{equation*}
+\tau(E,f(x))=\tau(E,x)
+\end{equation*}\vspace{0.1cm}
+
+\end{lema}
+
+\begin{proof} De fato, por definição temos:
+\begin{eqnarray*}
+\tau(E,f(x)) & = & \lim_{n\to+\infty}\tau_n(E,f(x))\\
+& = & \dfrac{1}{n}\lim_{n\to+\infty}\sum_{j=1}^{n}\carac{E}(f^j(x))\\
+& = & \dfrac{1}{n}\lim_{n\to+\infty}\left(\sum_{j=0}^{n-1}\carac{E}(f^j(x))-\dfrac{1}{n}\big[\carac{E}(x)-\carac{E}(f^n(x))\big]\right)\\
+& = & \dfrac{1}{n}\lim_{n\to+\infty}\sum_{j=0}^{n-1}\carac{E}(f^j(x))-\lim_{n\to\infty}\dfrac{1}{n}\big[\carac{E}(x)-\carac{E}(f^n(x))\big]\\
+& = & \tau(E,x)-\lim_{n\to+\infty}\dfrac{1}{n}\big[\carac{E}(x)-\carac{E}(f^n(x))\big]
+\end{eqnarray*}
+
+Como a função característica é limitada, esse ultimo limite é igual a zero, e o lema está demonstrado.
+\end{proof}
+
+\begin{teorema}\label{teb1}
+
+Seja $f:M\to M$ uma transformação mensurável e $\mu$ uma probabilidade invariante por $f$. Dado qualquer conjunto mensurável $E\subset M$, o tempo médio de permanência $\tau(E,x)$ existe em $\mu$-quase todo ponto $x\in M$. Além disso, 
+
+\begin{equation*}
+\int\tau(E,x)d\mu(x)=\mu(E).
+\end{equation*}\vspace{0.1cm}
+
+\end{teorema}
+
+\begin{proof}
+
+Seja $E\subset M$ um conjunto mensurável qualquer. Para cada $x\in M$, definamos:
+\begin{eqnarray*}
+\overline{\tau}(E,x) & = & \limsup_{n\to+\infty}\dfrac{1}{n}\#\big\{f^j(x)\in E:0\leq j\leq n-1\big\}\\
+\underline{\tau}(E,x) & = & \liminf_{n\to+\infty}\dfrac{1}{n}\#\big\{f^j(x)\in E:0\leq j\leq n-1\big\}
+\end{eqnarray*}\vspace{0.1cm}
+
+Para todo $x\in M$ temos que
+
+\begin{equation}\label{L42}
+\overline{\tau}(E,f(x))=\overline{\tau}(E,x)\quad\text{e}\quad\underline{\tau}(E,f(x))=\underline{\tau}(E,x)
+\end{equation}\vspace{0.1cm}
+
+De fato, a demonstração é análoga a do lema \ref{tmpo}.
+
+Para demonstrar a existência do tempo médio $\tau(E,x)$, basta mostrar que
+
+\begin{equation}
+\overline{\tau}(E,x)=\underline{\tau}(E,x)
+\end{equation}\vspace{0.1cm}
+para $\mu$-quase todo ponto $x\in M$.
+
+Como $\overline{\tau}(E,x)\geq\underline{\tau}(E,x)$ para todo $x\in M$, então pra mostrar a igualdade, basta mostrar a seguinte desigualdade
+
+\begin{equation}\label{L44}
+\int\overline{\tau}(E,x)d\mu(x)\leq\mu(E)\leq\int\underline{\tau}(E,x)d\mu(x)
+\end{equation}\vspace{0.1cm}
+
+Vamos provar a primeira desigualdade em \eqref{L44}, e a segunda segue de argumento inteiramente análogo.
+
+Dado $\varepsilon>0$ arbitrário. Por definição de $\limsup$, para cada $x\in M$ existem inteiros $t\geq 1$, tais que
+
+\begin{equation}\label{L45}
+\tau_t(E,x)\geq\overline{\tau}(E,x)-\varepsilon
+\end{equation}\vspace{0.1cm}
+
+Definamos $t:M \rightarrow \N$ uma função que leva o ponto $x\in M$ ao primeiro $t$ que satisfaça \eqref{L45}. Agora dividiremos a demonstração em dois casos.
+
+\textbf{Caso Particular:} Suponhamos que a função $t$ seja limitada, ou seja, existe um $K\in\N$ tal que $t(x)\leq K$ para todo $x\in M$. Então fixemos um certo $n\in\N$. 
+
+Dado $x \in M$, definamos uma sequencia $x_0,x_1,\cdots,x_s$ de pontos de $M$ e uma sequencia $t_0,t_1,\cdots,t_s$ de número naturais, do seguinte modo:
+
+\begin{enumerate}
+\item Tomemos $x_0=x$.
+\item Depois fazemos $t_i=t(x_i)$ e $x_{i+1}=f^{t_i}(x_i)$.
+\item Terminamos quando encontrarmos $x_s$ tal que $t_0+t_1+\cdots+t_s\geq n$.
+\end{enumerate}
+
+Note que aplicando $x_i=f^{t_0+t_1+\cdots+t_{i-1}}(x)$ em \eqref{L42}, temos $\overline{\tau}(E,x_i)=\overline{\tau}(E,x)$ para todo $i$. Pela definição de $\tau_t(E,x)$ em \eqref{L40}, temos
+
+\begin{equation*}
+\sum_{j=0}^{t_i-1}\carac{E}(f^j(x))=t_i\tau_{t_i}(E,x)
+\end{equation*}\vspace{0.1cm}
+
+Como essa equação vale para todo $x\in M$ em particular vale para todo $x_i$, e aplicando em \eqref{L45}, temos
+
+\begin{eqnarray}
+\sum_{j=0}^{t_i-1}\carac{E}(f^j(x_i)) & = &  t_i\tau_{t_i}(E,x_i)\nonumber\\
+ & \geq & t_i(\overline{\tau}(E,x)-\varepsilon)\label{L46}
+\end{eqnarray}\vspace{0.1cm}
+
+Pela definição da sequencia $x_i$ temos que
+\begin{eqnarray*}
+&& x_0 = x\\
+&& x_1 = f^{t_0}(x_0) = f^{t_0}(x)\\
+&& x_2 = f^{t_1}(x_1) = f^{t_1}(f^{t_0}(x)) = f^{t_0+t_1}(x)\\
+&& x_3 = f^{t_2}(x_2) = f^{t_2}(f^{t_0+t_1}(x)) = f^{t_0+t_1+t_2}(x)\\
+&& \ \ \ \ \vdots\\
+&& x_s = f^{t_0+t_1+\cdots+t_{s-1}}(x)
+\end{eqnarray*}\vspace{0.1cm}
+onde 
+\begin{equation*}
+t_0+t_1+\cdots+t_{s-1}<n-1
+\end{equation*}\vspace{0.1cm}
+
+E como pelo item 3 da definição da sequencia temos $t_0+t_1+\cdots+t_{s-1}\geq n-t_s \geq n-K$, podemos reescrever \eqref{L46}, colocando $x_i$ em função de $x$ para todo $i$, e somar todos os eles
+\begin{eqnarray}
+\sum_{j=0}^{n-1}\carac{E}(f^j(x)) & \geq & \left(t_0+t_1+\cdots+t_{s-1}\right)(\overline{\tau}(E,x)-\varepsilon)\nonumber\\
+& \geq & (n-t_s)(\overline{\tau}(E,x)-\varepsilon)\nonumber\\
+& \geq & (n-K)(\overline{\tau}(E,x)-\varepsilon)\label{L477}
+\end{eqnarray}\vspace{0.1cm}
+
+Essa desigualdade vale para todo $x\in M$, e como as funções características são integráveis, então
+\begin{eqnarray*}
+\int\sum_{j=0}^{n-1}\carac{E}(f^j(x))d\mu(x) & \geq & \int(n-K)(\overline{\tau}(E,x)-\varepsilon)d\mu(x)\\
+\sum_{j=0}^{n-1}\int\carac{E}(f^j(x))d\mu(x) & \geq & (n-K)\int\overline{\tau}(E,x)d\mu(x)-(n-K)\varepsilon\int d\mu(x)\\
+\sum_{j=0}^{n-1}\mu(E) & \geq & (n-K)\int\overline{\tau}(E,x)d\mu(x)-(n-K)\varepsilon\mu(M)\\
+n\mu(E) & \geq & (n-K)\int\overline{\tau}(E,x)d\mu(x)-(n-K)\varepsilon\\
+\mu(E) & \geq & \dfrac{(n-K)}{n}\int\overline{\tau}(E,x)d\mu(x)-\dfrac{(n-K)}{n}\varepsilon
+\end{eqnarray*}\vspace{0.1cm}
+
+Esse resultado vale para todo $n\in\N$, então passamos ao limite quando $n\to+\infty$
+\begin{eqnarray*}
+\mu(E) & \geq & \lim_{n\to+\infty}\left(\dfrac{(n-K)}{n}\int\overline{\tau}(E,x)d\mu(x)-\dfrac{(n-K)}{n}\varepsilon\right)\\
+& = & \lim_{n\to+\infty}\left(\dfrac{(n-K)}{n}\right)\int\overline{\tau}(E,x)d\mu(x)-\lim_{n\to+\infty}\left(\dfrac{(n-K)}{n}\right)\varepsilon\\
+& = & \int\overline{\tau}(E,x)d\mu(x)-\varepsilon
+\end{eqnarray*}\vspace{0.1cm}
+
+Como $\varepsilon>0$ é arbitrário, podemos  tendê-lo a 0, e temos
+
+\begin{equation*}
+\mu(E)\geq\int\overline{\tau}(E,x)d\mu(x)
+\end{equation*}\vspace{0.1cm}
+
+Terminando assim a demonstração para esse caso, onde a função $t$ é limitada.
+
+\textbf{Caso Geral:} Dado $\varepsilon>0$ fixemos $K>>1$ suficientemente grande, de modo que
+
+\begin{equation*}
+\mu\left(\big\{y\in M; t(y)>K\big\}\right)<\varepsilon
+\end{equation*}\vspace{0.1cm}	
+
+Vamos mostrar que esse $K$ de fato existe. Definamos $A_n\subset M$ da seguinte maneira
+
+\begin{equation*}
+A_j=\big\{y\in M; t(y)\leq K\big\}
+\end{equation*}\vspace{0.1cm}
+
+É claro que $A_j\subset A_{j+1}$ e $\cup_{j\in\N}A_j=M$, então $\lim\mu(A_j)=\mu\left(\cup_{j\in\N}A_j\right)=\mu(M)=1$. Ou seja, para todo $\varepsilon>0$ dado, existe $j_0\in\N$, tal que $j>j_0$ implica $\mu(A_j)>1-\varepsilon$. Tomemos $K>j_0$, então $\mu(A_k)>1-\varepsilon$, isso implica $\mu(M-A_k)<\varepsilon$. Agora observe que $(M-A_k)=\big\{y\in M; t(y)\leq K\big\}$. Vamos chamar esse conjunto de $B$. 
+
+De maneira similar ao cado particular, fixemos um certo $n\in\N$. Dado $x \in M$, definamos uma sequencia $x_0,x_1,\cdots,x_s$ de pontos de $M$ e uma sequencia $t_0,t_1,\cdots,t_s$ de número naturais, do seguinte modo:
+
+\begin{enumerate}
+\item Tomemos $x_0=x$.
+\item Se $t(x_i)\leq K$, fazemos $t_i=t(x_i)$ e $x_{i+1}=f^{t_i}(x_i)$.
+\item Se $t(x_i)> K$, fazemos $t_i=1$ e $x_{i+1}=f(x_i)$.
+\item Terminamos quando encontrarmos $x_s$ tal que $t_0+t_1+\cdots+t_s\geq n$.
+\end{enumerate}
+
+Do caso particular, temos que para todo $i$, tal que $t(x_i)\leq K$, a desigualdade \eqref{L46} continua valendo
+
+\begin{equation}\label{L47}
+\sum_{j=0}^{t_i-1}\carac{E}(f^j(x_i))\geq t_i(\overline{\tau}(E,x)-\varepsilon)
+\end{equation}\vspace{0.1cm}
+
+A desigualdade acima, implica na seguinte
+
+\begin{equation}\label{L48}
+\sum_{j=0}^{t_i-1}\carac{E}(f^j(x_i))\geq t_i(\overline{\tau}(E,x)-\varepsilon)-\sum_{j=0}^{t_i-1}\carac{B}(f^j(x_i))
+\end{equation}\vspace{0.1cm}
+
+Essa desigualdade tem a vantagem de valer para todos os $x_i$. De fato , basta vermos que quando $x_i$ for tal que $t(x_i)\leq K$, o ultimo somatório fica igual a zero, e decorre diretamente de \eqref{L47}, e quando $t(x_i)> K$, temos que $t_{i}=1$ e esses somatórios terão apenas um elemento, ficando
+\begin{eqnarray*}
+\sum_{j=0}^{t_i-1}\carac{E}(f^j(x_i)) & \geq & t_i(\overline{\tau}(E,x)-\varepsilon)-\sum_{j=0}^{t_i-1}\carac{B}(f^j(x_i))\\
+\sum_{j=0}^{0}\carac{E}(f^j(x_i)) & \geq & (\overline{\tau}(E,x)-\varepsilon)-\sum_{j=0}^{0}\carac{B}(f^j(x_i))\\\carac{E}(f(x_i)) & \geq & (\overline{\tau}(E,x)-\varepsilon)-\carac{B}(f(x_i))
+\end{eqnarray*}\vspace{0.1cm}
+
+Como $0\leq\carac{E}(f(x_i))\leq1$ por definição de função característica, $(\overline{\tau}(E,x)-\varepsilon)<1$ pois 
+$\overline{\tau}(E,x)\leq1$ e $\varepsilon>0$, e por fim $\carac{B}(f(x_i))=1$ pela definição de $B$ e pela escolha do $x_i$, então podemos concluir que a desigualdade é verdadeira, pois o membro da esquerda é maior do que ou igual a zero, e o da direita é menor que zero.
+
+Agora usando o mesmo método que usamos pra concluir \eqref{L477}, fazendo novamente $x_i = f^{t_0+t_1+\cdots+t_{i-1}}(x)$ para todo $i$, $x_s = f^{t_0+t_1+\cdots+t_{s-1}}(x)$ onde $t_0+t_1+\cdots+t_{s-1}<n-1$, e tendo em mente que pelo item 4 da definição da sequencia temos $t_0+t_1+\cdots+t_{s-1}\geq n-t_s \geq n-K$, e essa ultima desigualdade é verdade pois $t_i\leq K$ para todo $i$, então podemos generalizar
+
+\begin{eqnarray}
+\sum_{j=0}^{n-1}\carac{E}(f^j(x)) & \geq & \sum_{j=0}^{t_0+\cdots+t_{s-1}-1}\carac{E}(f^j(x))\nonumber\\
+ & = & \sum_{j=0}^{t_0-1}\carac{E}(f^j(x_i))+\sum_{j=t_0}^{t_0+t_1-1}\carac{E}(f^j(x_i))+\sum_{j=t_0+t_1}^{t_0+t_1+t_2-1}\carac{E}(f^j(x_i))+\cdots\nonumber\\
+ && \cdots+\sum_{t_0+\cdots+t_{s-2}}^{t_0+\cdots+t_{s-1}-1}\carac{E}(f^j(x_i))\nonumber\\	
+ & \geq & \big[t_0(\overline{\tau}(E,x)-\varepsilon)-R(t_0)\big]+\big[t_1(\overline{\tau}(E,x)-\varepsilon)-R(t_2)\big]+\cdots\nonumber\\
+ & & \cdots+\big[t_{s-1}(\overline{\tau}(E,x)-\varepsilon)-R(t_{s-1})\big]\label{L49}
+% & \geq & \left(t_0+t_1+\cdots+t_{s-1}\right)(\overline{\tau}(E,x)-\varepsilon)\\
+%& \geq & (n-t_s)(\overline{\tau}(E,x)-\varepsilon)\\
+%& \geq & (n-K)(\overline{\tau}(E,x)-\varepsilon)
+\end{eqnarray}\vspace{0.1cm}
+onde $\displaystyle R(t_0)=\sum_{j=0}^{t_1-1}\carac{B}(f^j(x_i))\quad$ e $\quad\displaystyle R(t_i)=\sum_{j=t_0+\cdots+t_{i-1}}^{t_0+\cdots+t_i-1}\carac{B}(f^j(x_i))$, logo somando todos os $R(t_i)$ temos
+\begin{eqnarray*}
+\sum_{j=0}^{t_0+\cdots+t_{s-1}-1}R(t_j) & = & \sum_{j=0}^{t_0+\cdots+t_i-1}\carac{B}(f^j(x_i))\\
+& \leq & \sum_{j=0}^{n-1}\carac{B}(f^j(x))
+\end{eqnarray*}\vspace{0.1cm}
+
+Podemos voltar para \eqref{L49}, e concluir
+
+\begin{eqnarray*}
+\sum_{j=0}^{n-1}\carac{E}(f^j(x)) & \geq & \big[t_0(\overline{\tau}(E,x)-\varepsilon)-R(t_0)\big]+\cdots+\big[t_{s-1}(\overline{\tau}(E,x)-\varepsilon)-R(t_{s-1})\big]\\
+ & = & (t_0+\cdots+t_{s-1})(\overline{\tau}(E,x)-\varepsilon)-\sum_{j=0}^{t_0+\cdots+t_{s-1}-1}R(t_j)\\
+ & \geq & (t_0+\cdots+t_{s-1})(\overline{\tau}(E,x)-\varepsilon)-\sum_{j=0}^{n-1}\carac{B}(f^j(x))\\
+& \geq & (n-t_s)(\overline{\tau}(E,x)-\varepsilon)-\sum_{j=0}^{n-1}\carac{B}(f^j(x))\\
+& \geq & (n-K)(\overline{\tau}(E,x)-\varepsilon)-\sum_{j=0}^{n-1}\carac{B}(f^j(x))
+\end{eqnarray*}\vspace{0.1cm}
+
+Essa desigualdade vale para todo $x\in M$, e como as funções características são integráveis, então
+\begin{eqnarray*}
+\int\sum_{j=0}^{n-1}\carac{E}(f^j(x))d\mu(x) & \geq & \int\left((n-K)(\overline{\tau}(E,x)-\varepsilon)-\sum_{j=0}^{n-1}\carac{B}(f^j(x))\right)d\mu(x)\\
+\sum_{j=0}^{n-1}\int\carac{E}(f^j(x))d\mu(x) & \geq & (n-K)\int(\overline{\tau}(E,x)-\varepsilon)d\mu(x)-\sum_{j=0}^{n-1}\int\carac{B}(f^j(x))d\mu(x)\\
+\sum_{j=0}^{n-1}\mu(E) & \geq & (n-K)\int\overline{\tau}(E,x)d\mu(x)-(n-K)\varepsilon\mu(M)-\sum_{j=0}^{n-1}\mu(B)\\
+n\mu(E) & \geq & (n-K)\int\overline{\tau}(E,x)d\mu(x)-(n-K)\varepsilon-n\mu(B)\\
+\mu(E) & \geq & \dfrac{(n-K)}{n}\int\overline{\tau}(E,x)d\mu(x)-\dfrac{(n-K)}{n}\varepsilon-\mu(B)
+\end{eqnarray*}\vspace{0.1cm}
+
+Esse resultado vale para todo $n\in\N$, então passamos ao limite quando $n\to+\infty$, e como $\mu(B)<3$, temos
+\begin{eqnarray*}
+\mu(E) & \geq & \lim_{n\to+\infty}\left(\dfrac{(n-K)}{n}\int\overline{\tau}(E,x)d\mu(x)-\dfrac{(n-K)}{n}\varepsilon-\varepsilon\right)\\
+& = & \lim_{n\to+\infty}\left(\dfrac{(n-K)}{n}\right)\int\overline{\tau}(E,x)d\mu(x)-\lim_{n\to+\infty}\left(\dfrac{(n-K)}{n}\right)\varepsilon-\lim_{n\to+\infty}\varepsilon\\
+& = & \int\overline{\tau}(E,x)d\mu(x)-2\varepsilon
+\end{eqnarray*}\vspace{0.1cm}
+
+Como $\varepsilon>0$ é arbitrário, podemos  tendê-lo a 0, e temos
+
+\begin{equation*}
+\mu(E)\geq\int\overline{\tau}(E,x)d\mu(x)
+\end{equation*}\vspace{0.1cm}
+
+Isso completa a demonstração do caso geral do teorema.
+
+\end{proof}
+
+\begin{teorema}\label{teb}
+
+{\bf (Teorema Ergódico de Birkhoff)} Seja $f : M \to M$ uma transformação mensurável e $\mu$ uma probabilidade invariante por $f$. Dada qualquer função integrável $\varphi : M \to \R$ o limite 
+
+\begin{equation*}
+\tilde{\varphi}(x) = \lim_{n\to+\infty}\dfrac{1}{n}\sum_{j=0}^{n-1}{\varphi(f^j(x))}
+\end{equation*}
+
+existe em $\mu$-quase todo ponto $x\in M$. Além disso,
+
+\begin{equation*}
+\int{\tilde{\varphi}(x)d\mu(x)}=\int{\varphi(x)d\mu(x)}.
+\end{equation*}
+
+\end{teorema}
+
+\begin{proof}
+Este enunciado mais geral pode ser provado usando uma versão um pouco mais elaborada do argumento usado pra provar \ref{teb1}, que não apresentaremos aqui.
+\end{proof}
+
+\begin{obs}
+O Teorema \ref{teb1} é o caso particular do Teorema Ergódico de Birkhoff \eqref{teb} quando $\varphi=\carac{E}$, a função característica do conjunto $E$.
+\end{obs}
+
+\end{document}
+
+
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[height=5cm]{Imagem.png}
+%\caption{legenda}
+%\label{Imagem}
+%\end{figure}
+
+%\begin{equation*}
+
+%\end{equation*}\vspace{0.1cm}
+
+%\begin{eqnarray*}
+
+%\end{eqnarray*}\vspace{0.1cm}
+
+%\begin{propriedade}
+
+%\end{propriedade}
+
+%\begin{definicao}
+
+%\end{definicao}
+
+%\begin{ex}
+
+%\end{ex}
+
+%\begin{solucao}
+
+%\end{solucao}
+
+%\begin{teorema}
+
+%\end{teorema}
+
+%\begin{proof}
+
+%\end{proof}
+
+%\begin{corolario}
+
+%\end{corolario}
+
+%\begin{flushright}
+%\begin{minipage}{7cm}
+%\small
+%\end{minipage}\vspace{1cm}
+%\end{flushright}

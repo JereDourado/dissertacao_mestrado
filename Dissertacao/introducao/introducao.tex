@@ -1,0 +1,50 @@
+%\include{../preambulo/preambulo.tex}
+
+\chapter*{Introdução}
+
+\addcontentsline{toc}{chapter}{Introdu\c{c}\~{a}o} \pagenumbering{arabic}
+
+A teoria de Sistemas Dinâmicos, apresentada no final do século XIX pelo matemático francês Henri Poincaré e posteriormente aprofundada por George Birkhoff no livro \textit{Dynamical Systems} (1927), introduziu um estudo qualitativo para as equações diferenciais que permitiam analisar comportamentos assintóticos em relação ao tempo, como estabilidade e periodicidade, sem precisar resolvê-las explicitamente.
+
+Uma dinâmica em síntese é uma função de um espaço nele mesmo, e as propriedades mais interessantes são extraídas da análise das órbitas, que é o conjunto dos pontos gerados quando a função é aplicada iteradamente dado um ponto inicial. As dinâmicas aqui estudadas são caóticas, ou seja, possuem uma sensibilidade à condição inicial, o que leva a necessidade de estudar a dinâmica num sentido mais geral.
+
+As propriedades dinâmicas estudadas neste texto, em linhas gerais são:
+\vspace{-0.2cm}\begin{itemize}
+\item Transitividade: em que a dinâmica leva qualquer aberto a intersectar outro aberto pelo menos uma vez no futuro ou no passado.
+\vspace{-0.4cm}\item Topologicamente mixing: em que a dinâmica "mistura"\ o espaço, levando cada aberto a interceptar qualquer outro aberto e manter a intersecção infinitamente depois de um certo tempo.
+\vspace{-0.4cm}\item Ergodicidade fraca; em que o conjunto dos pontos cujas órbitas são densas, é um conjunto de medida total na variedade.
+\end{itemize}
+
+Alguns difeomorfismos definidos em variedades diferenciáveis compactas desfrutam de estruturas dinâmicas especiais. Os apresentados aqui possuem uma decomposição em soma direta no espaço tangente gerada pelos autoespaços do operador derivada, chamados de espaços estáveis, centrais e instáveis. Os quais possuem uma relação com os conjuntos estáveis e instáveis, que são formados por pontos que se aproximam no futuro e por pontos que se aproximam no passado, respectivamente. 
+
+Quando o espaço central é trivial chamamos o difeomorfismo de hiperbólico ou difeomorfismo de Anosov. Neste caso, os conjuntos estáveis e instáveis são subvariedades diferenciáveis, consequência do famoso Teorema da Variedade Estável. Quando o subespaço central é não-trivial chamamos o difeomorfismo de Parcialmente Hiperbólico. Neste caso, será possível definir subvariedades estáveis e instáveis fortes que integram os subespaços estáveis e instáveis.
+
+Chamamos de $s-$minimal os difeomorfismos de Anosov que possui todas as variedades estáveis densas e $ss-$minimal os difeomorfismos parcialmente hiperbólicos que possui todas variedades estáveis densas. Analogamente, definimos $u-$minimal e $uu-$minimal usando as variedades instáveis no lugar das variedades estáveis. Definimos também os difeomorfismos $ms-$minimal cujo conjunto dos pontos que possuem variedades estáveis densas, é um conjunto de medida de Lebesgue total. Definição esta que faz sentido para os difeomorfismos que preservam a medida de Lebesgue. Analogamente definimos $mu-$minimal usando as variedades instáveis ao invés das variedades estáveis.
+
+Os três principais resultados do trabalho são os seguintes:
+
+\begin{teorema}	
+Seja $f : M \to M$ um difeomorfismo de Anosov. Então, $f$ é $s-$minimal e $u-$minimal se, e somente se, $f$ é topologicamente mixing.
+\end{teorema}
+
+Este é o Teorema \ref{TeoEquivMinimal}.
+
+\begin{teorema} Seja $f:M\to M$ um difeomorfismo parcialmente hiperbólico preservando a medida de Lebesgue $m$. Se $f$ for $ms-$minimal ou $mu-$minimal, então $f$ é topologicamente \textit{mixing}.
+\end{teorema}
+
+Este é o Teorema \ref{mminimal}.
+
+\begin{teorema} Seja $f:M\to M$ um difeomorfismo de classe $C^{1+\alpha}$ parcialmente hiperbólico. Se $f$ é $ms-$minimal ou $mu-$minimal, então $f$ é fracamente ergódico.
+\end{teorema}
+
+Este é o Teorema \ref{ergofraca}.
+
+Esta dissertação está dividida da seguinte forma: no Capítulo 1 apresentamos conceitos básicos da teoria, no Capítulo 2 estudamos os difeomorfismos de Anosov e no Capítulo 3 os difeomorfismos Parcialmente Hiperbólicos.
+
+\vspace{2cm}
+
+\hfill Jeremias Dourado
+
+\hfill Uberlândia-MG, 17 de fevereiro de 2020.
+
+%\end{document}

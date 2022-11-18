@@ -1,0 +1,190 @@
+\documentclass[12pt,a4paper,oneside]{report}%
+\usepackage{amssymb}
+\usepackage{amsmath,accents}
+\usepackage{amsfonts}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+%\usepackage[latin1]{inputenc}
+\usepackage{latexsym}
+\usepackage{wrapfig}
+\usepackage{makeidx}
+\setlength{\topmargin}{-2cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{25.7cm}
+\flushbottom
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%COMEÇO DO MEU PREAMBULO%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{indentfirst}
+%\usepackage[pdftex]{color,graphicx}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{mathrsfs}
+\usepackage{lscape}
+\usepackage[normalem]{ulem}
+\usepackage{enumerate}
+\usepackage{mathdesign}
+\usepackage{amsthm}
+\usepackage[all]{xy}
+\usepackage{accents}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+
+
+
+
+
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\nulo}{\varnothing}
+\newcommand{\x}{\times}
+\newcommand{\carac}[1]{\mathcal{X}_{#1}}
+%\newcommand{\ital}[1]{\textit{#1}}
+%\newcommand{\negr}[1]{\textbf{#1}}
+\newcommand{\duascolunas}[2]{\begin{minipage}{7cm} #1 \end{minipage}\hfill\begin{minipage}{7cm} #2 \end{minipage}\\\\} 
+\newcommand {\expo}[1]{\exp{\left(#1\right)}}
+\newcommand {\expi}[1]{\exp{i\left(#1\right)}}
+\newcommand{\arc}[1]{\ensuremath{\overset{\frown}{\raisebox{0pt}[6pt]{#1}}}}
+\newcommand*{\mes}{\ifthenelse{\the\month < 2}{Janeiro}
+                  {\ifthenelse{\the\month < 3}{Fevereiro}
+                  {\ifthenelse{\the\month < 4}{Março}
+                  {\ifthenelse{\the\month < 5}{Abril}
+                  {\ifthenelse{\the\month < 6}{Maio}
+                  {\ifthenelse{\the\month < 7}{Junho}
+                  {\ifthenelse{\the\month < 8}{Julho}
+                  {\ifthenelse{\the\month < 9}{Agosto}
+                  {\ifthenelse{\the\month < 10}{Setembro}
+                  {\ifthenelse{\the\month < 11}{Outubro}
+                  {\ifthenelse{\the\month < 12}{Novembro}{Dezembro}}}}}}}}}}}} %plota o mês atual
+\newcommand {\sen}[1]{\sin{\left(#1\right)}}
+\newcommand {\cossen}[1]{\cos{\left(#1\right)}}
+\newcommand {\tg}[1]{\tan{\left(#1\right)}}
+\newcommand {\cotg}[1]{\cot{\left(#1\right)}}
+\newcommand {\seca}[1]{\sec{\left(#1\right)}}
+\newcommand {\cossec}[1]{\csc{\left(#1\right)}}
+\newcommand{\E}{\xi}
+%\newcommand {\L}{\mathscr{L}}
+\newcommand {\Ima}[1]{\mathrm{Im}{\left[#1\right]}}
+\newcommand {\F}{\mathscr{F}}
+%\newcommand {\L}{\mathscr{L}}
+\newcommand {\om}{\Omega}
+\newcommand {\fii}{\varphi}
+\newcommand {\lap}{\Delta}
+\newcommand {\gra}{\nabla}
+\newcommand {\pc}{\vskip 1pc}
+\newcommand {\fim}{\nl\rightline{$\square$}\vskip 2pc}
+\newcommand {\nl}{\newline}
+\newcommand {\cl}{\centerline}
+\newcommand {\R}{\mathbb{R}}
+\newcommand {\N}{\mathbb{N}}
+\newcommand {\Z}{\mathbb{Z}}
+\newcommand {\V}{\mathcal{V}^{hp}}
+\newcommand {\Q}{\mathbb{Q}}
+%\newcommand {\F}{\mathbb{F}}
+\newcommand {\G}{\mathbb{G}}
+\newcommand {\C}{\mathbb{C}}
+\newcommand {\Ss}{\mathbb{S}}
+\newcommand {\Ph}{\mathcal{P}_{\!h}}
+\newcommand {\B}{\mathcal{B}}
+\newcommand {\f}{\mathcal{F}}
+\newcommand {\Lh}{\mathcal{L}}
+\newcommand {\La}{\Lambda}
+\newcommand{\Ri}{\Rightarrow}
+\newcommand{\Li}{\Leftarrow}
+\newcommand{\lr}{\Longleftrightarrow}
+\newcommand{\dis}{\displaystyle}
+\newcommand{\lon}{\longrightarrow}
+\newcommand{\nin}{/\!\!\!\!\!\in}
+%\newcommand {\la}{\lambda}
+\newcommand {\al}{\alpha}
+\newcommand {\bt}{\beta}
+\newcommand {\til}{\widetilde}
+\newcommand {\lb}{\linebreak}
+\newcommand {\esp}{\hskip 1pc}
+\newcommand {\be}{\nl\cl }
+\newcommand {\normf}[3]{\Big| \!\! \; \Big|  \dfrac{#1}{#2} \Big| \!\! \; \Big|_{#3}}
+\newcommand {\norma}[2] {{\parallel  \! #1 \!  \parallel}_{#2}}
+\newcommand {\normp}[1] {{|\!|\!| #1 |\!|\!|}_{\! \Ph}}
+\newcommand {\adsum}{\addcontentsline{toc}{subsection}}
+\newcommand {\T}{\mathbb{T}}
+\newcommand {\fecho}[1]{\overline{#1}}
+%\newcommand {\interior}[1]{\accentset{\circ}{#1}}
+\newcommand {\interior}[1]{\accentset{\smash{\raisebox{-0.12ex}{$\scriptstyle\circ$}}}{#1}\rule{0pt}{2.3ex}}
+\newcommand {\pref}[1]{(\ref{#1})}
+\newcommand {\prcr}[2]{(#1\cup #2)_{\al,L}\rtimes\N}
+\newcommand {\tp}[2]{\T(#1\cup #2)}
+\newcommand{\mdc}{\text{mdc}}
+\newcommand{\funcao}[5]{\begin{array}{cccc}
+#1:&\!\!\!#2 & \rightarrow & #3 \\
+  &\!\!\! #4 & \mapsto & #5
+\end{array}}
+\newcommand{\n}{{\bf n}}
+\newcommand{\soma}[2]{\displaystyle\sum_{#1}^{#2}}
+\newcommand {\flecha}[1] {\stackrel{#1 \rightarrow \infty}\longrightarrow}
+\newcommand{\canto}[1]{\begin{flushright} #1 \end{flushright}}
+\newcommand{\fd}{\vspace{-0,5cm} \begin{flushright} $\square$ \end{flushright} \vspace{-0,5cm}}
+\newcommand{\der}{\partial}
+%\newcommand{\sen}{{\rm  \ \! sen}}
+\newcommand{\orb}[1]{\mathcal{O}\left(#1\right)}
+\newcommand{\orbf}[1]{\mathcal{O}^{+}\left(#1\right)}
+\newcommand{\orbp}[1]{\mathcal{O}^{-}\left(#1\right)}
+\newcommand{\conjunto}[1]{\big\{#1\big\}}
+\newcommand{\rec}[1]{\mathcal{R}\left(#1\right)}
+\newcommand{\recc}[1]{\mathcal{RC}\left(#1\right)}
+\newcommand{\prob}[1]{\mathcal{M}_1\left(#1\right)}
+\newcommand{\diff}{\operatorname{Diff}}
+
+
+
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\textrm{sen\hspace{2pt}}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\textrm{tg\hspace{2pt}}}
+\providecommand{\arctan}{} \renewcommand{\arctan}{\hspace{2pt}\textrm{arctg\hspace{2pt}}}
+\providecommand{\arcsin}{} \renewcommand{\arcsin}{\hspace{2pt}\textrm{arcsen\hspace{2pt}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%FIM DO MEU PREAMBULO%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{proposicao}[teorema]{Proposi\c{c}\~ao}
+\newtheorem{corolario}[teorema]{Corol\'ario}
+\newtheorem{definicao}[teorema]{Defini\c c\~{a}o}
+\newtheorem{exercicio}[teorema]{Exerc\'icio}
+\newtheorem{ex}{Exemplo}[chapter]
+\newtheorem*{solucao}{Solu\c{c}\~{a}o}
+\newtheorem{obs}[teorema]{Observa\c{c}\~{a}o}
+
+
+%\newtheorem{teorema}{Teorema}[chapter]
+%\newtheorem{lema}{Lema}[chapter]
+%\newtheorem{proposicao}{Proposi\c{c}\~ao}[chapter]
+%\newtheorem{corolario}{Corol\'ario}[chapter]
+%\newtheorem{definicao}{Defini\c c\~{a}o}[chapter]
+%\newtheorem{exercicio}{Exerc\'icio}[chapter]
+%\newtheorem{ex}{Exemplo}[chapter]
+%\newtheorem*{solucao}{Solu\c{c}\~{a}o}
+%\newtheorem{obs}{Observa\c{c}\~{a}o}[chapter]
+
+
+\makeindex
+\pagestyle{myheadings}
+
+
+
+\begin{document}
+
+\DeclareGraphicsExtensions{.jpg,.pdf,.eps,.png} \pagenumbering{roman} 
+\pagestyle{plain}
