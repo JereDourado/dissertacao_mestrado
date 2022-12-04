@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.11.18)  18 NOV 2022 07:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11) (preloaded format=pdflatex 2022.12.4)  4 DEC 2022 11:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./Dissertacao.tex
 (Dissertacao.tex
-LaTeX2e <2022-11-01>
+LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2022-11-02>
 
 LaTeX Warning: \include should only be used after \begin{document} on input lin
@@ -25,8 +25,8 @@ File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \c@subparagraph=\count191
 \c@figure=\count192
 \c@table=\count193
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
 \bibindent=\dimen140
 )
 (/home/jeremias/.miktex/texmfs/install/tex/latex/amsfonts/amssymb.sty
@@ -43,7 +43,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/home/jeremias/.miktex/texmfs/install/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip49
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (/home/jeremias/.miktex/texmfs/install/tex/latex/amsmath/amstext.sty
@@ -103,8 +103,8 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \totwidth@=\dimen148
 \lineht@=\dimen149
 \@envbody=\toks20
-\multlinegap=\skip50
-\multlinetaggap=\skip51
+\multlinegap=\skip51
+\multlinetaggap=\skip52
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
@@ -118,7 +118,7 @@ Package: accents 2006/05/12 v1.4 Math Accent Tools
 \cc@skewchar=\count274
 )
 (/home/jeremias/.miktex/texmfs/install/tex/generic/babel/babel.sty
-Package: babel 2022/10/23 3.82 The Babel package
+Package: babel 2022/11/30 3.83 The Babel package
 \babel@savecnt=\count275
 \U@D=\dimen152
 \l@unhyphenated=\language1
@@ -226,8 +226,8 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \page@free=\dimen162
 \premulticols=\dimen163
 \postmulticols=\dimen164
-\multicolsep=\skip52
-\multicolbaselineskip=\skip53
+\multicolsep=\skip53
+\multicolbaselineskip=\skip54
 \partial@page=\box57
 \last@line=\box58
 \maxbalancingoverflow=\dimen165
@@ -283,9 +283,9 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 )
 (/home/jeremias/.miktex/texmfs/install/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip54
+\multirow@colwidth=\skip55
 \multirow@cntb=\count289
-\multirow@dima=\skip55
+\multirow@dima=\skip56
 \bigstrutjot=\dimen169
 )
 (/home/jeremias/.miktex/texmfs/install/tex/latex/jknappen/mathrsfs.sty
@@ -298,7 +298,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 (/home/jeremias/.miktex/texmfs/install/tex/latex/ulem/ulem.sty
 \UL@box=\box101
 \UL@hyphenbox=\box102
-\UL@skip=\skip56
+\UL@skip=\skip57
 \UL@hook=\toks29
 \UL@height=\dimen170
 \UL@pe=\count290
@@ -330,9 +330,9 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headfont=\toks33
 \thm@notefont=\toks34
 \thm@headpunct=\toks35
-\thm@preskip=\skip57
-\thm@postskip=\skip58
-\thm@headsep=\skip59
+\thm@preskip=\skip58
+\thm@postskip=\skip59
+\thm@headsep=\skip60
 \dth@everypar=\toks36
 )
 (/home/jeremias/.miktex/texmfs/install/tex/generic/xypic/xy.sty
@@ -590,7 +590,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip60
+\Hy@SectionHShift=\skip61
 ) (/home/jeremias/.miktex/texmfs/install/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2022/10/09 v0.5w Insert pages of external PDF documents (AM)
 
@@ -600,12 +600,12 @@ Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count313
 \calc@Adimen=\dimen267
 \calc@Bdimen=\dimen268
-\calc@Askip=\skip61
-\calc@Bskip=\skip62
+\calc@Askip=\skip62
+\calc@Bskip=\skip63
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count314
-\calc@Cskip=\skip63
+\calc@Cskip=\skip64
 )
 (/home/jeremias/.miktex/texmfs/install/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
@@ -746,7 +746,7 @@ Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
 F (HO)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )))
-\openout2 = `capa/capa.aux'.
+\openout2 = `./capa/capa.aux'.
 
  (capa/capa.tex
 <logo/logoufu_0.jpg, id=50, 40.65187pt x 39.14626pt>
@@ -759,7 +759,7 @@ Package pdftex.def Info: logo/logoufu_0.jpg  used on input line 17.
 
 {/home/jeremias/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map} <./logo/logouf
 u_0.jpg>])
-\openout2 = `contra_capa/contra_capa.aux'.
+\openout2 = `./contra_capa/contra_capa.aux'.
 
  (contra_capa/contra_capa.tex
 Underfull \hbox (badness 6978) in paragraph at lines 18--21
@@ -814,7 +814,7 @@ e1 used on input line 7.
 
 
  <./ficha_catalografica/reportFichaCatalografica.pdf>]
-\openout2 = `folha_de_rosto/folha_de_rosto.aux'.
+\openout2 = `./folha_de_rosto/folha_de_rosto.aux'.
 
 
 (folha_de_rosto/folha_de_rosto.tex
@@ -831,14 +831,14 @@ icidade na Dinâmica das Funções.
 [4
 
 ])
-\openout2 = `dedicatoria/dedicatoria.aux'.
+\openout2 = `./dedicatoria/dedicatoria.aux'.
 
  (dedicatoria/dedicatoria.tex [5
 
 
 
 ])
-\openout2 = `agradecimentos/agradecimentos.aux'.
+\openout2 = `./agradecimentos/agradecimentos.aux'.
 
  (agradecimentos/agradecimentos.tex
 Overfull \hbox (6.37242pt too wide) in paragraph at lines 11--12
@@ -863,7 +863,7 @@ ação construtivista e dialética,
 
 
 ])
-\openout2 = `resumo/resumo.aux'.
+\openout2 = `./resumo/resumo.aux'.
 
  (resumo/resumo.tex
 Overfull \hbox (24.05774pt too wide) in paragraph at lines 14--15
@@ -888,7 +888,7 @@ orfismos Parcialmente Hiperbólicos, Ergodicidade,
 
 
 ])
-\openout2 = `abstract/abstract.aux'.
+\openout2 = `./abstract/abstract.aux'.
 
  (abstract/abstract.tex
 Overfull \hbox (32.5853pt too wide) in paragraph at lines 13--14
@@ -921,7 +921,7 @@ morfismos Parcialmente
 
 
 ]
-\openout2 = `introducao/introducao.aux'.
+\openout2 = `./introducao/introducao.aux'.
 
  (introducao/introducao.tex
 Overfull \hbox (18.81924pt too wide) in paragraph at lines 18--19
@@ -938,7 +938,7 @@ LaTeX Warning: Reference `TeoEquivMinimal' on page 2 undefined on input line 30
 .
 
 ) [2]
-\openout2 = `capitulo1/capitulo1.aux'.
+\openout2 = `./capitulo1/capitulo1.aux'.
 
  (capitulo1/capitulo1.tex
 Cap\'{\i }tulo 1.
@@ -1001,11 +1001,11 @@ mm/m/it/12 A[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 ^^V [] []
  []
 
 [22] [23] [24] [25] [26] [27]) [28]
-\openout2 = `capitulo2/capitulo2.aux'.
+\openout2 = `./capitulo2/capitulo2.aux'.
 
 
-No file capitulo2/capitulo2.tex.
-\openout2 = `capitulo3/capitulo3.aux'.
+No file ./capitulo2/capitulo2.tex.
+\openout2 = `./capitulo3/capitulo3.aux'.
 
 (capitulo3/capitulo3.tex
 Cap\'{\i }tulo 2.
@@ -1088,7 +1088,7 @@ T1/cmr/m/n/12 )\OMS/cmsy/m/n/12 ^^@$
  []
 
 [36]) [37]
-\openout2 = `bibliografia/bibliografia.aux'.
+\openout2 = `./bibliografia/bibliografia.aux'.
 
  (bibliografia/bibliografia.tex
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
@@ -1114,13 +1114,13 @@ Package rerunfilecheck Info: File `Dissertacao.out' has not changed.
 (rerunfilecheck)             Checksum: CDCEBF21A8AA60FEDD9EDDBE2FE3E762;2147.
  ) 
 Here is how much of TeX's memory you used:
- 16340 strings out of 477220
- 260570 string characters out of 2825624
- 656424 words of memory out of 3000000
- 36964 multiletter control sequences out of 15000+600000
+ 16341 strings out of 477216
+ 261122 string characters out of 2825570
+ 656558 words of memory out of 3000000
+ 36969 multiletter control sequences out of 15000+600000
  493788 words of font info for 98 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 79i,17n,82p,3278b,660s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 79i,17n,82p,3280b,664s stack positions out of 10000i,1000n,20000p,200000b,80000s
  </home/jeremias/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1
 200.pk> </home/jeremias/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/
 ecbx1440.pk> </home/jeremias/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dp
